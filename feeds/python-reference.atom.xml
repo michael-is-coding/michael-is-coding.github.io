@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding - Python reference</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/python-reference.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-04-13T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>Common string operations in Python</title><link href="https://michaeliscoding.com/common-string-operations-in-python/" rel="alternate"></link><published>2021-09-09T00:00:00+02:00</published><updated>2022-04-13T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-09-09:/common-string-operations-in-python/</id><summary type="html">&lt;p&gt;This reference article covers the most common operations with strings.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Common string operations in Python" src="https://michaeliscoding.com/images/0012-common-string-operations-python.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;This reference article covers the most common operations with strings.&lt;/p&gt;
+&lt;h2 id="very-short-but-important-intro"&gt;Very short but important intro&lt;a class="headerlink" href="#very-short-but-important-intro" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Strings in Python are immutable&lt;/strong&gt;. That means we can never change (edit) a string. We always create a new one.  Of course, we can then assign a newly created string to the same variable.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Everything is case sensitive&lt;/strong&gt; unless stated otherwise. That means &lt;em&gt;"Here"&lt;/em&gt; is NOT equal to &lt;em&gt;"here"&lt;/em&gt;, and &lt;em&gt;"two"&lt;/em&gt; is NOT equal to &lt;em&gt;"TWO"&lt;/em&gt;, etc.&lt;/p&gt;
+&lt;h2 id="joining-strings"&gt;Joining strings&lt;a class="headerlink" href="#joining-strings" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can join strings in Python with a &lt;code&gt;+&lt;/code&gt;  (addition) operator:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;greeting = 'Hello ' + 'world!'
+# 'Hello world!'
+
+name = 'John'
+
+'Hello ' + name
+# 'Hello John'
+
+bye = 'Bye '
+
+bye + name
+# 'Bye John'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can join more than two strings, of course. But using &lt;code&gt;+&lt;/code&gt;  to join more than a few strings is inefficient. Especially in a loop, so never do that. &lt;/p&gt;
+&lt;p&gt;Instead, it's much better to use the &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.join"&gt;&lt;code&gt;join()&lt;/code&gt;&lt;/a&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;directions = ['up', 'right', 'down', 'left']
+
+'&amp;gt;'.join(directions)
+# 'up&amp;gt;right&amp;gt;down&amp;gt;left'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;str.join(iterable)&lt;/code&gt; is a method of string. It takes one parameter - iterable (e.g. list, set etc.) and returns a new string.&lt;/p&gt;
+&lt;p&gt;It creates a new string by joining (concatenating) strings in iterable by string separator. The separator is the string on which we call the &lt;code&gt;join()&lt;/code&gt; method  (in the code above, it's "&gt;".&lt;/p&gt;
+&lt;h2 id="splitting-string"&gt;Splitting string&lt;a class="headerlink" href="#splitting-string" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sometimes we want to split one string into multiple using some separator. For that, we use the &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.split"&gt;&lt;code&gt;split()&lt;/code&gt;&lt;/a&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;names = 'John &amp;amp; Martin &amp;amp; Carla &amp;amp; Linda &amp;amp; Alena'
+names.split(' &amp;amp; ')
+# ['John', 'Martin', 'Carla', 'Linda', 'Alena']
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;split()&lt;/code&gt; needs one argument, separator, which it uses to split the string. &lt;/p&gt;
+&lt;p&gt;It also takes the optional argument &lt;code&gt;maxsplit&lt;/code&gt;, limiting how many times to split the string. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;names = 'John &amp;amp; Martin &amp;amp; Carla &amp;amp; Linda &amp;amp; Alena'
+names.split(' &amp;amp; ', 2)
+# ['John', 'Martin', 'Carla &amp;amp; Linda &amp;amp; Alena']
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Above, we call &lt;code&gt;split()&lt;/code&gt; with the second argument &lt;code&gt;2&lt;/code&gt;, so it splits the string only twice. The remaining part is left untouched as the third item in the resulting list.&lt;/p&gt;
+&lt;p&gt;When we have multiple lines in our string (e.g. from a small file or other input), it's handy to use the &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.splitlines"&gt;&lt;code&gt;splitlines()&lt;/code&gt;&lt;/a&gt; method, which splits a string at line boundaries, so the resulting list contains each line separately.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;data = 'First line\nSecond line\nThird line'
+
+data.splitlines()
+# ['First line', 'Second line', 'Third line']
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We could also use &lt;code&gt;data.split('\n')&lt;/code&gt; but advantage of &lt;code&gt;splitlines()&lt;/code&gt; is that it handles all the other line boundaries than just &lt;code&gt;\n&lt;/code&gt; (&lt;a href="https://docs.python.org/3/library/stdtypes.html#str.splitlines"&gt;doc&lt;/a&gt;).&lt;/p&gt;
+&lt;h2 id="check-if-a-string-contains-a-substring"&gt;Check if a string contains a substring&lt;a class="headerlink" href="#check-if-a-string-contains-a-substring" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To check if a string contains some other string, we use the &lt;code&gt;in&lt;/code&gt; operator:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;numbers = 'one, two, three'
+'two' in numbers
+# True
+
+'five' in numbers
+# False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="check-if-a-string-starts-with-a-prefix"&gt;Check if a string starts with a prefix&lt;a class="headerlink" href="#check-if-a-string-starts-with-a-prefix" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To check if a string starts with some string, we use the &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.startswith"&gt;&lt;code&gt;startswith()&lt;/code&gt;&lt;/a&gt; function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;title = 'Here comes the sun'
+
+title.startswith('Here')
+# True
+
+# Case sensitive so this will produce False
+title.startswith('here')
+# False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But what if we want to check if a string starts with one of the multiple prefixes? &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;startswith()&lt;/code&gt; also takes a tuple as a first argument so we can pass multiple prefixes to check against:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;sentences = ['He is here', 'She is there', 
+             'You are great', 'I am good']
+
+# Print only sentences in third person
+for s in sentences:
+    if s.startswith(('He', 'She', 'It')):
+        print(s)
+
+# He is here
+# She is there
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;startswith()&lt;/code&gt; also takes two optional parameters, &lt;code&gt;start&lt;/code&gt; and &lt;code&gt;end&lt;/code&gt;. We can use these to tell it where it should start to look for a prefix and where the search should end. Essentially it cuts our string before checking it:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;'She is there'.startswith('is', start=4)
+# True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;end&lt;/code&gt; is not that useful for &lt;code&gt;startswith&lt;/code&gt;  but more for &lt;code&gt;endswith()&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="check-if-a-string-ends-with-a-suffix"&gt;Check if a string ends with a suffix&lt;a class="headerlink" href="#check-if-a-string-ends-with-a-suffix" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To check if a string ends with some strings, we use &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.endswith"&gt;&lt;code&gt;endswith()&lt;/code&gt;&lt;/a&gt;. It works the same as &lt;code&gt;startswith()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;title = 'Here comes the sun'
+
+title.endswith('sun')
+# True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can also pass tuple as with &lt;code&gt;startswith()&lt;/code&gt; and use &lt;code&gt;start&lt;/code&gt; and &lt;code&gt;end&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;sentences = ['He is here', 'She is there', 
+             'You are great', 'I am good']
+
+# Print only sentences ending with 'eat' or 'good'
+for s in sentences:
+    if s.endswith(('eat', 'good')):
+        print(s)
+# You are great
+# I am good
+
+'You are great'.endswith('are', 0, 7)
+# True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When we want to use &lt;code&gt;end&lt;/code&gt;, we need to use &lt;code&gt;start&lt;/code&gt; too - we use 0 when we don't want to ignore anything from the beginning of the string.&lt;/p&gt;
+&lt;h2 id="count-occurrences-of-a-substring"&gt;Count occurrences of a substring&lt;a class="headerlink" href="#count-occurrences-of-a-substring" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When we need to know how many times substring occurs in our string, we use the &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.count"&gt;&lt;code&gt;count()&lt;/code&gt;&lt;/a&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;all_blue = 'I like blue shoes, blue shirts, blue hats'
+
+all_blue.count('blue')
+# 3
+
+all_blue.count('green')
+# 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This method also takes &lt;code&gt;start&lt;/code&gt; and end parameters. If provided, it looks for substring only within the range between &lt;em&gt;start&lt;/em&gt; and &lt;em&gt;end&lt;/em&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;all_blue = 'I like blue shoes, blue shirts, blue hats'
+
+all_blue.count('blue', 10, 30)
+# 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="length-of-a-string"&gt;Length of a string&lt;a class="headerlink" href="#length-of-a-string" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To get the length of the string,  that is, how many characters it has, we use the &lt;a href="https://docs.python.org/3/library/functions.html#len"&gt;&lt;code&gt;len()&lt;/code&gt;&lt;/a&gt; function:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;len('hello')
+# 5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="replacing-part-of-a-string"&gt;Replacing part of a string&lt;a class="headerlink" href="#replacing-part-of-a-string" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sometimes we want to replace part of the string with another string. We can use the &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.replace"&gt;&lt;code&gt;replace(old, new)&lt;/code&gt;&lt;/a&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;all_blue = 'I like blue shoes, blue shirts, blue hats'
+
+all_blue.replace('blue', 'green')
+# 'I like green shoes, green shirts, green hats'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;replace()&lt;/code&gt; takes one optional parameter &lt;code&gt;count&lt;/code&gt;. By giving it this parameter, we can limit how many occurrences of the substring it should replace:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;all_blue = 'I like blue shoes, blue shirts, blue hats'
+
+all_blue.replace('blue', 'green', 1)
+# 'I like green shoes, blue shirts, blue hats'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="convert-string-to-lowercase"&gt;Convert string to lowercase&lt;a class="headerlink" href="#convert-string-to-lowercase" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To make all characters in string lower case, we use the &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.lower"&gt;&lt;code&gt;lower()&lt;/code&gt;&lt;/a&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;title = 'Here comes the sun'
+
+title_lowercase = title.lower()
+# 'here comes the sun'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Lowercasing a string is often helpful when dealing with substring (contains, starts with, ends with) or comparing, and we don't care about case sensitiveness. In this case, we make everything lower case and then do our operation.&lt;/p&gt;
+&lt;h2 id="convert-string-to-uppercase"&gt;Convert string to uppercase&lt;a class="headerlink" href="#convert-string-to-uppercase" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We use the &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.isupper"&gt;&lt;code&gt;upper()&lt;/code&gt;&lt;/a&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;title = 'Here comes the sun'
+
+title_uppercase = title.upper()
+# 'HERE COMES THE SUN'
+&lt;/code&gt;&lt;/pre&gt;</content><category term="Python reference"></category><category term="python"></category><category term="string"></category><category term="str"></category></entry><entry><title>Python's in operator</title><link href="https://michaeliscoding.com/python-in-operator/" rel="alternate"></link><published>2021-08-26T00:00:00+02:00</published><updated>2022-04-12T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-26:/python-in-operator/</id><summary type="html">&lt;p&gt;Where and how do we use the &lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; operator in Python.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Python's in operator" src="https://michaeliscoding.com/images/0008-python-in-operator.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;in&lt;/code&gt; operator is ubiquitous in Python; it is used with strings, lists and other iterables to check if they contain a specific element.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;in&lt;/code&gt; is a binary membership operator.&lt;/p&gt;
+&lt;p&gt;Binary means it uses two operands—one on the left and one on the right.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="in operands" src="https://michaeliscoding.com/images/0008-in-operands-python.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Membership means it checks if one operand is a member of the other operand. The &lt;em&gt;in&lt;/em&gt; operator checks if its left operand is a member of its left operand. &lt;/p&gt;
+&lt;p&gt;Or, put more simply, it checks if its right operand contains its left operand. If it does, it returns &lt;code&gt;True&lt;/code&gt;;  otherwise, it returns &lt;code&gt;False&lt;/code&gt;. 
+We can use it only if an operand on the right is iterable.&lt;/p&gt;
+&lt;p&gt;Both left and right operands can be variables or values (constants).&lt;/p&gt;
+&lt;p&gt;Let's look at how we use it with different objects in Python.&lt;/p&gt;
+&lt;h2 id="strings"&gt;Strings&lt;a class="headerlink" href="#strings" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;in&lt;/code&gt; operator can check if the string on the right contains the string on the left.
+In other words, we can use it to check if a string contains some substring.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;s = 'Big blue sky'
+
+'blue' in s
+# outputs: True
+
+b = 'blue'
+
+b in s
+# outputs: True
+
+'red' in s
+# outputs: False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;in&lt;/code&gt; operator is  case-sensitive:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;'big' in s
+# outputs: False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;'Big blue sky'&lt;/code&gt; does not contain &lt;code&gt;big&lt;/code&gt;, but it does contain &lt;code&gt;Big&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Few more examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;j = 'joy of coding'
+
+'din' in j
+# outputs: True
+
+'y of' in j
+# outputs: True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="lists-and-other-iterables"&gt;Lists and other iterables&lt;a class="headerlink" href="#lists-and-other-iterables" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;in&lt;/code&gt; operator also works with any iterable - lists, tuples, sets and others.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;numbers = [2, 4, 6, 8]
+
+4 in numbers
+# outputs: True
+
+5 in numbers
+# outputs: False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tuples:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;t = ('a', 'b', 'c')
+
+'a' in t
+# outputs: True
+
+'f' in t
+# outputs: False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Sets:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;colors = {'red', 'green', 'blue'}
+
+'gr' in colors
+# outputs: False
+
+'red' in colors
+# outputs: True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Please note that when we work with lists, sets, tuples (and dicts), the &lt;code&gt;in&lt;/code&gt; operator checks if its left operand is an exact match to any item in the right operand.
+Unlike when we use the &lt;code&gt;in&lt;/code&gt; with two strings, it is not looking for a substring.&lt;/p&gt;
+&lt;h2 id="dicts"&gt;Dicts&lt;a class="headerlink" href="#dicts" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;dict&lt;/em&gt; is also iterable, but when we use the &lt;code&gt;in&lt;/code&gt; operator with a dict, it only uses the dict's keys to check for membership.&lt;/p&gt;
+&lt;p&gt;It ignores the dict's values.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;fruits = {
+    'apple': 'red',
+    'banana': 'yellow',
+    'lime': 'green'
+}
+
+'red' in fruits
+# outputs: False
+
+'banana' in fruits
+# outputs: True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So the &lt;code&gt;in&lt;/code&gt; operator for dicts means: "Does the dict contains this key?"&lt;/p&gt;
+&lt;h2 id="not-in"&gt;&lt;code&gt;not in&lt;/code&gt;&lt;a class="headerlink" href="#not-in" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;in&lt;/code&gt; operator returns &lt;code&gt;True&lt;/code&gt; if the left operand is a member of the right operand. 
+&lt;code&gt;not in&lt;/code&gt; does the exact opposite. It returns &lt;code&gt;True&lt;/code&gt; if the left operand is NOT a member of the right operand.&lt;/p&gt;
+&lt;p&gt;Few examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;s = 'Big blue sky'
+
+'yellow' not in s
+# outputs: True
+
+'blue' not in s
+# outputs: False
+
+numbers = [2, 4, 6, 8]
+
+1 not in numbers
+# outputs True
+
+2 not in numbers
+# outputs False
+
+fruits = {
+    'apple': 'red',
+    'banana': 'yellow',
+    'lime': 'green'
+}
+
+'red' not in fruits
+# outputs: True
+
+'banana' not in fruits
+# outputs: False
+&lt;/code&gt;&lt;/pre&gt;</content><category term="Python reference"></category><category term="python"></category><category term="in"></category><category term="list"></category><category term="string"></category><category term="operator"></category></entry></feed>

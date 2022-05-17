@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding - How to in Python</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/how-to-in-python.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-04-19T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>How to delete files and directories in Python</title><link href="https://michaeliscoding.com/how-to-delete-files-directories-in-python/" rel="alternate"></link><published>2021-09-16T00:00:00+02:00</published><updated>2022-04-19T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-09-16:/how-to-delete-files-directories-in-python/</id><summary type="html">&lt;p&gt;How to delete files and directories in Python using &lt;em&gt;os&lt;/em&gt; and &lt;em&gt;shutils&lt;/em&gt; modules&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to delete files and directories in Python" src="https://michaeliscoding.com/images/0014-delete-files-directories-python.jpg"&gt;&lt;/p&gt;
+&lt;h2 id="deleting-files"&gt;Deleting files&lt;a class="headerlink" href="#deleting-files" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To delete a file we use &lt;code&gt;os.remove()&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;It takes a path to a file as an argument. It can be an absolute path or a path relative to the &lt;a href="https://michaeliscoding.com/how-to-get-and-change-working-directory-in-python/"&gt;current working directory&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+
+os.remove('/Users/michaeliscoding/my_dir/file1.txt')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If such a file doesn't exist, it will raise &lt;code&gt;FileNotFoundError&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;If the path we provided points to a directory, not a file, it will raise an &lt;code&gt;IsADirectoryError&lt;/code&gt; or a &lt;code&gt;PermissionError&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;(&lt;a href="https://docs.python.org/3/library/os.html#os.remove"&gt;Documentation&lt;/a&gt; says it will raise &lt;code&gt;IsADirectoryError&lt;/code&gt; but on macOS it raises &lt;code&gt;PermissionError&lt;/code&gt; for me.)&lt;/p&gt;
+&lt;h2 id="deleting-directories"&gt;Deleting directories&lt;a class="headerlink" href="#deleting-directories" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;o delete a directory  we need a different function - &lt;code&gt;os.rmdir()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+
+os.rmdir('/Users/michaeliscoding/my_dir/')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But there is a catch! It will work only if a directory is &lt;strong&gt;empty&lt;/strong&gt;!&lt;/p&gt;
+&lt;p&gt;Otherwise, it will raise &lt;code&gt;OSError&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To make the directory empty, we would first need to delete all files and 
+subdirectories it contains. But those sub-directories might also have files, 
+so we would need to write a recursive function for that.&lt;/p&gt;
+&lt;p&gt;Luckily, we don’t have to do that by ourselves. There is the &lt;code&gt;shuttle.rmtree()&lt;/code&gt; function that will delete directories even if they're not empty:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import shutils
+
+shutils.rmtree('/Users/michaeliscoding/my_dir/')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This one will delete all files and directories on the given path so &lt;strong&gt;be careful&lt;/strong&gt;!&lt;/p&gt;
+&lt;p&gt;Another function that is sometimes helpful is &lt;code&gt;os.removedirs()&lt;/code&gt;.
+It removes a directory you give it and any directory leading to it (parents) if those are empty.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+
+os.removedirs('/Users/michaeliscoding/my_dir/')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Code above would delete &lt;em&gt;my_dir&lt;/em&gt; if empty and &lt;em&gt;michaeliscoding&lt;/em&gt; if empty, and even &lt;em&gt;Users&lt;/em&gt; if empty. Since it is deleting only empty directories, there’s not that much harm 
+this can cause.&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="directory"></category><category term="os"></category><category term="file"></category><category term="shutils"></category></entry><entry><title>How to get and change the working directory in Python</title><link href="https://michaeliscoding.com/how-to-get-and-change-working-directory-in-python/" rel="alternate"></link><published>2021-09-14T00:00:00+02:00</published><updated>2022-04-19T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-09-14:/how-to-get-and-change-working-directory-in-python/</id><summary type="html">&lt;p&gt;What is a working directory (CWD), and how to get it and change it in Python?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Current working directory" src="https://michaeliscoding.com/images/0013-get-and-change-working-directory-python.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;What is a working directory (CWD), and how to get it and change it in Python?&lt;/p&gt;
+&lt;h2 id="what-is-a-current-working-directory-cwd"&gt;What is a current working directory - CWD?&lt;a class="headerlink" href="#what-is-a-current-working-directory-cwd" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The current working directory (CWD) is a directory our code operates from.&lt;/p&gt;
+&lt;p&gt;It is (almost) always a directory from which we started (run) Python, whether we started REPL with &lt;code&gt;python3&lt;/code&gt; or run file with &lt;code&gt;python3 my_code.py&lt;/code&gt;. &lt;/p&gt;
+&lt;h2 id="why-is-this-important"&gt;Why is this important?&lt;a class="headerlink" href="#why-is-this-important" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;CWD is important because when we work with files and directories and reference a file by name or relative path, this name or path is interpreted as relative to the CWD. &lt;/p&gt;
+&lt;p&gt;Let's say CWD is &lt;code&gt;'/Users/michaeliscoding/'&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If we open a file with the name &lt;code&gt;'test.txt'&lt;/code&gt;, Python will open the file at the absolute path &lt;code&gt;'/Users/michaeliscoding/text.txt'&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;If we use the relative path &lt;code&gt;'my_dir/test2.txt'&lt;/code&gt;, Python will open a file at the absolute path &lt;code&gt;'/Users/michaeliscoding/my_dir/test2.txt'&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;We can also go up - if we use relative path &lt;code&gt;'../test3.txt'&lt;/code&gt; Python will open the file at absolute path &lt;code&gt;'/Users/test3.txt'&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="how-to-get-the-current-working-directory-in-python"&gt;How to get the current working directory in Python&lt;a class="headerlink" href="#how-to-get-the-current-working-directory-in-python" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can get CWD by using the function &lt;a href="https://docs.python.org/3/library/os.html#os.getcwd"&gt;&lt;code&gt;os.getcwd()&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+
+os.getcwd()
+# outputs: '/Users/michaeliscoding/'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(You'll get a different path as an output, of course.)&lt;/p&gt;
+&lt;p&gt;As we mentioned, it is almost always a directory from which we start Python.
+I said almost because we can change this directory.&lt;/p&gt;
+&lt;h2 id="how-to-change-the-current-working-directory"&gt;How to change the current working directory&lt;a class="headerlink" href="#how-to-change-the-current-working-directory" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can  change CWD with &lt;a href="https://docs.python.org/3/library/os.html#os.chdir"&gt;&lt;code&gt;os.chdir(path)&lt;/code&gt;&lt;/a&gt; function:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+
+# using absolute path
+os.chdir('/Users/michaeliscoding/projects/data/')
+
+# using relative path
+os.chdir('data/')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;chdir()&lt;/code&gt; will raise a &lt;code&gt;FileNotFoundError&lt;/code&gt; if the directory we want to change to does not exist.&lt;/p&gt;
+&lt;p&gt;The path we give to &lt;code&gt;chdir()&lt;/code&gt; can be absolute or relative. If it's relative, it is a relative path from the CWD.&lt;/p&gt;
+&lt;p&gt;Changing CWD might be helpful if we operate with files in some directory and we want to deal just with file names, not whole paths.&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="directory"></category><category term="os"></category><category term="cwd"></category><category term="path"></category></entry><entry><title>How to read directory content in Python</title><link href="https://michaeliscoding.com/how-to-read-directory-content-in-python/" rel="alternate"></link><published>2021-09-07T00:00:00+02:00</published><updated>2022-04-13T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-09-07:/how-to-read-directory-content-in-python/</id><summary type="html">&lt;p&gt;We look at three ways to read directory content using the built-in os module.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to read directory content in Python?" src="https://michaeliscoding.com/images/0011-read-directory-content-python.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Reading directory content is easy in Python. The most common is to use the built-in &lt;code&gt;os&lt;/code&gt; module.&lt;/p&gt;
+&lt;p&gt;First, let’s start with the test directory we'll be using. It looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;my_dir
+  | - file2.txt
+  | - file1.txt
+  | - my_subdir
+     | - subdir_file2.txt
+     | - subdir_file1.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img alt="Our sample directory" src="https://michaeliscoding.com/images/0011-sample-directory.png"&gt;&lt;/p&gt;
+&lt;p&gt;With that out of the way, let’s look at the three functions we can use.&lt;/p&gt;
+&lt;h2 id="oslistdir"&gt;&lt;code&gt;os.listdir()&lt;/code&gt;&lt;a class="headerlink" href="#oslistdir" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The simplest way to list directory content is by using  &lt;code&gt;os.listdir&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+
+content = os.listdir('/Users/michaeliscoding/my_dir')
+
+# outputs: ['file2.txt', 'file1.txt', 'my_subdir']
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This method will return a list of strings. Each string is the name of a file 
+or directory.&lt;/p&gt;
+&lt;p&gt;Sometimes, it might be enough, but it has three drawbacks:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We only have the name of the file or folder, not a path to it. The path might be useful if we want to do something with files/folders &lt;/li&gt;
+&lt;li&gt;We don’t know if the item in the list is a file or a folder - we only have the name&lt;/li&gt;
+&lt;li&gt;We received a list of what is in the directory only on the top level, ignoring what is in subfolders. In our case, we don’t know what is in &lt;em&gt;my_subdir&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="get-path"&gt;Get path&lt;a class="headerlink" href="#get-path" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We can fix the first drawback by using the &lt;code&gt;os.path.join()&lt;/code&gt; function. It puts together the path to our directory and file (or sub-directory) name to get the path:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+
+dir_path = '/Users/michaeliscoding/my_dir'
+content = os.listdir(dir_path)
+for item_name in content:
+    item_path = os.path.join(dir_path, item_name)
+    print(item_path)
+
+# outputs: 
+# /Users/michaeliscoding/my_dir/file2.txt
+# /Users/michaeliscoding/my_dir/file1.txt
+# /Users/michaeliscoding/my_dir/my_subdir
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="check-if-an-item-is-a-file-or-directory"&gt;Check if an item is a file or directory&lt;a class="headerlink" href="#check-if-an-item-is-a-file-or-directory" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We can use the function &lt;code&gt;os.path.isfile()&lt;/code&gt; to check if an item is a file or a directory. This function takes the path and returns &lt;code&gt;True&lt;/code&gt; if there is a file at the path. Otherwise, for a directory, it returns &lt;code&gt;False&lt;/code&gt;. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+
+dir_path = '/Users/michaeliscoding/my_dir'
+content = os.listdir(dir_path)
+for item_name in content:
+    item_path = os.path.join(dir_path, item_name)
+    if os.path.isfile(item_path):
+        print('FILE: ' + item_path)
+    else:
+        print('DIR: ' + item_path)
+
+# outputs: 
+# FILE: /Users/michaeliscoding/my_dir/file2.txt
+# FILE: /Users/michaeliscoding/my_dir/file1.txt
+# DIR: /Users/michaeliscoding/my_dir/my_subdir
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It is a matter of opinion whether the third drawback is actually a drawback. If we don’t care about sub-directories, then  &lt;code&gt;os.listdir()&lt;/code&gt; will work fine. 
+Otherwise, the following function might work better for us.&lt;/p&gt;
+&lt;h2 id="oswalk"&gt;&lt;code&gt;os.walk()&lt;/code&gt;&lt;a class="headerlink" href="#oswalk" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Like the previous one, the &lt;code&gt;os.walk()&lt;/code&gt; function takes a directory path as a parameter. 
+But it doesn't return a simple list of files/folders names in our directory.&lt;/p&gt;
+&lt;p&gt;It walks our directory recursively through all the sub-directories and returns one tuple for each directory it finds on the way down.&lt;/p&gt;
+&lt;p&gt;Each tuple contains three things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The first is the path to the directory this tuple is describing&lt;/li&gt;
+&lt;li&gt;The second item is a list of sub-directories under this directory &lt;/li&gt;
+&lt;li&gt;The third is a list of files in this directory&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+
+dir_path = '/Users/michaeliscoding/my_dir'
+
+for item in os.walk(dir_path):
+    print(item)
+
+# Outputs:
+# ('/Users/michaeliscoding/projects/my_dir', ['my_subdir'], ['file2.txt', 'file1.txt'])
+# ('/Users/michaeliscoding/projects/my_dir/my_subdir', [], ['subdir_file2.txt', 'subdir_file1.txt'])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For our &lt;em&gt;my_dir&lt;/em&gt; directory, we received two tuples. 
+The first one is a tuple describing our &lt;em&gt;my_dir&lt;/em&gt; :&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;('/Users/michaeliscoding/projects/my_dir', 
+ ['my_subdir'], 
+ ['file2.txt', 'file1.txt'])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It contains the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;'/Users/michaeliscoding/projects/my_dir'&lt;/code&gt; - This is path to our &lt;em&gt;my_dir&lt;/em&gt; directory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[‘my_subdir']&lt;/code&gt; - This is list of sub-directories in our &lt;em&gt;my_dir&lt;/em&gt; directory containing one item: &lt;em&gt;my_subdir&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;['file2.txt', 'file1.txt']&lt;/code&gt; - This is list of files under &lt;em&gt;my_dir&lt;/em&gt; directory&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The second one is a tuple describing our sub-directory &lt;em&gt;my_subdir&lt;/em&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;('/Users/michaeliscoding/projects/my_dir/my_subdir', 
+ [], 
+ ['subdir_file2.txt', 'subdir_file1.txt'])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It contains the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;'/Users/michaeliscoding/projects/my_dir/my_subdir'&lt;/code&gt; - This is path to &lt;em&gt;my_subdir&lt;/em&gt; directory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[]&lt;/code&gt; - This is list of sub-directories in &lt;em&gt;my_subdir&lt;/em&gt; - it doesn’t have any sub-directories so its empty&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[‘subdir_file2.txt', 'subdir_file1.txt']&lt;/code&gt; - This is list of files in &lt;em&gt;my_subdir&lt;/em&gt; directory&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As we can see from the above, &lt;code&gt;os.walk()&lt;/code&gt; walks through the directory and all its subdirectories recursively. So we will get the entire tree of the directory.&lt;/p&gt;
+&lt;p&gt;With these tuples, we know what is what. Tuples are generated only for directories. The first item in the tuple is a path to the directory. Then the second item in the tuple always contains a list of sub-directories.
+Files are always in the third item of the tuple.&lt;/p&gt;
+&lt;p&gt;We still need to put together the path by joining the path of the directory, which is in the first item with a file name or a directory name:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;# we iterate through all tuples
+for item in os.walk(dir_path):
+    # second item - list of sub-directories - has index 1
+    # we iterate through all sub-directories
+    for subdir_name in item[1]:
+        # first item - path to directory this tuple describes - has index 0 
+        subdir_path = os.path.join(item[0], subdir_name)
+        print('DIR: ' + subdir_path)
+    # third item - list of files - has index 2
+    # we iterate through all files 
+    for file_name in item[2]:
+        file_path = os.path.join(item[0], file_name)
+        print('FILE: ' + file_path)
+
+# outputs:
+# DIR: /Users/michaeliscoding/projects/my_dir/my_subdir
+# FILE: /Users/michaeliscoding/projects/my_dir/file2.txt
+# FILE: /Users/michaeliscoding/projects/my_dir/file1.txt
+# FILE: /Users/michaeliscoding/projects/my_dir/my_subdir/subdir_file2.txt
+# FILE: /Users/michaeliscoding/projects/my_dir/my_subdir/subdir_file1.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="osscandir"&gt;&lt;code&gt;os.scandir()&lt;/code&gt;&lt;a class="headerlink" href="#osscandir" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Another function we can use to list the content of a directory is &lt;code&gt;os.scandir()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It works similarly to &lt;code&gt;os.listdir()&lt;/code&gt;, taking the path to the directory as a parameter, except it doesn't return just names of files and sub-directories. &lt;/p&gt;
+&lt;p&gt;Instead, it returns &lt;code&gt;os.DirEntry&lt;/code&gt; objects which have some useful properties and methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;name&lt;/code&gt; property - returns name of the file/directory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;path&lt;/code&gt; property - return path to the file/directory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;is_file()&lt;/code&gt; method - returns True for file; otherwise False&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;is_dir()&lt;/code&gt; method - returns True for directory; otherwise False&lt;/li&gt;
+&lt;li&gt;few more which we can read about in the &lt;a href="https://docs.python.org/3/library/os.html#os.DirEntry"&gt;documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Using &lt;code&gt;os.scandir()&lt;/code&gt;, our code would look like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+
+dir_path = '/Users/michaeliscoding/my_dir'
+content = os.scandir(dir_path)
+for item in content:
+    if item.is_file():
+        print('FILE: ' + item.path)
+    else:
+        print('DIR: ' + item.path)
+
+# outputs:
+# FILE: /Users/michaeliscoding/projects/my_dir/file2.txt
+# FILE: /Users/michaeliscoding/projects/my_dir/file1.txt
+# DIR: /Users/michaeliscoding/projects/my_dir/my_subdir
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="summary"&gt;Summary&lt;a class="headerlink" href="#summary" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We went through 3 simple ways to list directory content using the built-in &lt;code&gt;os&lt;/code&gt; module.&lt;/p&gt;
+&lt;p&gt;There is no best one here, really. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;os.listdir()&lt;/code&gt;is the simplest, but we need to do extra things to get the path or type (file/dir).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;os.walk()&lt;/code&gt; is the only one that reads the complete directory tree, including sub-directories.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;os.scandir()&lt;/code&gt; is as simple as &lt;code&gt;listdir()&lt;/code&gt;, but we get back objects instead of strings, so it's easier to get type (file/dir).&lt;/li&gt;
+&lt;/ul&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="directory"></category><category term="os"></category><category term="file"></category><category term="listdir()"></category><category term="walk()"></category><category term="scandir()"></category></entry><entry><title>How to filter a list in Python</title><link href="https://michaeliscoding.com/how-to-filter-list-in-python/" rel="alternate"></link><published>2021-08-24T00:00:00+02:00</published><updated>2022-04-12T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-24:/how-to-filter-list-in-python/</id><summary type="html">&lt;p&gt;There are many ways to filter a list in Python. What are they and which one is the best?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to filter list in Python" src="https://michaeliscoding.com/images/0007-filter-list-python.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Filtering a list (or array) is a common thing every programmer needs to do quite often.&lt;/p&gt;
+&lt;p&gt;There are many ways to filter a list in Python. What are they, and which one is the best?&lt;/p&gt;
+&lt;h2 id="setup"&gt;Setup&lt;a class="headerlink" href="#setup" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We start with a list of fruits like the one below:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;fruits = [
+    'apple',
+    'pear',
+    'strawberry',
+    'orange',
+    'blueberry',
+    'lemon',
+    'raspberry',
+    'cranberry'
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We want to filter this list, so the new list contains only berries (strawberry, blueberry, raspberry and cranberry).&lt;/p&gt;
+&lt;p&gt;To determine if a fruit is a berry, we'll check if it contains the string &lt;em&gt;'berry'&lt;/em&gt;. It might be a naive condition but good enough for our purpose here. We'll use the &lt;code&gt;in&lt;/code&gt; operator:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;'berry' in fruit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="using-a-for-loop"&gt;Using a &lt;em&gt;for&lt;/em&gt; loop&lt;a class="headerlink" href="#using-a-for-loop" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Let's start with a plain old &lt;em&gt;for&lt;/em&gt; loop. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;berries = []
+
+for fruit in fruits:
+    if 'berry' in fruit:
+        berries.append(fruit)
+
+print(berries)
+# will output
+# ['strawberry', 'blueberry', 'raspberry', 'cranberry']
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We create an empty list named &lt;code&gt;berries&lt;/code&gt;. Then we go through every item in &lt;code&gt;fruits&lt;/code&gt; to check if it contains &lt;em&gt;'berry'&lt;/em&gt; and if so, we add it to our new list &lt;code&gt;berries&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The code above is probably the most common solution. &lt;/p&gt;
+&lt;h2 id="using-a-list-comprehension"&gt;Using a list comprehension&lt;a class="headerlink" href="#using-a-list-comprehension" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Python is a very expressive and succinct language, and list comprehensions are one of its most remarkable features.&lt;/p&gt;
+&lt;p&gt;We can use it to do filtering:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;berries = [fruit for fruit in fruits if 'berry' in fruit]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This code is very nice and short. And very pythonic. &lt;/p&gt;
+&lt;p&gt;List comprehensions allow us to add an &lt;code&gt;if&lt;/code&gt; statement, and we can use this to build a new filtered list. &lt;/p&gt;
+&lt;p&gt;The comprehension above will add the &lt;code&gt;fruit&lt;/code&gt; to the new list only when the &lt;code&gt;if&lt;/code&gt; condition evaluates to &lt;code&gt;True&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="using-the-built-in-filter-function"&gt;Using the built-in &lt;code&gt;filter()&lt;/code&gt; function&lt;a class="headerlink" href="#using-the-built-in-filter-function" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Python has a built-in function &lt;code&gt;filter()&lt;/code&gt;, which we use for ... &lt;/p&gt;
+&lt;p&gt;wait for it...&lt;/p&gt;
+&lt;p&gt;filtering. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;filter()&lt;/code&gt; takes 2 parameters: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The first parameter is a function that determines if an item should be filtered out or not. It receives each item as a parameter and should return True for items we want to keep; otherwise, it should return False.&lt;/li&gt;
+&lt;li&gt;The second parameter is a list (or other iterable) that we want to filter.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We can use it like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def is_berry(fruit):
+    return 'berry' in fruit
+
+berries = filter(is_berry, fruits)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or we can use it with &lt;code&gt;lambda&lt;/code&gt; if our condition is simple:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;berries = filter(lambda fruit: 'berry' in fruit, fruits)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But there is a slight problem here. &lt;/p&gt;
+&lt;p&gt;In both cases above, &lt;code&gt;filter()&lt;/code&gt; actually doesn't return a list but rather a &lt;code&gt;filter object&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;The filter object is an iterator - very helpful if we operate on large datasets as it doesn't load data in the memory all at once.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;print(berries)
+# will output
+# &amp;lt;filter object at 0x10314b610&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Often we can use an iterator exactly like a list (but only once). But if we want an actual list, we need to create it explicitly from the iterator:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;berries =  list(filter(lambda fruit: 'berry' in fruit, fruits))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="using-a-generator-expression"&gt;Using a generator expression&lt;a class="headerlink" href="#using-a-generator-expression" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Generator expression works like comprehension, except it returns a generator object rather than a list. &lt;/p&gt;
+&lt;p&gt;A generator object is an iterator which might be helpful if we work with large datasets.&lt;/p&gt;
+&lt;p&gt;We write generator expression same as a list comprehension except we change square brackets &lt;code&gt;[]&lt;/code&gt; to round brackets &lt;code&gt;()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;berries = (fruit for fruit in fruits if 'berry' in fruit)
+print(berries)
+# will output
+# &amp;lt;generator object &amp;lt;genexpr&amp;gt; at 0x102f43300&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="what-option-is-the-best"&gt;What option is the best?&lt;a class="headerlink" href="#what-option-is-the-best" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If we need an actual list and our dataset is not too big, the best option is to use list comprehension. 
+It's very pythonic and short. Most Python programmers will understand it straight away.&lt;/p&gt;
+&lt;p&gt;We should use the filter() or generator expression when working with a large dataset.
+&lt;code&gt;filter()&lt;/code&gt; is more verbose unless our function, which determines if an item should be filtered out, already exists. But we can still use &lt;code&gt;lambda&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Plain old for loop is the most lengthy, but one benefit is that it will be 
+also understood by people who don't know Python.&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehension"></category><category term="list"></category><category term="filter"></category><category term="lambda"></category></entry><entry><title>How to get the first matching item in a list without a loop in Python</title><link href="https://michaeliscoding.com/how-to-get-first-matching-item-without-loop-in-python/" rel="alternate"></link><published>2021-08-19T00:00:00+02:00</published><updated>2022-04-11T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-19:/how-to-get-first-matching-item-without-loop-in-python/</id><summary type="html">&lt;p&gt;Can we avoid a loop and keep its efficiency when we want to get the first matching item in the list?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to get the first matching item in a list without a loop in Python" src="https://michaeliscoding.com/images/0006-first-matching-item-without-loop-python.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;In programming, it is very common that we need to get the first item from a list that matches some criteria. Let's look at our options in Python and if we can do it without a &lt;em&gt;for&lt;/em&gt; loop.&lt;/p&gt;
+&lt;p&gt;Say we have defined class Fruit:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;@dataclass(frozen=True)
+class Fruit:
+    name: str
+    color: str
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And we have a list of fruits like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;fruits = [
+    Fruit('apple', 'red'),
+    Fruit('orange', 'orange'),
+    Fruit('lemon', 'yellow'),
+    Fruit('lime', 'green'),
+    Fruit('banana', 'yellow'),
+    Fruit('plum', 'blue'),
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We want to get the first fruit from the list with a yellow colour.&lt;/p&gt;
+&lt;h2 id="using-a-for-loop"&gt;Using a &lt;em&gt;for&lt;/em&gt; loop&lt;a class="headerlink" href="#using-a-for-loop" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The simplest way to do this is to iterate through the items in the list, 
+check the colour, and if it's yellow, return the item. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;
+def get_first_yellow(list_of_fruits):
+    for f in list_of_fruits:
+        if f.color == 'yellow':
+            return f
+    return None
+
+
+get_yellow(fruits)
+
+# will return 
+# Fruit(name='lemon', color='yellow')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This code is very efficient as we terminate the loop (and the function) on the 
+the first match, so we don't do any unnecessary work. &lt;/p&gt;
+&lt;p&gt;If there is no yellow fruit loop, we return &lt;code&gt;None&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="can-we-do-this-without-a-loop"&gt;Can we do this without a loop?&lt;a class="headerlink" href="#can-we-do-this-without-a-loop" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can avoid the loop by using list comprehension.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def get_first_yellow_no_loop(list_of_fruits):
+    matches = [f for f in list_of_fruits if f.color == 'yellow']
+    if matches:
+        return matches[0]
+    return None
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;While this also works, have we gained anything? &lt;/p&gt;
+&lt;p&gt;The code is not shorter. &lt;/p&gt;
+&lt;p&gt;It is not clearer. &lt;/p&gt;
+&lt;p&gt;And, it's also less efficient because:
+- it will go through the whole list (not only until it finds the first match)
+- create a new list of matching items
+- do &lt;em&gt;if&lt;/em&gt; and only then return&lt;/p&gt;
+&lt;p&gt;Loop was better.&lt;/p&gt;
+&lt;p&gt;Can we do this without the loop with the same efficiency?&lt;/p&gt;
+&lt;h2 id="generator-expression-and-the-next-function"&gt;Generator expression and the &lt;code&gt;next()&lt;/code&gt; function&lt;a class="headerlink" href="#generator-expression-and-the-next-function" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We could use a generator expression to avoid iterating through the whole list.&lt;/p&gt;
+&lt;p&gt;The generator doesn't create a new list. It outputs values on the fly when we need them.&lt;/p&gt;
+&lt;p&gt;We can rewrite our function with a generator expression like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def get_first_yellow_generator(list_of_fruits):
+    matches = (f for f in list_of_fruits if f.color == 'yellow')
+    return next(matches, None)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;First, we created a generator with generator expression and assigned it to
+variable matches.&lt;/p&gt;
+&lt;p&gt;Then, we used the built-in function &lt;a href="https://docs.python.org/3/library/functions.html#next"&gt;&lt;code&gt;next()&lt;/code&gt;&lt;/a&gt;, which retrieves the next item from our &lt;code&gt;matches&lt;/code&gt; generator. &lt;/p&gt;
+&lt;p&gt;The second parameter to the &lt;code&gt;next()&lt;/code&gt; is the value to return if there is no next item. 
+If we don't provide this value, then the &lt;code&gt;next()&lt;/code&gt; would throw a &lt;code&gt;StopIteration&lt;/code&gt; exception if there are no yellow items in our list.&lt;/p&gt;
+&lt;p&gt;This code is very efficient because it doesn't iterate the whole list or allocate any memory for a new list. &lt;/p&gt;
+&lt;p&gt;It's also clear what's going on to any experienced Python developer.
+We can also make it one line if you're into one-liners.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def get_first_yellow_one_line(list_of_fruits):
+    return next((f for f in list_of_fruits if f.color == 'yellow'), None)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="summary"&gt;Summary&lt;a class="headerlink" href="#summary" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;There are multiple ways to get the first matching item from a list (or any iterable).&lt;/p&gt;
+&lt;p&gt;There is nothing wrong with a &lt;em&gt;for&lt;/em&gt; loop here. We're not mutating any variables, and it's very efficient.&lt;/p&gt;
+&lt;p&gt;As we can see, replacing the &lt;em&gt;for&lt;/em&gt; loop with a comprehension doesn't help us at all, so I don't recommend that (unless we use the filtered list for some further processing).&lt;/p&gt;
+&lt;p&gt;We can avoid the &lt;em&gt;for&lt;/em&gt; loop and keep clarity and efficiency by using generator expression. &lt;/p&gt;
+&lt;p&gt;This code will be shorter and might be preferred by more experienced
+Python developers but will be a bit harder to understand for people just 
+starting with Python.&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehension"></category><category term="list"></category><category term="generator"></category><category term="loop"></category><category term="next()"></category></entry><entry><title>How to flat a list of lists in Python</title><link href="https://michaeliscoding.com/how-to-flat-list-of-lists-in-python/" rel="alternate"></link><published>2021-08-17T00:00:00+02:00</published><updated>2022-04-11T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-17:/how-to-flat-list-of-lists-in-python/</id><summary type="html">&lt;p&gt;What is the best way to flat a list of lists?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to flat a list of lists in Python" src="https://michaeliscoding.com/images/0005-flat-list-of-lists-python.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Let's say we have a list of lists like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;list_of_lists = [
+    ['London', 'Manchester'],
+    ['New York', 'Los Angeles'],
+    ['Rome', 'Milan']
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What's the best way to turn it into a simple list that looks like this?&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;['London', 'Manchester', 'New York', 'Los Angeles', 'Rome', 'Milan']
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="using-a-for-loop"&gt;Using a &lt;em&gt;for&lt;/em&gt; loop&lt;a class="headerlink" href="#using-a-for-loop" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Using &lt;em&gt;for&lt;/em&gt; loop, we can flat list of lists in two ways.&lt;/p&gt;
+&lt;p&gt;The first one is to use the inner &lt;em&gt;for&lt;/em&gt; loop:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;flat = []
+for sublist in list_of_lists:
+    for item in sublist:
+        flat.append(item)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the four lines of code above we:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create an empty list. &lt;/li&gt;
+&lt;li&gt;Iterate through list_of_lists.&lt;/li&gt;
+&lt;li&gt;Then iterate through each sublist.&lt;/li&gt;
+&lt;li&gt;Then when we get to an item in the sublist, append it to our flat list.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The second one is to use only one loop.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;flat = []
+for sublist in list_of_lists:
+    flat.extend(sublist)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the three lines of code above we:
+1. Create an empty list. 
+1. Iterate through list_of_lists.
+1. We extend our flat list with the content of the sublist.&lt;/p&gt;
+&lt;p&gt;This second option is shorter and also faster. It's probably also a bit easier to understand.&lt;/p&gt;
+&lt;p&gt;But there are better ways.&lt;/p&gt;
+&lt;h2 id="using-a-list-comprehension"&gt;Using a list comprehension&lt;a class="headerlink" href="#using-a-list-comprehension" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;With a list comprehension, it's nice and short:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;flat = [item for sublist in list_of_lists for item in sublist]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What's going on here?&lt;/p&gt;
+&lt;p&gt;It is pretty similar to the inner &lt;code&gt;for&lt;/code&gt; loop. &lt;/p&gt;
+&lt;p&gt;Let's reformat that comprehension to see the similarity:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;flat = [item 
+        for sublist in list_of_lists 
+            for item in sublist]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can see it's the same two &lt;em&gt;for&lt;/em&gt; loops when formatted like this.  &lt;/p&gt;
+&lt;p&gt;The only difference is that instead of &lt;code&gt;flat.append(item)&lt;/code&gt; in the inner loop, we use &lt;code&gt;item&lt;/code&gt; at the beginning of the comprehension. &lt;/p&gt;
+&lt;h2 id="using-the-itertools"&gt;Using the &lt;em&gt;itertools&lt;/em&gt;&lt;a class="headerlink" href="#using-the-itertools" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;For completeness, I want to mention we can use &lt;a href="https://docs.python.org/3/library/itertools.html"&gt;itertools&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;We could use two functions: &lt;code&gt;chain&lt;/code&gt; and &lt;code&gt;chain_iterable&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from itertools import chain
+
+# Using chain, please note * before list_of_lists
+flat1 = chain(*list_of_lists)
+
+# Using chain_iterable
+flat2 = chain.from_iterable(list_of_lists)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;These functions, however, don't return a list but rather an iterator, so if we need a list, we need to create it explicitly.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;flat_list_1 = list(chain(*list_of_lists))
+
+flat_list_2 = list(chain.from_iterable(list_of_lists))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="summary"&gt;Summary&lt;a class="headerlink" href="#summary" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I recommend using list comprehension. &lt;/p&gt;
+&lt;p&gt;It's one line, it doesn't mutate any variable, it is clear to any experienced Python developer, and it's also the fastest.&lt;/p&gt;
+&lt;p&gt;Also, if we need to apply some function to an &lt;code&gt;item&lt;/code&gt;, we can do it directly as part of comprehension:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;# Notice item.lower()
+flat = [item.lower() for sublist in list_of_lists for item in sublist]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In case we don't want to allocate a list, we can also turn it into a generator expression by changing brackets from &lt;code&gt;[]&lt;/code&gt; to &lt;code&gt;()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;flat = (item.lower() for sublist in list_of_lists for item in sublist)
+&lt;/code&gt;&lt;/pre&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehension"></category><category term="list"></category><category term="for loop"></category></entry><entry><title>How to merge dictionaries in Python</title><link href="https://michaeliscoding.com/how-to-merge-dictionaries-in-python/" rel="alternate"></link><published>2021-08-12T00:00:00+02:00</published><updated>2022-04-08T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-12:/how-to-merge-dictionaries-in-python/</id><summary type="html">&lt;p&gt;What is the best way to merge two or more dictionaries into one?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to merge dictionaries in Python" src="https://michaeliscoding.com/images/0004-merge-dictionaries-python.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;We have two dictionaries, &lt;code&gt;d1&lt;/code&gt; and &lt;code&gt;d2&lt;/code&gt;, and we want to merge them, so we end up with a dictionary containing values from both.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;d1 = {'left': 5, 'right': 10}
+
+d2 = {'top': 15, 'bottom': 20}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The expected result after merging is the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;{'left': 5, 'right': 10, 'top': 15, 'bottom': 20}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="using-the-dictionary-union"&gt;Using the dictionary union&lt;a class="headerlink" href="#using-the-dictionary-union" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The cleanest and shortest way is to use dictionary union. It is available &lt;strong&gt;only for Python 3.9&lt;/strong&gt; and newer:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;merged = d1 | d2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="using-the-dictionary-constructor"&gt;Using the dictionary constructor&lt;a class="headerlink" href="#using-the-dictionary-constructor" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The second best way is to use a dictionary constructor. It is available &lt;strong&gt;for Python 3.5&lt;/strong&gt; and newer:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;merged = {**d1, **d2}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="using-a-comprehension"&gt;Using a comprehension&lt;a class="headerlink" href="#using-a-comprehension" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;With Python 3.4 and lower, we'll have to write more code. The shortest and fastest option is to use a dict comprehension:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;merged = {k: v for d in [d1, d2] for k, v in d.items()}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="copy-and-update"&gt;Copy and update&lt;a class="headerlink" href="#copy-and-update" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We could also use the old-style imperative way, copy the first dict and update it with the second one. It is two lines, though, and we mutate a variable, which I do not recommend.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;merged = d1.copy()
+merged.update(d2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="more-than-2-dictionaries"&gt;More than 2 dictionaries&lt;a class="headerlink" href="#more-than-2-dictionaries" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Anything above also works with three or more dictionaries, of course:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;d1 = {'left': 5, 'right': 10}
+
+d2 = {'top': 15, 'bottom': 20}
+
+d3 = {'height': 30, 'width': 40}
+
+# Python 3.9+
+merged = d1 | d2 | d3
+
+# Python 3.5+
+merged = {**d1, **d2, **d3}
+
+# Python 3.4 and lower
+merged = {k: v for d in [d1, d2, d3] for k, v in d.items()}
+
+# imperative way 
+merged = d1.copy()
+merged.update(d2)
+merged.update(d3)
+
+# All code above will produce 
+{'left': 5, 'right': 10, 'top': 15, 'bottom': 20, 'height': 30, 'width': 40}
+&lt;/code&gt;&lt;/pre&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehensions"></category><category term="dict"></category><category term="dictionary"></category></entry><entry><title>How to create a list of unique items with a comprehension in Python</title><link href="https://michaeliscoding.com/how-to-create-a-list-of-unique-items-with-a-comprehension-in-python/" rel="alternate"></link><published>2021-08-10T00:00:00+02:00</published><updated>2022-04-07T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-10:/how-to-create-a-list-of-unique-items-with-a-comprehension-in-python/</id><summary type="html">&lt;p&gt;List comprehensions are a fantastic tool to work with lists. Is it possible to create a list of unique items with list comprehension?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to create a list of unique items with a comprehension in Python" src="https://michaeliscoding.com/images/0003-list-comprehension-unique-items-python.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;A list comprehension is a fantastic tool for creating lists. But is it possible to create a list of unique items with list comprehension?&lt;/p&gt;
+&lt;h2 id="the-challenge"&gt;The challenge&lt;a class="headerlink" href="#the-challenge" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Let's say we have a list of posts:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;@dataclass(frozen=True)
+class Post:
+    title: str
+    category: str
+
+posts = [
+    Post(title='first post', category='python'),
+    Post(title='second post', category='python'),
+    Post(title='third post', category='django'),
+    Post(title='fourth post', category='python'),
+    Post(title='fifth post', category='django'),
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now say we want to get a list of all categories, but we don't want any category to appear twice in our list. So the resulting list from the above &lt;code&gt;posts&lt;/code&gt; list would be &lt;code&gt;['pyton', 'django']&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;With for loop, we could do this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;categories = []
+for p in posts:
+    if p.category not in categories:
+        categories.append(p.category)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="comprehension"&gt;Comprehension&lt;a class="headerlink" href="#comprehension" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;How do we achieve the same result with a list comprehension?&lt;/p&gt;
+&lt;p&gt;We could try this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;categories = [p.category for p in posts if p.category not in categories]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But this will not work because the &lt;code&gt;categories&lt;/code&gt; variable doesn't exist yet. When we use comprehension, it creates a list on the fly, and we don't have it in a variable until comprehension finishes.&lt;/p&gt;
+&lt;p&gt;We can use set comprehension instead. Set is a data container that contains unique values, so it will deal with uniqueness for us. To change a list comprehension to a set comprehension, the only thing We need to do is to change square brackets to curly brackets:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;categories = {p.category for p in posts}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now &lt;code&gt;categories&lt;/code&gt; is a set. That works fine if we need any iterable. But, if 
+we specifically need a list we need to create a list out of a set:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;categories = list({p.category for p in posts})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That's it. We did it with one line.&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehensions"></category><category term="list comprehension"></category><category term="list"></category></entry><entry><title>When to make a new .py file for a Python project?</title><link href="https://michaeliscoding.com/when-to-make-a-new-py-file-for-a-python-project/" rel="alternate"></link><published>2021-08-06T00:00:00+02:00</published><updated>2022-04-06T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-06:/when-to-make-a-new-py-file-for-a-python-project/</id><summary type="html">&lt;p&gt;Learn when to make a new .py file for a Python project and how to split and organize code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="When to make a new .py file for a Python project?" src="https://michaeliscoding.com/images/0002-when-new-file-for-python-project.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Most Python projects have multiple python files instead of having all code in one file. &lt;/p&gt;
+&lt;p&gt;Should we always try to separate code into multiple files?&lt;/p&gt;
+&lt;p&gt;How do we know when to start splitting our code into multiple files?&lt;/p&gt;
+&lt;h2 id="always-split"&gt;Always split?&lt;a class="headerlink" href="#always-split" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Should we always split code into multiple files? &lt;/p&gt;
+&lt;p&gt;Not always. Many Python projects are just simple scripts that do one thing and are just a few tens of lines of code. In this case, there is not much point.&lt;/p&gt;
+&lt;h2 id="when-should-we-split"&gt;When should we split?&lt;a class="headerlink" href="#when-should-we-split" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If our file gets bigger, however, having more than a few hundred lines of code, it’s time to split.&lt;/p&gt;
+&lt;p&gt;Why few hundreds? It’s the observation from years of experience. It’s not a very precise number, it could be 200, or it could be 900. That’s a big difference. Sometimes it can be over 1000; sometimes, it’s best to have less than 100 lines in one file.&lt;/p&gt;
+&lt;p&gt;The goal here is to organise a project so that it is easy to navigate and understand.&lt;/p&gt;
+&lt;p&gt;Big files are hard to navigate. Scrolling through 5000 lines of code is not very practical. &lt;/p&gt;
+&lt;p&gt;Also, when many people work on a project and they use Git, it will make
+things even harder if everything is in one or a few very big files.&lt;/p&gt;
+&lt;p&gt;On the other hand, having a lot of very small files also makes it hard to navigate the project because we’ll have to switch between files often and lose track of what’s going on quickly.&lt;/p&gt;
+&lt;h2 id="how-to-split"&gt;How to split?&lt;a class="headerlink" href="#how-to-split" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The best way is to split our code into files based on WHAT it does.&lt;/p&gt;
+&lt;p&gt;Say our big app imports some data about companies  - invoices, employees, customers - does some processing and then generates a report. &lt;/p&gt;
+&lt;p&gt;We could start with the following files: &lt;em&gt;import.py&lt;/em&gt;, &lt;em&gt;process.py&lt;/em&gt;, &lt;em&gt;report.py&lt;/em&gt;. &lt;/p&gt;
+&lt;p&gt;When the &lt;em&gt;process.py&lt;/em&gt; file turns out to be a lot of code (more than a few hundred lines), it’s time to split it further based on different parts of your processing, e.g. &lt;em&gt;process_invoices.py&lt;/em&gt;, &lt;em&gt;process_employees.py&lt;/em&gt; and so on. &lt;/p&gt;
+&lt;p&gt;Then we would probably start to organise them into folders - we’d create a process folder for all the process files. &lt;/p&gt;
+&lt;p&gt;So split code logically based on what it does. That should be our primary driver for splitting.&lt;/p&gt;
+&lt;p&gt;Don’t allow files to get too big, and group similar files with folders.&lt;/p&gt;
+&lt;p&gt;Then, it is much easier to navigate our project, find things and use a version control system (Git).&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="beginner"></category></entry></feed>

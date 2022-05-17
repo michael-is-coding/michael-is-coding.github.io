@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding - Programming</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/programming.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-04-25T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>Why is the first index of the array (list) 0?</title><link href="https://michaeliscoding.com/why-is-first-index-of-array-0/" rel="alternate"></link><published>2021-10-14T00:00:00+02:00</published><updated>2022-04-25T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-10-14:/why-is-first-index-of-array-0/</id><summary type="html">&lt;p&gt;The index of the first item in the array (list) is 0. This article explains why that is.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Why is the first index of the array (list) 0?" src="https://michaeliscoding.com/images/0022-why-is-first-index-of-array-0.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;To get the first item from an array(list) by index, we need to use index 0.&lt;/p&gt;
+&lt;p&gt;But why it is 0 and not 1?&lt;/p&gt;
+&lt;h2 id="history"&gt;History&lt;a class="headerlink" href="#history" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In the old days of programming, when programmers had to deal with memory allocation and assembler language, people started to develop higher-level languages. &lt;/p&gt;
+&lt;p&gt;Higher-level language in those days meant that we didn't have to write 
+assembler (which could have different instructions for different processors). 
+So by higher-level language here, we mean something like C.&lt;/p&gt;
+&lt;h2 id="how-memory-looks"&gt;How memory looks&lt;a class="headerlink" href="#how-memory-looks" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can imagine memory as a rectangle divided into equally big parts where each part has its number. &lt;/p&gt;
+&lt;p&gt;Or it can be like a small town with the shape of a rectangle where each house has its number.&lt;/p&gt;
+&lt;p&gt;It looks something like this:
+&lt;img alt="How physical memory looks" src="https://michaeliscoding.com/images/0022-why-first-index-is-0-memory.png" width="329"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each box represents one byte. &lt;/li&gt;
+&lt;li&gt;One byte can store a number up to 255.&lt;/li&gt;
+&lt;li&gt;One byte = 8bits. 8 bits means it has eight places for 1s and 0s.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, this is a one byte representing the number 25: &lt;em&gt;00011001&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For bigger numbers, we need more bytes, e.g. for number 1776, we need 2 bytes, and it would look like this: &lt;em&gt;0000011011110000&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Memory is usually our RAM. Each byte in memory has its address. Memory is linear, so the further we go, the bigger its address. Exactly like with streets.    &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="how-does-array-list-in-python-work"&gt;How does array (list in Python) work?&lt;a class="headerlink" href="#how-does-array-list-in-python-work" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When we want to create an array in C, we first need to allocate memory.&lt;/p&gt;
+&lt;p&gt;The question is, how much memory do we need?&lt;/p&gt;
+&lt;p&gt;To allocate memory for an array, we need to know two things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How many items do we want to store in an array.&lt;/li&gt;
+&lt;li&gt;What kind of items (values) do we want to store in an array - different values have different sizes, e.g. int (−32,767, +32,767) takes  2 bytes (16 bits), but long takes 4 bytes (32 bits).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So if we want an array for three ints, we need to allocate 6 bytes, but if we want an array for two longs, we need to allocate 8 bytes.&lt;/p&gt;
+&lt;p&gt;So now that we know how much memory we need, we can go ahead and allocate it.&lt;/p&gt;
+&lt;p&gt;What we get back from the function which allocates the memory (malloc()) is a pointer to the physical address in memory. And we store it in a variable.&lt;/p&gt;
+&lt;p&gt;So our variable, let's call it &lt;code&gt;my_array&lt;/code&gt;, now points to some place in our computer's memory, and that's where the operating system will physically store our data (ints, longs, whatever).&lt;/p&gt;
+&lt;h3 id="but-how-do-we-refer-to-an-individual-items-in-array"&gt;But how do we refer to an individual items in array?&lt;a class="headerlink" href="#but-how-do-we-refer-to-an-individual-items-in-array" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;As we know, we use indexes. But what is an index really?&lt;/p&gt;
+&lt;p&gt;To get to some item in our array, we need to know its address in memory.&lt;/p&gt;
+&lt;p&gt;How do we get it? We have the address of the beginning of the array in our pointer - variable &lt;code&gt;my_array&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We can use the address of the array to get what is at the beginning of the array.
+So the address of the first item in the array is the same as the address of the whole array. 
+Good.&lt;/p&gt;
+&lt;p&gt;How do we get the address of the second item in the array?&lt;/p&gt;
+&lt;p&gt;That's where information about what kind of item we store in the array is now helpful again.&lt;/p&gt;
+&lt;p&gt;If we store &lt;code&gt;int&lt;/code&gt; values, we know that one &lt;code&gt;int&lt;/code&gt; has 2 bytes. So the address of the 2nd item in our array is the address of the array + 2 bytes.&lt;/p&gt;
+&lt;p&gt;Where is 3rd item? Address of our array + 2 times 2 bytes.&lt;/p&gt;
+&lt;p&gt;See the pattern here?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1st item: the address of array + &lt;strong&gt;0&lt;/strong&gt;* size of the item.&lt;/li&gt;
+&lt;li&gt;2nd item: the address of array + &lt;strong&gt;1&lt;/strong&gt; * size of the item.&lt;/li&gt;
+&lt;li&gt;3rd item: the address of array  +  &lt;strong&gt;2&lt;/strong&gt; * size of the item.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;So index actually means offset.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;It tells us what is the offset from the beginning of the array.&lt;/p&gt;
+&lt;p&gt;If our pointer &lt;code&gt;my_array&lt;/code&gt; would point to a memory address 100, then:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The address of the &lt;em&gt;1st&lt;/em&gt; item is &lt;strong&gt;100&lt;/strong&gt; (same as the array's address, they're at the same place): 100 + 0 time 2 bytes.&lt;/li&gt;
+&lt;li&gt;The address of the &lt;em&gt;2nd&lt;/em&gt; item is &lt;strong&gt;102&lt;/strong&gt;: 100 + 1 time 2 bytes.&lt;/li&gt;
+&lt;li&gt;The address of the &lt;em&gt;3rd&lt;/em&gt; item is &lt;strong&gt;104&lt;/strong&gt;: 100 + 2 times 2 bytes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the picture for a visual explanation.
+&lt;img alt="Array of 2 ints in memory" src="https://michaeliscoding.com/images/0022-why-first-index-is-0-array-in-memory.png"&gt;&lt;/p&gt;</content><category term="Programming"></category><category term="python"></category><category term="list"></category><category term="array"></category></entry></feed>
