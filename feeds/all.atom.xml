@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/all.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-05-12T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>What is an iterator in Python</title><link href="https://michaeliscoding.com/what-is-an-iterator-in-python/" rel="alternate"></link><published>2021-10-27T00:00:00+02:00</published><updated>2022-05-12T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-10-27:/what-is-an-iterator-in-python/</id><summary type="html">&lt;p&gt;The iterator is one of the core objects in Python. Understanding iterators is crucial to mastering Python. We'll look at how iterators work, and we'll also create our own iterators.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="What is an iterator in Python" src="https://michaeliscoding.com/images/0024-what-is-iterator-python.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/all.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-05-26T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>Difference between function and method</title><link href="https://michaeliscoding.com/difference-between-function-and-method/" rel="alternate"></link><published>2022-05-26T00:00:00+02:00</published><updated>2022-05-26T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-05-26:/difference-between-function-and-method/</id><summary type="html">&lt;p&gt;Functions and methods are similar concepts, but they're not the same. Let's see what the difference between them is.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Difference between function and method" src="https://michaeliscoding.com/images/0025-difference-between-function-and-method.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;When reading documentation or programming articles, we often see mentions of functions and methods. While they are similar concepts, they’re not the same. It is essential to understand what the difference is.&lt;/p&gt;
+&lt;h2 id="what-is-a-function"&gt;What is a function?&lt;a class="headerlink" href="#what-is-a-function" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A function is simply a block (or chunk) of a code with a name. &lt;/p&gt;
+&lt;p&gt;If we want to execute the same code multiple times or from multiple places, we put it into function and then call it by its name.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def my_function():
+    print('hello')
+    print('how are you?')
+
+my_function()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It might have parameters if we want to change the behaviour of the code in the function from the outside:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def my_function(name):
+    print('Hello ' + name)
+    print('How are you?')
+
+my_function('John')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="what-is-a-method"&gt;What is a method?&lt;a class="headerlink" href="#what-is-a-method" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A method is also a block (or chunk) of code with a name, and it can also have parameters. But there is one big difference between function and method:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A method is always associated with a class. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So when we talk about a method we talk about a method of a specific class and instances (objects) of that class.&lt;/p&gt;
+&lt;p&gt;Here is  a method &lt;code&gt;my_method&lt;/code&gt; in class &lt;code&gt;MyClass&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;class MyClass:
+
+    def my_method(self):
+        print('Hello from instance method')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The above method is called the &lt;em&gt;instance method&lt;/em&gt;. In Python, instance methods always have at least one parameter named &lt;code&gt;self&lt;/code&gt;. When we call a method on an object Python will put the object the method is called on into this parameter, so we have access to it from within a method. &lt;/p&gt;
+&lt;p&gt;To call method &lt;code&gt;my_method&lt;/code&gt;, we first need to create an object from &lt;em&gt;MyClass&lt;/em&gt;, and only then we can call the method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;obj = MyClass()
+
+obj.my_method()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can also have &lt;em&gt;static methods&lt;/em&gt; in Python. Static methods are associated with the class but do not need the object (instance) of that class. Hence they don’t have &lt;code&gt;self&lt;/code&gt; parameter.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;class MyClass:
+    @staticmethod
+    def my_static_method():
+        print('I am static method')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To use a static method, we don’t have to create an object first:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;MyClass.my_static_method()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But we can still call it on the objects of that class too:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;obj = MyClass()
+obj.my_static_method()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="summary"&gt;Summary&lt;a class="headerlink" href="#summary" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;So, the difference between functions and methods is the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Methods are always associated with a class and objects of that class. We call methods on objects or classes.&lt;/li&gt;
+&lt;li&gt;Functions are not associated with anything and can be called only by their names.&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Programming"></category><category term="python"></category><category term="function"></category><category term="method"></category><category term="class"></category><category term="object"></category></entry><entry><title>What is an iterator in Python</title><link href="https://michaeliscoding.com/what-is-an-iterator-in-python/" rel="alternate"></link><published>2021-10-27T00:00:00+02:00</published><updated>2022-05-12T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-10-27:/what-is-an-iterator-in-python/</id><summary type="html">&lt;p&gt;The iterator is one of the core objects in Python. Understanding iterators is crucial to mastering Python. We'll look at how iterators work, and we'll also create our own iterators.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="What is an iterator in Python" src="https://michaeliscoding.com/images/0024-what-is-iterator-python.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;We've learned before &lt;a href="https://michaeliscoding.com/what-is-an-iterable-in-python/"&gt;what an iterable is&lt;/a&gt;. It is an object we can iterate over - we can go over its items one by one.&lt;/p&gt;
 &lt;p&gt;An &lt;strong&gt;iterator&lt;/strong&gt; is an object that does the actual iteration over an &lt;em&gt;iterable&lt;/em&gt;. It provides iteration, enabling us to iterate over an iterable. &lt;/p&gt;
 &lt;p&gt;Python &lt;a href="https://docs.python.org/3/glossary.html#term-iterator"&gt;documentation&lt;/a&gt; says it is:&lt;/p&gt;
