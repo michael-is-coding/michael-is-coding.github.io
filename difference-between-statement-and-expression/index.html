@@ -23,7 +23,7 @@
         hljs.highlightAll();
     </script>
 
-    <title>Michael is coding - Categories</title>
+    <title>Difference between statement and expression - Michael is coding</title>
     <meta charset="utf-8"/>
     <meta name="generator" content="Pelican"/>
 
@@ -42,16 +42,49 @@
           type="application/atom+xml" rel="alternate" title="Michael is coding Atom Feed"/>
     <link href="https://michaeliscoding.com/feeds/rss.xml"
           type="application/rss+xml" rel="alternate" title="Michael is coding RSS Feed"/>
+    <link href="https://michaeliscoding.com/feeds/programming.atom.xml"
+          type="application/atom+xml" rel="alternate" title="Michael is coding Categories Atom Feed"/>
+    <link href="https://michaeliscoding.com/feeds/programming.rss.xml"
+          type="application/rss+xml" rel="alternate" title="Michael is coding Categories RSS Feed"/>
 
 
-<meta name="description" content="Python, programming and web development articles."/>
 
-<meta property="og:url" content="https://michaeliscoding.com"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Michael is coding"/>
-<meta property="og:description" content="Python, programming and web development articles."/>
-<meta property="og:image" content="https://michaeliscoding.com/theme/michael-is-coding-logo.png"/>
+<meta name="description" content="Functions and methods are similar concepts, but they're not the same. Let's see what the difference between them is."/>
 
+
+<link rel="canonical" href="https://michaeliscoding.com/difference-between-statement-and-expression/">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:url" content="https://michaeliscoding.com/difference-between-statement-and-expression/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Difference between statement and expression"/>
+<meta property="og:description" content="Functions and methods are similar concepts, but they're not the same. Let's see what the difference between them is."/>
+<meta property="og:image" content="https://michaeliscoding.com/images/0026-difference-between-statement-and-expression.jpg"/>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "image": "https://michaeliscoding.com/images/0026-difference-between-statement-and-expression.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Michael is coding"
+        },
+        "headline": "Difference between statement and expression",
+        "description": "Functions and methods are similar concepts, but they're not the same. Let's see what the difference between them is.",
+        "datePublished": "2022-06-01",
+        "dateModified": " 2022-06-01 ",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Michael is coding",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://michaeliscoding.com/theme/michael-is-coding-logo.png"
+            }
+        }
+    }
+</script>
     <script defer data-domain="michaeliscoding.com" src="https://plausible.io/js/plausible.js"></script>
     <script>
         // Burger menus
@@ -168,52 +201,124 @@
         <!-- content -->
         <div class="mx-auto px-2">
 
-<section id="content" class="max-w-screen-lg">
-    <h1 class="text-5xl text-center font-normal tracking-wide mb-24">
-        <span class=" border-b-4 border-cyan-300">Categories</span>
-    </h1>
-    <div class="grid grid-cols-1 justify-items-center sm:grid-cols-2 sm:gap-x-12 gap-y-12 lg:flex justify-between">
-        <div class="flex flex-col flex-none w-72 lg:w-auto sm:justify-self-end">
-            <span class="text-center text-teal-900 mb-6">Articles that explain in detail <br> how things work in Python</span>
-            <a href="/category/python-explained" rel="bookmark"
-               class="text-lg text-center text-teal-900 px-6 py-2.5 bg-teal-300 rounded-md"
-               title="Articles that explain in detail how things work in Python">Python explained</a>
-        </div>
+<article id="content" class="max-w-[60ch] mx-auto prose prose-lg prose-slate font-serif prose-headings:font-sans prose-headings:font-semibold prose-img:rounded-md  lg:max-w-none">
+    <header class="max-w-[60ch]">
+        <h1 itemprop="name headline">
+            Difference between statement and expression
+<!--            <a href="https://michaeliscoding.com/difference-between-statement-and-expression/" rel="bookmark" class="headerlink" title="Permalink to Difference between statement and expression">Permalink-->
+            </a>
+        </h1>
 
-        <div class="flex flex-col flex-none w-72 lg:w-auto sm:justify-self-start">
-            <span class="text-center text-cyan-900 mb-6">Articles about how to do <br> specific tasks in Python.</span>
-            <a href="/category/how-to-in-python" rel="bookmark"
-               class="text-lg text-center text-cyan-900 px-6 py-2.5 bg-cyan-300 rounded-md"
-               title="Articles that explain in detail how things work in Python">How to... in Python</a>
-        </div>
+<!--        <time class="font-sans font-medium text-base"-->
+<!--              datetime="2022-06-01"-->
+<!--              itemprop="datePublished">-->
+<!--            Wed 01 June 2022-->
+<!--        </time>-->
+<!--        -->
+    </header>
+    <div class="lg:flex lg:flex-row-reverse">
 
-        <div class="flex flex-col flex-none w-72 lg:w-auto sm:justify-self-end">
-            <span class="text-center text-yellow-800 mb-6">Articles with summary of<br> most used Python features.</span>
-            <a href="/category/python-reference" rel="bookmark"
-               class="text-lg text-center text-yellow-800 px-6 py-2.5 bg-yellow-300 rounded-md"
-               title="Articles that explain in detail how things work in Python">Python reference</a>
-        </div>
+            <div id="toc" class="hidden lg:block max-w-[15rem] ml-36 w-60">
+                <div class="sticky top-4">
+                <h4 class="toc-title not-prose mt-0"><span>Table of contents</span></h4>
+                <div class="toc">
+<ul>
+<li><a href="#what-is-a-statement">What is a statement?</a></li>
+<li><a href="#what-is-an-expression">What is an expression?</a></li>
+<li><a href="#difference">Difference</a></li>
+</ul>
+</div>
 
-        <div class="flex flex-col flex-none w-72 lg:w-auto sm:justify-self-start">
-            <span class="text-center text-cyan-700 mb-6">Articles explaining concepts of <br> programming.</span>
-            <a href="/category/programming" rel="bookmark"
-               class="text-lg text-center text-white px-6 py-2.5 bg-cyan-700 rounded-md"
-               title="Articles that explain in detail how things work in Python">Programming concepts</a>
-        </div>
-    </div>
+                </div>
+            </div>
+        <div id="full-article" class="max-w-[60ch]" itemprop="articleBody">
+            <p><img alt="Difference between statement and expression" src="https://michaeliscoding.com/images/0026-difference-between-statement-and-expression.jpg"></p>
+<h2 id="what-is-a-statement">What is a statement?<a class="headerlink" href="#what-is-a-statement" title="Permanent link">Permalink</a></h2>
+<p>A statement is a piece of code that does something.</p>
+<p>It performs action(s) or instruction(s) that has an effect.</p>
+<p>For example, assigning value to a variable is a statement:</p>
+<pre><code class="language-python">x = 5
+</code></pre>
+<p>It performs an assignment, and the effect is that now variable x has a value of 5.</p>
+<p>As well as class definition, a <em>for loop</em> or <em>if..else</em>:</p>
+<pre><code class="language-python"># definition of a class
+class MyClass:
+    pass
 
-<!--    <ul>-->
-<!--        -->
-<!--            <li class="text-center text-2xl"><a href="https://michaeliscoding.com/category/how-to-in-python/">How to in Python</a> (9)</li>-->
-<!--        -->
-<!--            <li class="text-center text-2xl"><a href="https://michaeliscoding.com/category/programming/">Programming</a> (3)</li>-->
-<!--        -->
-<!--            <li class="text-center text-2xl"><a href="https://michaeliscoding.com/category/python-explained/">Python explained</a> (12)</li>-->
-<!--        -->
-<!--            <li class="text-center text-2xl"><a href="https://michaeliscoding.com/category/python-reference/">Python reference</a> (2)</li>-->
-<!--        -->
-<!--    </ul>-->
+# for loop
+for n in [1,2,3]:
+    print(str(n))
 
+if x == 6:
+    print('it is six')
+else:
+    print('it is not six')
+</code></pre>
+<p>The class definition above defines a new class, and the effect is we have a new class which we can use.
+<em>for loop</em> above loops over the list of numbers, and the effect is that it printed them.
+<em>if..else</em> statement above checks the value of x and prints the string depending on the value.</p>
+<h2 id="what-is-an-expression">What is an expression?<a class="headerlink" href="#what-is-an-expression" title="Permanent link">Permalink</a></h2>
+<p>An expression is a piece of code that produces a value. 
+We often say that expression can be evaluated (or reduced) to a value.</p>
+<p>So an expression is anything that results in a value.</p>
+<p>For example, this simple addition is an expression, as it evaluates a value of 5.</p>
+<pre><code class="language-python">1 + 3
+# evaluates to 5
+</code></pre>
+<p>Logical operators are also expressions because they always produce a bool value (True or False):</p>
+<pre><code class="language-python">True and False
+# evaluates to False
+</code></pre>
+<p>Another example is comparison operators; they always produce a bool value:</p>
+<pre><code class="language-python">4 == 5
+# evaluates to False
+</code></pre>
+<p>An expression can be part of another expression so that we can build more complex expressions.</p>
+<pre><code class="language-python">4 == 5 or 2 == 2
+# evaluaates to True
+</code></pre>
+<p>An expression can be part of a statement. For example <em>if..else</em> statement uses the expression in the if part as it needs the bool value to know what to execute:</p>
+<pre><code class="language-python">x = 5
+if x == 2:
+    print('True branch')
+else:
+    print('False branch')
+</code></pre>
+<h2 id="difference">Difference<a class="headerlink" href="#difference" title="Permanent link">Permalink</a></h2>
+<p>A statement is a piece of code that does something. </p>
+<p>An expression is a piece of code that evaluates to a value. </p>
+<p>So the difference between statement and expression is that expression always produces (evaluates to) a value.</p>
+<p>Every expression is a statement as well -  it does something:  it returns a value.</p>
+<p>But not every statement is an expression unless it produces value.</p>
+<p>So, an expression is a statement that produces (evaluates to) a value.</p>
+            <h2 class="text-center">
+                <span class="border-b-2 border-teal-300 text-2xl font-medium tracking-wide mb-6 mt-12">You might also like</span>
+            </h2>
+            <div id="reading-list" class="text-center">
+                <ul>
+
+
+
+
+
+
+                    <li><a href="/difference-between-function-and-method/">Difference between function and method</a></li>
+
+
+                    <li><a href="/what-is-an-iterator-in-python/">What is an iterator in Python</a></li>
+
+
+                    <li><a href="/what-is-an-iterable-in-python/">What is an iterable in Python</a></li>
+
+
+                    <li><a href="/why-is-first-index-of-array-0/">Why is the first index of the array (list) 0?</a></li>
+
+
+                    <li><a href="/lists-are-arrays-in-python/">Lists are arrays in Python</a></li>
+
+
+                </ul>
+            </div>
 <!--<h2 class="text-center mb-6 mt-12">-->
 <!--    <span class="text-3xl font-light tracking-wide border-b-2 border-teal-300">Let's stay in touch</span></h2>-->
 <div class="flex flex-col space-y-8 not-prose mt-12">
@@ -713,7 +818,11 @@
            data-size="large" data-show-count="false">Follow @michaeliscoding</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-</div></section>
+</div>        </div>
+    </div>
+</article>
+
+
         </div>
         <!-- sidebar -->
 <!--                <div class="md:flex-none md:w-72 md:min-w-72 px-5 bg-cyan-300"></div>-->

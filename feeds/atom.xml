@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-05-26T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>Difference between function and method</title><link href="https://michaeliscoding.com/difference-between-function-and-method/" rel="alternate"></link><published>2022-05-26T00:00:00+02:00</published><updated>2022-05-26T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-05-26:/difference-between-function-and-method/</id><summary type="html">&lt;p&gt;Functions and methods are similar concepts, but they're not the same. Let's see what the difference between them is.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Difference between function and method" src="https://michaeliscoding.com/images/0025-difference-between-function-and-method.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-06-01T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>Difference between statement and expression</title><link href="https://michaeliscoding.com/difference-between-statement-and-expression/" rel="alternate"></link><published>2022-06-01T00:00:00+02:00</published><updated>2022-06-01T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-01:/difference-between-statement-and-expression/</id><summary type="html">&lt;p&gt;Functions and methods are similar concepts, but they're not the same. Let's see what the difference between them is.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Difference between statement and expression" src="https://michaeliscoding.com/images/0026-difference-between-statement-and-expression.jpg"&gt;&lt;/p&gt;
+&lt;h2 id="what-is-a-statement"&gt;What is a statement?&lt;a class="headerlink" href="#what-is-a-statement" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A statement is a piece of code that does something.&lt;/p&gt;
+&lt;p&gt;It performs action(s) or instruction(s) that has an effect.&lt;/p&gt;
+&lt;p&gt;For example, assigning value to a variable is a statement:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;x = 5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It performs an assignment, and the effect is that now variable x has a value of 5.&lt;/p&gt;
+&lt;p&gt;As well as class definition, a &lt;em&gt;for loop&lt;/em&gt; or &lt;em&gt;if..else&lt;/em&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;# definition of a class
+class MyClass:
+    pass
+
+# for loop
+for n in [1,2,3]:
+    print(str(n))
+
+if x == 6:
+    print('it is six')
+else:
+    print('it is not six')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The class definition above defines a new class, and the effect is we have a new class which we can use.
+&lt;em&gt;for loop&lt;/em&gt; above loops over the list of numbers, and the effect is that it printed them.
+&lt;em&gt;if..else&lt;/em&gt; statement above checks the value of x and prints the string depending on the value.&lt;/p&gt;
+&lt;h2 id="what-is-an-expression"&gt;What is an expression?&lt;a class="headerlink" href="#what-is-an-expression" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;An expression is a piece of code that produces a value. 
+We often say that expression can be evaluated (or reduced) to a value.&lt;/p&gt;
+&lt;p&gt;So an expression is anything that results in a value.&lt;/p&gt;
+&lt;p&gt;For example, this simple addition is an expression, as it evaluates a value of 5.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;1 + 3
+# evaluates to 5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Logical operators are also expressions because they always produce a bool value (True or False):&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;True and False
+# evaluates to False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Another example is comparison operators; they always produce a bool value:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;4 == 5
+# evaluates to False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;An expression can be part of another expression so that we can build more complex expressions.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;4 == 5 or 2 == 2
+# evaluaates to True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;An expression can be part of a statement. For example &lt;em&gt;if..else&lt;/em&gt; statement uses the expression in the if part as it needs the bool value to know what to execute:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;x = 5
+if x == 2:
+    print('True branch')
+else:
+    print('False branch')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="difference"&gt;Difference&lt;a class="headerlink" href="#difference" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A statement is a piece of code that does something. &lt;/p&gt;
+&lt;p&gt;An expression is a piece of code that evaluates to a value. &lt;/p&gt;
+&lt;p&gt;So the difference between statement and expression is that expression always produces (evaluates to) a value.&lt;/p&gt;
+&lt;p&gt;Every expression is a statement as well -  it does something:  it returns a value.&lt;/p&gt;
+&lt;p&gt;But not every statement is an expression unless it produces value.&lt;/p&gt;
+&lt;p&gt;So, an expression is a statement that produces (evaluates to) a value.&lt;/p&gt;</content><category term="Programming"></category><category term="python"></category><category term="statement"></category><category term="expression"></category></entry><entry><title>Difference between function and method</title><link href="https://michaeliscoding.com/difference-between-function-and-method/" rel="alternate"></link><published>2022-05-26T00:00:00+02:00</published><updated>2022-05-26T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-05-26:/difference-between-function-and-method/</id><summary type="html">&lt;p&gt;Functions and methods are similar concepts, but they're not the same. Let's see what the difference between them is.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Difference between function and method" src="https://michaeliscoding.com/images/0025-difference-between-function-and-method.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;When reading documentation or programming articles, we often see mentions of functions and methods. While they are similar concepts, they’re not the same. It is essential to understand what the difference is.&lt;/p&gt;
 &lt;h2 id="what-is-a-function"&gt;What is a function?&lt;a class="headerlink" href="#what-is-a-function" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;A function is simply a block (or chunk) of a code with a name. &lt;/p&gt;
