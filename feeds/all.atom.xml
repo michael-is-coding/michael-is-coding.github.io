@@ -21,9 +21,11 @@ if x == 6:
 else:
     print('it is not six')
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The class definition above defines a new class, and the effect is we have a new class which we can use.
-&lt;em&gt;for loop&lt;/em&gt; above loops over the list of numbers, and the effect is that it printed them.
-&lt;em&gt;if..else&lt;/em&gt; statement above checks the value of x and prints the string depending on the value.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The class definition above defines a new class, and the effect is we have a new class which we can use.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;for loop&lt;/em&gt; above loops over the list of numbers, and the effect is that it printed them.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;if..else&lt;/em&gt; statement above checks the value of x and prints the string depending on the value.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="what-is-an-expression"&gt;What is an expression?&lt;a class="headerlink" href="#what-is-an-expression" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;An expression is a piece of code that produces a value. 
 We often say that expression can be evaluated (or reduced) to a value.&lt;/p&gt;
@@ -57,7 +59,28 @@ else:
 &lt;p&gt;So the difference between statement and expression is that expression always produces (evaluates to) a value.&lt;/p&gt;
 &lt;p&gt;Every expression is a statement as well -  it does something:  it returns a value.&lt;/p&gt;
 &lt;p&gt;But not every statement is an expression unless it produces value.&lt;/p&gt;
-&lt;p&gt;So, an expression is a statement that produces (evaluates to) a value.&lt;/p&gt;</content><category term="Programming"></category><category term="python"></category><category term="statement"></category><category term="expression"></category></entry><entry><title>Difference between function and method</title><link href="https://michaeliscoding.com/difference-between-function-and-method/" rel="alternate"></link><published>2022-05-26T00:00:00+02:00</published><updated>2022-05-26T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-05-26:/difference-between-function-and-method/</id><summary type="html">&lt;p&gt;Functions and methods are similar concepts, but they're not the same. Let's see what the difference between them is.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Difference between function and method" src="https://michaeliscoding.com/images/0025-difference-between-function-and-method.jpg"&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;So, an expression is a statement that produces (evaluates to) a value.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Expression always has a result which can be assign to a variable. Statement that is not also an expression has no result and therefore can’t be assigned to a variable. &lt;/p&gt;
+&lt;p&gt;We can do this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;# assign expression to a variable
+x = 2 * 2
+print(x)
+# outputs 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But we can’t do this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;# assign statement to x not possible
+
+x = for n in [1,2]: print(n)
+
+# outputs error
+#  File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1
+#    x = for n in [1,2]: print(n)
+#        ^^^
+# SyntaxError: invalid syntax
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Trying to assign a statement to variable &lt;code&gt;x&lt;/code&gt; is not valid; there is nothing to assign because the statement does not produce a value.&lt;/p&gt;</content><category term="Programming"></category><category term="python"></category><category term="statement"></category><category term="expression"></category></entry><entry><title>Difference between function and method</title><link href="https://michaeliscoding.com/difference-between-function-and-method/" rel="alternate"></link><published>2022-05-26T00:00:00+02:00</published><updated>2022-05-26T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-05-26:/difference-between-function-and-method/</id><summary type="html">&lt;p&gt;Functions and methods are similar concepts, but they're not the same. Let's see what the difference between them is.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Difference between function and method" src="https://michaeliscoding.com/images/0025-difference-between-function-and-method.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;When reading documentation or programming articles, we often see mentions of functions and methods. While they are similar concepts, they’re not the same. It is essential to understand what the difference is.&lt;/p&gt;
 &lt;h2 id="what-is-a-function"&gt;What is a function?&lt;a class="headerlink" href="#what-is-a-function" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;A function is simply a block (or chunk) of a code with a name. &lt;/p&gt;

@@ -254,9 +254,11 @@ if x == 6:
 else:
     print('it is not six')
 </code></pre>
-<p>The class definition above defines a new class, and the effect is we have a new class which we can use.
-<em>for loop</em> above loops over the list of numbers, and the effect is that it printed them.
-<em>if..else</em> statement above checks the value of x and prints the string depending on the value.</p>
+<ul>
+<li>The class definition above defines a new class, and the effect is we have a new class which we can use.</li>
+<li><em>for loop</em> above loops over the list of numbers, and the effect is that it printed them.</li>
+<li><em>if..else</em> statement above checks the value of x and prints the string depending on the value.</li>
+</ul>
 <h2 id="what-is-an-expression">What is an expression?<a class="headerlink" href="#what-is-an-expression" title="Permanent link">Permalink</a></h2>
 <p>An expression is a piece of code that produces a value. 
 We often say that expression can be evaluated (or reduced) to a value.</p>
@@ -290,7 +292,28 @@ else:
 <p>So the difference between statement and expression is that expression always produces (evaluates to) a value.</p>
 <p>Every expression is a statement as well -  it does something:  it returns a value.</p>
 <p>But not every statement is an expression unless it produces value.</p>
+<blockquote>
 <p>So, an expression is a statement that produces (evaluates to) a value.</p>
+</blockquote>
+<p>Expression always has a result which can be assign to a variable. Statement that is not also an expression has no result and therefore can’t be assigned to a variable. </p>
+<p>We can do this:</p>
+<pre><code class="language-python"># assign expression to a variable
+x = 2 * 2
+print(x)
+# outputs 4
+</code></pre>
+<p>But we can’t do this:</p>
+<pre><code class="language-python"># assign statement to x not possible
+
+x = for n in [1,2]: print(n)
+
+# outputs error
+#  File &quot;&lt;stdin&gt;&quot;, line 1
+#    x = for n in [1,2]: print(n)
+#        ^^^
+# SyntaxError: invalid syntax
+</code></pre>
+<p>Trying to assign a statement to variable <code>x</code> is not valid; there is nothing to assign because the statement does not produce a value.</p>
             <h2 class="text-center">
                 <span class="border-b-2 border-teal-300 text-2xl font-medium tracking-wide mb-6 mt-12">You might also like</span>
             </h2>
