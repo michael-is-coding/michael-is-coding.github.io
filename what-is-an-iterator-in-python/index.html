@@ -316,7 +316,7 @@ it.__next__()
 it.__next__()
 2
 </code></pre>
-<p>But as with any dunder method, we should not. It’s better to use the <code>next()</code> function.</p>
+<p>But as with any <a href="https://michaeliscoding.com/what-are-dunder-methods-python/">dunder method</a>, we should not. It’s better to use the <code>next()</code> function.</p>
 <p>We will write our own iterator with the <code>__next__()</code> method shortly. </p>
 <p>Now, let's look at what happens if there is no next item in an iterable?</p>
 <h2 id="exhaustion">Exhaustion<a class="headerlink" href="#exhaustion" title="Permanent link">Permalink</a></h2>
@@ -505,7 +505,7 @@ for item in our_bistro:
 <h3 id="iterator-as-iterable">Iterator as iterable<a class="headerlink" href="#iterator-as-iterable" title="Permanent link">Permalink</a></h3>
 <p>We learned before that if an object has the <code>__iter__()</code> method, it is iterable. </p>
 <p>So if an <em>iterator</em> has it, then it's also <em>iterable</em>!</p>
-<p>And that means we can use iterator with <code>for loop</code> and <code>in</code> expression and functions that expect iterable.</p>
+<p>And that means we can use iterator with <code>for loop</code> and <code>in</code> <a href="https://michaeliscoding.com/difference-between-statement-and-expression/#what-is-an-expression">expression</a> and functions that expect iterable.</p>
 <p>Let's try with a <em>for loop</em>:</p>
 <pre><code class="language-python">numbers = [1, 2, 3]
 
@@ -693,6 +693,9 @@ But when asked for an iterator, it will just return itself.  </p>
 
 
 
+                    <li><a href="/what-are-dunder-methods-python/">What are dunder methods in Python?</a></li>
+
+
                     <li><a href="/difference-between-statement-and-expression/">Difference between statement and expression</a></li>
 
 
@@ -705,9 +708,6 @@ But when asked for an iterator, it will just return itself.  </p>
 
 
                     <li><a href="/why-is-first-index-of-array-0/">Why is the first index of the array (list) 0?</a></li>
-
-
-                    <li><a href="/lists-are-arrays-in-python/">Lists are arrays in Python</a></li>
 
 
                 </ul>

@@ -1,5 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-06-01T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>Difference between statement and expression</title><link href="https://michaeliscoding.com/difference-between-statement-and-expression/" rel="alternate"></link><published>2022-06-01T00:00:00+02:00</published><updated>2022-06-01T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-01:/difference-between-statement-and-expression/</id><summary type="html">&lt;p&gt;Functions and methods are similar concepts, but they're not the same. Let's see what the difference between them is.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Difference between statement and expression" src="https://michaeliscoding.com/images/0026-difference-between-statement-and-expression.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-06-09T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>What are dunder methods in Python?</title><link href="https://michaeliscoding.com/what-are-dunder-methods-python/" rel="alternate"></link><published>2022-06-09T00:00:00+02:00</published><updated>2022-06-09T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-09:/what-are-dunder-methods-python/</id><summary type="html">&lt;p&gt;Dunder methods are methods with special meaning in Python. We look into what they are and why they're called the whey they are.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="What are dunder methods in Python?" src="https://michaeliscoding.com/images/0027-what-are-dunder-methods-python.jpg"&gt;&lt;/p&gt;
+&lt;h2 id="where-the-name-comes-from"&gt;Where the name comes from?&lt;a class="headerlink" href="#where-the-name-comes-from" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;First, let's explain the name. What does dunder mean? It is a shortcut for &lt;strong&gt;D&lt;/strong&gt;ouble &lt;strong&gt;Under&lt;/strong&gt;sore. &lt;/p&gt;
+&lt;p&gt;Dunder methods are methods whose name starts with two underscores and ends with two underscores. The most common is probably the &lt;code&gt;__init__&lt;/code&gt; method which we use to initialise an instance of the class.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;class MyClass:
+    __init__(self):
+        # do some initialization
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="whats-special-about-dunder-methods"&gt;What’s special about dunder methods?&lt;a class="headerlink" href="#whats-special-about-dunder-methods" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;There are many dunder methods in Python. How are they unique?&lt;/p&gt;
+&lt;p&gt;Dunder methods are defined by Python language and are called internally by Python or during some operations. For example, the &lt;code&gt;__init__&lt;/code&gt; method is called by Python when we create an instance of a class.&lt;/p&gt;
+&lt;p&gt;We should not call dunder methods directly on instances (objects) from the outside. So we should not do things like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;numbers = [1, 2, 3]
+numbers.__len__()
+# outputs: 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Rather, we ought to use the &lt;code&gt;len()&lt;/code&gt; function, which calls &lt;code&gt;__len__()&lt;/code&gt; method for us:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;numbers = [1, 2, 3]
+len(numbers)
+# outputs: 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We must not invent any new dunder methods ourselves. They could interfere with the internal working of the Python now or in the future.&lt;/p&gt;
+&lt;p&gt;However, we can use existing, already defined dunder methods as documented.&lt;/p&gt;
+&lt;h2 id="dunder-methods-in-action"&gt;Dunder methods in action&lt;a class="headerlink" href="#dunder-methods-in-action" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Let's create a new class &lt;em&gt;FullName&lt;/em&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;class FullName:
+    def __init__(self, first, last):
+        self.first = first
+        self.last = last
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the code above, we define a new class and use the &lt;code&gt;__init__&lt;/code&gt; method to store the names in instance variables. Let's see how it works.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;# create an instance of the class
+friend = FullName('John', 'Doe')
+
+friend.first
+# outputs: 'John'
+
+friend.last
+# outputs: 'Doe'
+
+friend
+# outputs: &amp;lt;__main__.FullName object at 0x10d80ebf0&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can see our class works as expected. After creating an instance, we can get back the first and last names we've put in.&lt;/p&gt;
+&lt;p&gt;When we type &lt;code&gt;friend&lt;/code&gt;, the variable's name, we get a description of our instance and its address in the memory.&lt;/p&gt;
+&lt;p&gt;That is a string representation of the instance. We can also get it by using the &lt;code&gt;repr()&lt;/code&gt; function:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;repr(friend)
+# outputs: &amp;lt;__main__.FullName object at 0x10d80ebf0&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But we can change that. Say we want to use first and last name as a string representation of the instance. How would we do it? We can use another dunder method, &lt;code&gt;__repr__&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;class FullName:
+    def __init__(self, first, last):
+        self.first = first
+        self.last = last
+
+    def __repr__(self):
+        return self.first + &amp;quot; &amp;quot; + self.last
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Check if it works:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;friend = FullName('John', 'Doe')
+
+friend
+# outputs: 'John Doe'
+
+repr(friend)
+# outputs: 'John Doe'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We could also call &lt;code&gt;__repr__&lt;/code&gt; on the instance itself:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;friend.__repr__()
+# outputs: 'John Doe'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But as we said before, we should not do it. Dunder methods are internal to classes and their instances; we should not call them from the outside.&lt;/p&gt;</content><category term="Python explained"></category><category term="python"></category><category term="dunder"></category><category term="method"></category><category term="__init__"></category><category term="__repr__"></category><category term="repr()"></category></entry><entry><title>Difference between statement and expression</title><link href="https://michaeliscoding.com/difference-between-statement-and-expression/" rel="alternate"></link><published>2022-06-01T00:00:00+02:00</published><updated>2022-06-01T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-01:/difference-between-statement-and-expression/</id><summary type="html">&lt;p&gt;Every expression is a statement, but not every statement is an expression. What makes expression different?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Difference between statement and expression" src="https://michaeliscoding.com/images/0026-difference-between-statement-and-expression.jpg"&gt;&lt;/p&gt;
 &lt;h2 id="what-is-a-statement"&gt;What is a statement?&lt;a class="headerlink" href="#what-is-a-statement" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;A statement is a piece of code that does something.&lt;/p&gt;
 &lt;p&gt;It performs action(s) or instruction(s) that has an effect.&lt;/p&gt;
@@ -198,7 +270,7 @@ it.__next__()
 it.__next__()
 2
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;But as with any dunder method, we should not. It’s better to use the &lt;code&gt;next()&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;But as with any &lt;a href="https://michaeliscoding.com/what-are-dunder-methods-python/"&gt;dunder method&lt;/a&gt;, we should not. It’s better to use the &lt;code&gt;next()&lt;/code&gt; function.&lt;/p&gt;
 &lt;p&gt;We will write our own iterator with the &lt;code&gt;__next__()&lt;/code&gt; method shortly. &lt;/p&gt;
 &lt;p&gt;Now, let's look at what happens if there is no next item in an iterable?&lt;/p&gt;
 &lt;h2 id="exhaustion"&gt;Exhaustion&lt;a class="headerlink" href="#exhaustion" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
@@ -387,7 +459,7 @@ for item in our_bistro:
 &lt;h3 id="iterator-as-iterable"&gt;Iterator as iterable&lt;a class="headerlink" href="#iterator-as-iterable" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;We learned before that if an object has the &lt;code&gt;__iter__()&lt;/code&gt; method, it is iterable. &lt;/p&gt;
 &lt;p&gt;So if an &lt;em&gt;iterator&lt;/em&gt; has it, then it's also &lt;em&gt;iterable&lt;/em&gt;!&lt;/p&gt;
-&lt;p&gt;And that means we can use iterator with &lt;code&gt;for loop&lt;/code&gt; and &lt;code&gt;in&lt;/code&gt; expression and functions that expect iterable.&lt;/p&gt;
+&lt;p&gt;And that means we can use iterator with &lt;code&gt;for loop&lt;/code&gt; and &lt;code&gt;in&lt;/code&gt; &lt;a href="https://michaeliscoding.com/difference-between-statement-and-expression/#what-is-an-expression"&gt;expression&lt;/a&gt; and functions that expect iterable.&lt;/p&gt;
 &lt;p&gt;Let's try with a &lt;em&gt;for loop&lt;/em&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;numbers = [1, 2, 3]
 
