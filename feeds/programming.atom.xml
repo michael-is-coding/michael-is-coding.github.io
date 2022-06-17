@@ -1,5 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding - Programming</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/programming.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-06-01T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>Difference between statement and expression</title><link href="https://michaeliscoding.com/difference-between-statement-and-expression/" rel="alternate"></link><published>2022-06-01T00:00:00+02:00</published><updated>2022-06-01T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-01:/difference-between-statement-and-expression/</id><summary type="html">&lt;p&gt;Every expression is a statement, but not every statement is an expression. What makes expression different?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Difference between statement and expression" src="https://michaeliscoding.com/images/0026-difference-between-statement-and-expression.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding - Programming</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/programming.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-06-17T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>What pure functions are, and why do more of them</title><link href="https://michaeliscoding.com/what-pure-functions-are/" rel="alternate"></link><published>2022-06-17T00:00:00+02:00</published><updated>2022-06-17T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-17:/what-pure-functions-are/</id><summary type="html">&lt;p&gt;Pure functions make our code much better. Learn what pure functions are and how they make our code better.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="What pure functions are, and why write more of them?" src="https://michaeliscoding.com/images/0028-what-pure-functions-are.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;A pure function is a function that, given the same input, always returns the same output and does not have side effects.&lt;/p&gt;
+&lt;h2 id="same-result-for-same-arguments"&gt;Same result for same arguments&lt;a class="headerlink" href="#same-result-for-same-arguments" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The pure function will always return the same result for the same arguments. What exactly does it mean?&lt;/p&gt;
+&lt;p&gt;Let’s have a look at the following code.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;other = 0
+def add(a, b):
+    return a + b
+
+add(4, 5)
+# outputs: 9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;add(a, b)&lt;/code&gt; is a pure function because when we call it with arguments 4 and 5, it will always return 9. &lt;/p&gt;
+&lt;p&gt;We can call it now or tomorrow; we can call it once or thousand times; e call other functions before it or not; it will always return 9 if we give it 4 and 5. &lt;/p&gt;
+&lt;p&gt;We can change any other variables, but this function will always return 9 if we give it 4 and 5:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;other = 10
+
+def add(a, b):
+    return a + b
+
+add(4, 5)
+# outputs: 9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The following function, however, is not pure:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;other = 0
+def no_pure_add(a, b):
+    return a + b + other
+
+no_pure_add(4, 5)
+# outputs: 9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Why? Because if we change the variable &lt;code&gt;other&lt;/code&gt;, our function will not return the same result if we give it the same arguments.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;other = 2
+no_pure_add(4, 5)
+# outputs: 11
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The above is a simple example, but it illustrates that function whose result can be affected by the outside state is not pure because its result is not predictable. This external state might be anything; a database that the function connects to, a file it reads, a global variable, time, or the use of another function which is not pure (usually it’s I/O).&lt;/p&gt;
+&lt;h2 id="no-side-effects"&gt;No side effects&lt;a class="headerlink" href="#no-side-effects" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A pure function has no side effects. That means it will not change (mutate) any variables outside of the function or change the state of anything else outside of the function. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It can’t have any other effect than its primary effect of returning the result.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Look at the following code:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;def side_effect_add(a, b):
+    result = a + b
+    with open('result.txt', 'w') as result_file:
+        result_file.write(str(result))
+    return result
+
+side_effect_add(4, 5)
+# outputs:9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;side_effect_add(a, b)&lt;/code&gt; is not pure function. It returns the same result every time given the same argument but it changes the outside state - a file system. So calling this function can affect other parts of the system. Other (un-pure) functions can rely on the state of the &lt;em&gt;result.txt&lt;/em&gt; file and calling the &lt;code&gt;side_effect_add&lt;/code&gt; might affect the results of other functions. &lt;/p&gt;
+&lt;h2 id="why-write-more-of-them"&gt;Why write more of them&lt;a class="headerlink" href="#why-write-more-of-them" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pure functions are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;easy to test&lt;/li&gt;
+&lt;li&gt;easy to reason about&lt;/li&gt;
+&lt;li&gt;easy to debug&lt;/li&gt;
+&lt;li&gt;and they make the whole system much more robust&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pure functions are straightforward to test. We call a function with parameters and check the result. We don't need to set up an external state; no need to do complicated mocks. It's a breeze to test them.&lt;/p&gt;
+&lt;p&gt;They're much easier to reason about because what you see is what you get. Since they're not dependent on the outside state, nor do they change the outside state, you can see everything that is going on within a function. When they use other functions, they are also pure, so we can just open that function and see what it is doing.&lt;/p&gt;
+&lt;p&gt;Debugging is also much easier because all we need to see is in our call stack and local variables. We don't need to check what is in the file system, database, other variables etc. It's all in front of our eyes.&lt;/p&gt;
+&lt;p&gt;These properties of pure functions make the whole system much more robust because you have code which has good tests, is easier to understand, and if there is a problem, you can debug it quickly. If the problem is in pure function is also fast to fix. And if the problem is not in pure functions, we'll find it out quickly, and we can focus on our un-pure functions.&lt;/p&gt;
+&lt;h2 id="not-all-functions-can-be-pure"&gt;Not all functions can be pure&lt;a class="headerlink" href="#not-all-functions-can-be-pure" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can't have our programs written with pure functions only. Most programs need to use external resources, such as connection, display, database, etc. &lt;/p&gt;
+&lt;p&gt;The trick is to have as many pure functions as possible so we can easily test, reason about and debug most of the program and isolate code that deals with the external state (I/O) in a few places so that when there is a problem, we know where to look for it.&lt;/p&gt;</content><category term="Programming"></category><category term="function"></category><category term="pure"></category><category term="testing"></category><category term="robust"></category><category term="debug"></category></entry><entry><title>Difference between statement and expression</title><link href="https://michaeliscoding.com/difference-between-statement-and-expression/" rel="alternate"></link><published>2022-06-01T00:00:00+02:00</published><updated>2022-06-01T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-01:/difference-between-statement-and-expression/</id><summary type="html">&lt;p&gt;Every expression is a statement, but not every statement is an expression. What makes expression different?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Difference between statement and expression" src="https://michaeliscoding.com/images/0026-difference-between-statement-and-expression.jpg"&gt;&lt;/p&gt;
 &lt;h2 id="what-is-a-statement"&gt;What is a statement?&lt;a class="headerlink" href="#what-is-a-statement" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;A statement is a piece of code that does something.&lt;/p&gt;
 &lt;p&gt;It performs action(s) or instruction(s) that has an effect.&lt;/p&gt;

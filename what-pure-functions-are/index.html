@@ -23,7 +23,7 @@
         hljs.highlightAll();
     </script>
 
-    <title>Michael is coding - Latest</title>
+    <title>What pure functions are, and why do more of them - Michael is coding</title>
     <meta charset="utf-8"/>
     <meta name="generator" content="Pelican"/>
 
@@ -42,16 +42,49 @@
           type="application/atom+xml" rel="alternate" title="Michael is coding Atom Feed"/>
     <link href="https://michaeliscoding.com/feeds/rss.xml"
           type="application/rss+xml" rel="alternate" title="Michael is coding RSS Feed"/>
+    <link href="https://michaeliscoding.com/feeds/programming.atom.xml"
+          type="application/atom+xml" rel="alternate" title="Michael is coding Categories Atom Feed"/>
+    <link href="https://michaeliscoding.com/feeds/programming.rss.xml"
+          type="application/rss+xml" rel="alternate" title="Michael is coding Categories RSS Feed"/>
 
 
-<meta name="description" content="Python, programming and web development articles."/>
 
-<meta property="og:url" content="https://michaeliscoding.com"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Michael is coding "/>
-<meta property="og:description" content="Python, programming and web development articles."/>
-<meta property="og:image" content="https://michaeliscoding.com/theme/michael-is-coding-logo.png"/>
+<meta name="description" content="Pure functions make our code much better. Learn what pure functions are and how they make our code better."/>
 
+
+<link rel="canonical" href="https://michaeliscoding.com/what-pure-functions-are/">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:url" content="https://michaeliscoding.com/what-pure-functions-are/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="What pure functions are, and why do more of them"/>
+<meta property="og:description" content="Pure functions make our code much better. Learn what pure functions are and how they make our code better."/>
+<meta property="og:image" content="https://michaeliscoding.com/images/0028-what-pure-functions-are.jpg"/>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "image": "https://michaeliscoding.com/images/0028-what-pure-functions-are.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Michael is coding"
+        },
+        "headline": "What pure functions are, and why do more of them",
+        "description": "Pure functions make our code much better. Learn what pure functions are and how they make our code better.",
+        "datePublished": "2022-06-17",
+        "dateModified": " 2022-06-17 ",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Michael is coding",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://michaeliscoding.com/theme/michael-is-coding-logo.png"
+            }
+        }
+    }
+</script>
     <script defer data-domain="michaeliscoding.com" src="https://plausible.io/js/plausible.js"></script>
     <script>
         // Burger menus
@@ -168,271 +201,134 @@
         <!-- content -->
         <div class="mx-auto px-2">
 
-<div id="content" class="max-w-3xl mx-auto">
-    <h1 class="text-4xl sm:text-5xl text-center font-normal tracking-wide mb-24">
-        <span class=" border-b-4 border-cyan-300">Latest articles</span>
-    </h1>
+<article id="content" class="max-w-[60ch] mx-auto prose prose-lg prose-slate font-serif prose-headings:font-sans prose-headings:font-semibold prose-img:rounded-md  lg:max-w-none">
+    <header class="max-w-[60ch]">
+        <h1 itemprop="name headline">
+            What pure functions are, and why do more of them
+<!--            <a href="https://michaeliscoding.com/what-pure-functions-are/" rel="bookmark" class="headerlink" title="Permalink to What pure functions are, and why do more of them">Permalink-->
+            </a>
+        </h1>
 
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0018-dict-comprehension-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How to use dict comprehensions in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>What are dict comprehensions? How do they differ from list comprehensions, and when are they useful.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-10-01T00:00:00+02:00"> Fri 01 October 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-to-use-dict-comprehensions-in-python/" rel="bookmark"
-           title="Permalink to How to use dict comprehensions in Python"></a>
-    </article>
+<!--        <time class="font-sans font-medium text-base"-->
+<!--              datetime="2022-06-17"-->
+<!--              itemprop="datePublished">-->
+<!--            Fri 17 June 2022-->
+<!--        </time>-->
+<!--        -->
+    </header>
+    <div class="lg:flex lg:flex-row-reverse">
 
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0017-set-comprehension-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How to use set comprehensions in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>What are set comprehensions? How do they differ from list comprehensions, and when are they useful.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-28T00:00:00+02:00"> Tue 28 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-to-use-set-comprehensions-in-python/" rel="bookmark"
-           title="Permalink to How to use set comprehensions in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0016-why-use-comprehensions-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    Why should we use comprehensions in Python?
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>There are at least three good reasons why we should use comprehensions in Python. Let's see what they are.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-23T00:00:00+02:00"> Thu 23 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/why-should-we-use-comprehensions-in-python/" rel="bookmark"
-           title="Permalink to Why should we use comprehensions in Python?"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0015-how-list-comprehension-works-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How do list comprehensions work in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>A detailed explanation of how list comprehensions work in Python. What's their purpose. When to use them and when not to.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-21T00:00:00+02:00"> Tue 21 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-do-list-comprehensions-work-in-python/" rel="bookmark"
-           title="Permalink to How do list comprehensions work in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0014-delete-files-directories-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How to delete files and directories in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>How to delete files and directories in Python using <em>os</em> and <em>shutils</em> modules</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-16T00:00:00+02:00"> Thu 16 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-to-delete-files-directories-in-python/" rel="bookmark"
-           title="Permalink to How to delete files and directories in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0013-get-and-change-working-directory-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How to get and change the working directory in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>What is a working directory (CWD), and how to get it and change it in Python?</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-14T00:00:00+02:00"> Tue 14 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-to-get-and-change-working-directory-in-python/" rel="bookmark"
-           title="Permalink to How to get and change the working directory in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0012-common-string-operations-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    Common string operations in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>This reference article covers the most common operations with strings.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-09T00:00:00+02:00"> Thu 09 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/common-string-operations-in-python/" rel="bookmark"
-           title="Permalink to Common string operations in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0011-read-directory-content-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How to read directory content in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>We look at three ways to read directory content using the built-in os module.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-07T00:00:00+02:00"> Tue 07 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-to-read-directory-content-in-python/" rel="bookmark"
-           title="Permalink to How to read directory content in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0010-about-bool-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    About <code>bool</code> in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>True+1+True=3. What bool values really are in Python.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-02T00:00:00+02:00"> Thu 02 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/about-bool-in-python/" rel="bookmark"
-           title="Permalink to About bool in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0009-difference-between-sort-and-sorted-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    Difference between <code>sorted()</code> and <code>.sort()</code> in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>Why is the sort() used like my_list.sort() but sorted() is used as sorted(my_list)? What is the key difference between them?</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-08-31T00:00:00+02:00"> Tue 31 August 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/difference-between-sort-and-sorted-in-python/" rel="bookmark"
-           title="Permalink to Difference between sorted() and .sort() in Python"></a>
-    </article>
-
-
-<div class="flex w-full justify-between mt-20">
-<!--        <a href="https://michaeliscoding.com/index.html">First page</a>-->
-        <a class="font-medium text-base text-teal-700 underline" href="https://michaeliscoding.com/index.html">Previous page</a>
-
-    <p class="">Page 2 / 3</p>
-        <a class="font-medium text-base text-teal-700 underline"  href="https://michaeliscoding.com/latest/page/3/">Next page</a>
-<!--        <a href="https://michaeliscoding.com/latest/page/3/">Last page</a>-->
+            <div id="toc" class="hidden lg:block max-w-[15rem] ml-36 w-60">
+                <div class="sticky top-4">
+                <h4 class="toc-title not-prose mt-0"><span>Table of contents</span></h4>
+                <div class="toc">
+<ul>
+<li><a href="#same-result-for-same-arguments">Same result for same arguments</a></li>
+<li><a href="#no-side-effects">No side effects</a></li>
+<li><a href="#why-write-more-of-them">Why write more of them</a></li>
+<li><a href="#not-all-functions-can-be-pure">Not all functions can be pure</a></li>
+</ul>
 </div>
 
+                </div>
+            </div>
+        <div id="full-article" class="max-w-[60ch]" itemprop="articleBody">
+            <p><img alt="What pure functions are, and why write more of them?" src="https://michaeliscoding.com/images/0028-what-pure-functions-are.jpg"></p>
+<p>A pure function is a function that, given the same input, always returns the same output and does not have side effects.</p>
+<h2 id="same-result-for-same-arguments">Same result for same arguments<a class="headerlink" href="#same-result-for-same-arguments" title="Permanent link">Permalink</a></h2>
+<p>The pure function will always return the same result for the same arguments. What exactly does it mean?</p>
+<p>Let’s have a look at the following code.</p>
+<pre><code class="language-python">other = 0
+def add(a, b):
+    return a + b
 
+add(4, 5)
+# outputs: 9
+</code></pre>
+<p><code>add(a, b)</code> is a pure function because when we call it with arguments 4 and 5, it will always return 9. </p>
+<p>We can call it now or tomorrow; we can call it once or thousand times; e call other functions before it or not; it will always return 9 if we give it 4 and 5. </p>
+<p>We can change any other variables, but this function will always return 9 if we give it 4 and 5:</p>
+<pre><code class="language-python">other = 10
+
+def add(a, b):
+    return a + b
+
+add(4, 5)
+# outputs: 9
+</code></pre>
+<p>The following function, however, is not pure:</p>
+<pre><code class="language-python">other = 0
+def no_pure_add(a, b):
+    return a + b + other
+
+no_pure_add(4, 5)
+# outputs: 9
+</code></pre>
+<p>Why? Because if we change the variable <code>other</code>, our function will not return the same result if we give it the same arguments.</p>
+<pre><code class="language-python">other = 2
+no_pure_add(4, 5)
+# outputs: 11
+</code></pre>
+<p>The above is a simple example, but it illustrates that function whose result can be affected by the outside state is not pure because its result is not predictable. This external state might be anything; a database that the function connects to, a file it reads, a global variable, time, or the use of another function which is not pure (usually it’s I/O).</p>
+<h2 id="no-side-effects">No side effects<a class="headerlink" href="#no-side-effects" title="Permanent link">Permalink</a></h2>
+<p>A pure function has no side effects. That means it will not change (mutate) any variables outside of the function or change the state of anything else outside of the function. </p>
+<blockquote>
+<p>It can’t have any other effect than its primary effect of returning the result.</p>
+</blockquote>
+<p>Look at the following code:</p>
+<pre><code class="language-python">def side_effect_add(a, b):
+    result = a + b
+    with open('result.txt', 'w') as result_file:
+        result_file.write(str(result))
+    return result
+
+side_effect_add(4, 5)
+# outputs:9
+</code></pre>
+<p><code>side_effect_add(a, b)</code> is not pure function. It returns the same result every time given the same argument but it changes the outside state - a file system. So calling this function can affect other parts of the system. Other (un-pure) functions can rely on the state of the <em>result.txt</em> file and calling the <code>side_effect_add</code> might affect the results of other functions. </p>
+<h2 id="why-write-more-of-them">Why write more of them<a class="headerlink" href="#why-write-more-of-them" title="Permanent link">Permalink</a></h2>
+<p>Pure functions are:</p>
+<ul>
+<li>easy to test</li>
+<li>easy to reason about</li>
+<li>easy to debug</li>
+<li>and they make the whole system much more robust</li>
+</ul>
+<p>Pure functions are straightforward to test. We call a function with parameters and check the result. We don't need to set up an external state; no need to do complicated mocks. It's a breeze to test them.</p>
+<p>They're much easier to reason about because what you see is what you get. Since they're not dependent on the outside state, nor do they change the outside state, you can see everything that is going on within a function. When they use other functions, they are also pure, so we can just open that function and see what it is doing.</p>
+<p>Debugging is also much easier because all we need to see is in our call stack and local variables. We don't need to check what is in the file system, database, other variables etc. It's all in front of our eyes.</p>
+<p>These properties of pure functions make the whole system much more robust because you have code which has good tests, is easier to understand, and if there is a problem, you can debug it quickly. If the problem is in pure function is also fast to fix. And if the problem is not in pure functions, we'll find it out quickly, and we can focus on our un-pure functions.</p>
+<h2 id="not-all-functions-can-be-pure">Not all functions can be pure<a class="headerlink" href="#not-all-functions-can-be-pure" title="Permanent link">Permalink</a></h2>
+<p>We can't have our programs written with pure functions only. Most programs need to use external resources, such as connection, display, database, etc. </p>
+<p>The trick is to have as many pure functions as possible so we can easily test, reason about and debug most of the program and isolate code that deals with the external state (I/O) in a few places so that when there is a problem, we know where to look for it.</p>
+            <h2 class="text-center">
+                <span class="border-b-2 border-teal-300 text-2xl font-medium tracking-wide mb-6 mt-12">You might also like</span>
+            </h2>
+            <div id="reading-list" class="text-center">
+                <ul>
+
+
+
+
+
+
+                    <li><a href="/what-are-dunder-methods-python/">What are dunder methods in Python?</a></li>
+
+
+                    <li><a href="/difference-between-statement-and-expression/">Difference between statement and expression</a></li>
+
+
+                    <li><a href="/difference-between-function-and-method/">Difference between function and method</a></li>
+
+
+                    <li><a href="/what-is-an-iterator-in-python/">What is an iterator in Python</a></li>
+
+
+                    <li><a href="/what-is-an-iterable-in-python/">What is an iterable in Python</a></li>
+
+
+                </ul>
+            </div>
 <!--<h2 class="text-center mb-6 mt-12">-->
 <!--    <span class="text-3xl font-light tracking-wide border-b-2 border-teal-300">Let's stay in touch</span></h2>-->
 <div class="flex flex-col space-y-8 not-prose mt-12">
@@ -932,7 +828,11 @@
            data-size="large" data-show-count="false">Follow @michaeliscoding</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-</div></div>
+</div>        </div>
+    </div>
+</article>
+
+
         </div>
         <!-- sidebar -->
 <!--                <div class="md:flex-none md:w-72 md:min-w-72 px-5 bg-cyan-300"></div>-->
