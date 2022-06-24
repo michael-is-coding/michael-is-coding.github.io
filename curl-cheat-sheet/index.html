@@ -23,7 +23,7 @@
         hljs.highlightAll();
     </script>
 
-    <title>Michael is coding - Latest</title>
+    <title>cURL cheat sheet - Michael is coding</title>
     <meta charset="utf-8"/>
     <meta name="generator" content="Pelican"/>
 
@@ -42,16 +42,48 @@
           type="application/atom+xml" rel="alternate" title="Michael is coding Atom Feed"/>
     <link href="https://michaeliscoding.com/feeds/rss.xml"
           type="application/rss+xml" rel="alternate" title="Michael is coding RSS Feed"/>
+    <link href="https://michaeliscoding.com/feeds/programming.atom.xml"
+          type="application/atom+xml" rel="alternate" title="Michael is coding Categories Atom Feed"/>
+    <link href="https://michaeliscoding.com/feeds/programming.rss.xml"
+          type="application/rss+xml" rel="alternate" title="Michael is coding Categories RSS Feed"/>
 
 
-<meta name="description" content="Python, programming and web development articles."/>
 
-<meta property="og:url" content="https://michaeliscoding.com"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Michael is coding "/>
-<meta property="og:description" content="Python, programming and web development articles."/>
-<meta property="og:image" content="https://michaeliscoding.com/theme/michael-is-coding-logo.png"/>
 
+
+<link rel="canonical" href="https://michaeliscoding.com/curl-cheat-sheet/">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="og:url" content="https://michaeliscoding.com/curl-cheat-sheet/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="cURL cheat sheet"/>
+<meta property="og:description" content=""/>
+<meta property="og:image" content="https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg"/>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "image": "https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Michael is coding"
+        },
+        "headline": "cURL cheat sheet",
+        "description": "",
+        "datePublished": "2022-06-24",
+        "dateModified": " 2022-06-24 ",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Michael is coding",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://michaeliscoding.com/theme/michael-is-coding-logo.png"
+            }
+        }
+    }
+</script>
     <script defer data-domain="michaeliscoding.com" src="https://plausible.io/js/plausible.js"></script>
     <script>
         // Burger menus
@@ -168,271 +200,147 @@
         <!-- content -->
         <div class="mx-auto px-2">
 
-<div id="content" class="max-w-3xl mx-auto">
-    <h1 class="text-4xl sm:text-5xl text-center font-normal tracking-wide mb-24">
-        <span class=" border-b-4 border-cyan-300">Latest articles</span>
-    </h1>
+<article id="content" class="max-w-[60ch] mx-auto prose prose-lg prose-slate font-serif prose-headings:font-sans prose-headings:font-semibold prose-img:rounded-md  lg:max-w-none">
+    <header class="max-w-[60ch]">
+        <h1 itemprop="name headline">
+            cURL cheat sheet
+<!--            <a href="https://michaeliscoding.com/curl-cheat-sheet/" rel="bookmark" class="headerlink" title="Permalink to cURL cheat sheet">Permalink-->
+            </a>
+        </h1>
 
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0019-nested-comprehensions-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How nested comprehensions work in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>We can nest comprehensions the same way as we can nest for loops. In this article, we explain how it works.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-10-05T00:00:00+02:00"> Tue 05 October 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-nested-comprehensions-work-in-python/" rel="bookmark"
-           title="Permalink to How nested comprehensions work in Python"></a>
-    </article>
+<!--        <time class="font-sans font-medium text-base"-->
+<!--              datetime="2022-06-24"-->
+<!--              itemprop="datePublished">-->
+<!--            Fri 24 June 2022-->
+<!--        </time>-->
+<!--        -->
+    </header>
+    <div class="lg:flex lg:flex-row-reverse">
 
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0018-dict-comprehension-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How to use dict comprehensions in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>What are dict comprehensions? How do they differ from list comprehensions, and when are they useful.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-10-01T00:00:00+02:00"> Fri 01 October 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-to-use-dict-comprehensions-in-python/" rel="bookmark"
-           title="Permalink to How to use dict comprehensions in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0017-set-comprehension-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How to use set comprehensions in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>What are set comprehensions? How do they differ from list comprehensions, and when are they useful.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-28T00:00:00+02:00"> Tue 28 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-to-use-set-comprehensions-in-python/" rel="bookmark"
-           title="Permalink to How to use set comprehensions in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0016-why-use-comprehensions-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    Why should we use comprehensions in Python?
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>There are at least three good reasons why we should use comprehensions in Python. Let's see what they are.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-23T00:00:00+02:00"> Thu 23 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/why-should-we-use-comprehensions-in-python/" rel="bookmark"
-           title="Permalink to Why should we use comprehensions in Python?"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0015-how-list-comprehension-works-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How do list comprehensions work in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>A detailed explanation of how list comprehensions work in Python. What's their purpose. When to use them and when not to.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-21T00:00:00+02:00"> Tue 21 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-do-list-comprehensions-work-in-python/" rel="bookmark"
-           title="Permalink to How do list comprehensions work in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0014-delete-files-directories-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How to delete files and directories in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>How to delete files and directories in Python using <em>os</em> and <em>shutils</em> modules</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-16T00:00:00+02:00"> Thu 16 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-to-delete-files-directories-in-python/" rel="bookmark"
-           title="Permalink to How to delete files and directories in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0013-get-and-change-working-directory-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How to get and change the working directory in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>What is a working directory (CWD), and how to get it and change it in Python?</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-14T00:00:00+02:00"> Tue 14 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-to-get-and-change-working-directory-in-python/" rel="bookmark"
-           title="Permalink to How to get and change the working directory in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0012-common-string-operations-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    Common string operations in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>This reference article covers the most common operations with strings.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-09T00:00:00+02:00"> Thu 09 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/common-string-operations-in-python/" rel="bookmark"
-           title="Permalink to Common string operations in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0011-read-directory-content-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    How to read directory content in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>We look at three ways to read directory content using the built-in os module.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-07T00:00:00+02:00"> Tue 07 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/how-to-read-directory-content-in-python/" rel="bookmark"
-           title="Permalink to How to read directory content in Python"></a>
-    </article>
-
-
-    <article class="mx-auto max-w-md md:max-w-none justify-self-center text-slate-900 flex flex-col md:flex-row mt-20 overflow-hidden relative">
-        <div class="bg-cover aspect-[40/21] rounded-md bg-cyan-900 md:w-[300px] md:h-[157px]"
-             style="background-image:url(/images/0010-about-bool-python.jpg)">
-        </div>
-        <div class="flex flex-col grow justify-between md:ml-7 mt-3 md:mt-0">
-            <header>
-                <h2 class="text-xl font-semibold mb-3">
-                    About <code>bool</code> in Python
-                </h2>
-            </header>
-            <div class="text-lg font-light grow shrink"> <p>True+1+True=3. What bool values really are in Python.</p></div>
-            <footer class="flex items-baseline justify-between mt-3">
-                <time class="text-sm font-semibold text-slate-500" datetime="2021-09-02T00:00:00+02:00"> Thu 02 September 2021
-                </time>
-                <span class="text-sm font-semibold text-cyan-900 bg-cyan-300 rounded-md pl-4 pr-2 py-1 whitespace-nowrap">Read more
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-</svg></span>
-            </footer>
-        </div>
-        <a class="absolute top-0 right-0 left-0 bottom-0" href="https://michaeliscoding.com/about-bool-in-python/" rel="bookmark"
-           title="Permalink to About bool in Python"></a>
-    </article>
-
-
-<div class="flex w-full justify-between mt-20">
-<!--        <a href="https://michaeliscoding.com/index.html">First page</a>-->
-        <a class="font-medium text-base text-teal-700 underline" href="https://michaeliscoding.com/index.html">Previous page</a>
-
-    <p class="">Page 2 / 3</p>
-        <a class="font-medium text-base text-teal-700 underline"  href="https://michaeliscoding.com/latest/page/3/">Next page</a>
-<!--        <a href="https://michaeliscoding.com/latest/page/3/">Last page</a>-->
+            <div id="toc" class="hidden lg:block max-w-[15rem] ml-36 w-60">
+                <div class="sticky top-4">
+                <h4 class="toc-title not-prose mt-0"><span>Table of contents</span></h4>
+                <div class="toc">
+<ul>
+<li><a href="#basic-usage">Basic usage</a></li>
+<li><a href="#view-response-headers">View response headers</a></li>
+<li><a href="#save-response-to-a-file">Save response to a file</a></li>
+<li><a href="#download-file">Download file</a></li>
+<li><a href="#send-headers">Send headers</a></li>
+<li><a href="#http-method">HTTP Method</a></li>
+<li><a href="#send-data">Send data</a></li>
+<li><a href="#send-data-from-file">Send data from file</a></li>
+<li><a href="#follow-redirects">Follow redirects</a></li>
+<li><a href="#more-info-about-request-and-response">More info about request and response</a></li>
+</ul>
 </div>
 
+                </div>
+            </div>
+        <div id="full-article" class="max-w-[60ch]" itemprop="articleBody">
+            <p><img alt="cURL cheat sheet" src="https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg"></p>
+<h2 id="basic-usage">Basic usage<a class="headerlink" href="#basic-usage" title="Permanent link">Permalink</a></h2>
+<pre><code class="language-bash">curl url
+</code></pre>
+<p>The above will make a GET request to the URL and display a response body.</p>
+<h2 id="view-response-headers">View response headers<a class="headerlink" href="#view-response-headers" title="Permanent link">Permalink</a></h2>
+<p>We can use the <code>- head</code> option to see only response headers.</p>
+<pre><code class="language-bash">curl --head url
+</code></pre>
+<p>If we want to see response headers AND response body, we can use the <code>-i</code> option:</p>
+<pre><code class="language-bash">curl -i url
+</code></pre>
+<h2 id="save-response-to-a-file">Save response to a file<a class="headerlink" href="#save-response-to-a-file" title="Permanent link">Permalink</a></h2>
+<p>By default, curl outputs everything to the screen (terminal).</p>
+<p>To redirect its output to a file, we can use options <code>-o</code> or <code>-O</code>.</p>
+<p><code>-o</code> option lets us tell curl into which file it should write output to.</p>
+<pre><code class="language-bash">curl url -o file.txt
+</code></pre>
+<p>Please note that whatever would be printed to the screen will now be saved to the file — including response headers if we used the <code>-i</code> option <code>curl -i url -o file.txt</code>.</p>
+<p>If we don't need to specify a custom file name, we can use the option <code>-O</code> and curl will save its output to the file with the same name as the file name in the <code>url</code>.</p>
+<pre><code class="language-bash">curl -O url
+</code></pre>
+<h2 id="download-file">Download file<a class="headerlink" href="#download-file" title="Permanent link">Permalink</a></h2>
+<p>We can use the <code>-O</code> or <code>-o</code>option to download a file. But we need to make sure we don't use other options that modify the output like <code>-i</code>.</p>
+<pre><code class="language-bash">curl -O url_of_the_file 
+</code></pre>
+<p>If we want to save a file with a different name than it has on the server:</p>
+<pre><code class="language-bash">curl url_of_the_file -o desired-name
+</code></pre>
+<p>Examples:</p>
+<pre><code class="language-bash">curl -O https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg
+</code></pre>
+<pre><code class="language-bash">curl https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg -o curl.jpg
+</code></pre>
+<h2 id="send-headers">Send headers<a class="headerlink" href="#send-headers" title="Permanent link">Permalink</a></h2>
+<p>To send headers, we use the <code>-H</code> option like this</p>
+<pre><code class="language-bash">curl -H &quot;Header-name: header-value&quot; url
+</code></pre>
+<p>If we want to send multiple headers, we provide <code>-H</code> options multiple times:</p>
+<pre><code class="language-bash">curl -H &quot;Header-name: header-value&quot; -H &quot;Other-Header: -other-header-value&quot; url
+</code></pre>
+<p>Examples:</p>
+<pre><code class="language-bash">curl -H &quot;Content-Type: application/json&quot; url
+</code></pre>
+<pre><code class="language-bash">curl -H &quot;Content-Type: application/json&quot; -H &quot;Accept-Encoding: gzip, deflate&quot; url
+</code></pre>
+<h2 id="http-method">HTTP Method<a class="headerlink" href="#http-method" title="Permanent link">Permalink</a></h2>
+<p>Unless specified otherwise,  curl will make a request using the GET method.</p>
+<p>To change the HTTP method, use the <code>-X</code> option.</p>
+<pre><code class="language-bash">curl -X METHOD url
+</code></pre>
+<p>Examples:</p>
+<pre><code class="language-bash">curl -X POST
+</code></pre>
+<h2 id="send-data">Send data<a class="headerlink" href="#send-data" title="Permanent link">Permalink</a></h2>
+<p>When making POST or PUT requests, we need to send data with a request.</p>
+<p>To send data, we use the <code>-d</code> option.</p>
+<pre><code class="language-bash">curl -d 'our data here' url
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-bash">curl -X POST -d '{&quot;id&quot;:1, &quot;name&quot;: &quot;John&quot;}' url
+</code></pre>
+<p>When sending data, don't forget to specify the <code>Content-type</code> header using the <code>-H</code> option.</p>
+<h2 id="send-data-from-file">Send data from file<a class="headerlink" href="#send-data-from-file" title="Permanent link">Permalink</a></h2>
+<p>If the data we want to send in the request body are in the file, e.g.  we need to use the <code>-d</code> option and then use the <code>@</code> sign before the name of the file like this:</p>
+<pre><code class="language-bash">curl -d @my_file.json url
+</code></pre>
+<h2 id="follow-redirects">Follow redirects<a class="headerlink" href="#follow-redirects" title="Permanent link">Permalink</a></h2>
+<p>Sometimes response from the server has a 301 or 302 status code which means redirect to another page. Curl will not follow the new URL by default, but we can tell him to do so with the <code>-L</code> option.</p>
+<pre><code class="language-bash">curl -L url
+</code></pre>
+<h2 id="more-info-about-request-and-response">More info about request and response<a class="headerlink" href="#more-info-about-request-and-response" title="Permanent link">Permalink</a></h2>
+<p>To get more information about request and response, we can use the <code>-v</code> option — as a shortcut for verbose:</p>
+<pre><code class="language-bash">curl -v url
+</code></pre>
+            <h2 class="text-center">
+                <span class="border-b-2 border-teal-300 text-2xl font-medium tracking-wide mb-6 mt-12">You might also like</span>
+            </h2>
+            <div id="reading-list" class="text-center">
+                <ul>
 
+
+
+
+
+
+                    <li><a href="/what-pure-functions-are/">What pure functions are, and why do more of them</a></li>
+
+
+                    <li><a href="/what-are-dunder-methods-python/">What are dunder methods in Python?</a></li>
+
+
+                    <li><a href="/difference-between-statement-and-expression/">Difference between statement and expression</a></li>
+
+
+                    <li><a href="/difference-between-function-and-method/">Difference between function and method</a></li>
+
+
+                    <li><a href="/what-is-an-iterator-in-python/">What is an iterator in Python</a></li>
+
+
+                </ul>
+            </div>
 <!--<h2 class="text-center mb-6 mt-12">-->
 <!--    <span class="text-3xl font-light tracking-wide border-b-2 border-teal-300">Let's stay in touch</span></h2>-->
 <div class="flex flex-col space-y-8 not-prose mt-12">
@@ -932,7 +840,11 @@
            data-size="large" data-show-count="false">Follow @michaeliscoding</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-</div></div>
+</div>        </div>
+    </div>
+</article>
+
+
         </div>
         <!-- sidebar -->
 <!--                <div class="md:flex-none md:w-72 md:min-w-72 px-5 bg-cyan-300"></div>-->

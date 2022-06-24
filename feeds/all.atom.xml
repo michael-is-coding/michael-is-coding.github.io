@@ -1,5 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/all.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-06-17T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>What pure functions are, and why do more of them</title><link href="https://michaeliscoding.com/what-pure-functions-are/" rel="alternate"></link><published>2022-06-17T00:00:00+02:00</published><updated>2022-06-17T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-17:/what-pure-functions-are/</id><summary type="html">&lt;p&gt;Pure functions make our code much better. Learn what pure functions are and how they make our code better.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="What pure functions are, and why write more of them?" src="https://michaeliscoding.com/images/0028-what-pure-functions-are.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/all.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-06-24T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>cURL cheat sheet</title><link href="https://michaeliscoding.com/curl-cheat-sheet/" rel="alternate"></link><published>2022-06-24T00:00:00+02:00</published><updated>2022-06-24T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-24:/curl-cheat-sheet/</id><summary type="html"></summary><content type="html">&lt;p&gt;&lt;img alt="cURL cheat sheet" src="https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg"&gt;&lt;/p&gt;
+&lt;h2 id="basic-usage"&gt;Basic usage&lt;a class="headerlink" href="#basic-usage" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The above will make a GET request to the URL and display a response body.&lt;/p&gt;
+&lt;h2 id="view-response-headers"&gt;View response headers&lt;a class="headerlink" href="#view-response-headers" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can use the &lt;code&gt;- head&lt;/code&gt; option to see only response headers.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl --head url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If we want to see response headers AND response body, we can use the &lt;code&gt;-i&lt;/code&gt; option:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -i url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="save-response-to-a-file"&gt;Save response to a file&lt;a class="headerlink" href="#save-response-to-a-file" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;By default, curl outputs everything to the screen (terminal).&lt;/p&gt;
+&lt;p&gt;To redirect its output to a file, we can use options &lt;code&gt;-o&lt;/code&gt; or &lt;code&gt;-O&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-o&lt;/code&gt; option lets us tell curl into which file it should write output to.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl url -o file.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Please note that whatever would be printed to the screen will now be saved to the file — including response headers if we used the &lt;code&gt;-i&lt;/code&gt; option &lt;code&gt;curl -i url -o file.txt&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If we don't need to specify a custom file name, we can use the option &lt;code&gt;-O&lt;/code&gt; and curl will save its output to the file with the same name as the file name in the &lt;code&gt;url&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -O url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="download-file"&gt;Download file&lt;a class="headerlink" href="#download-file" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can use the &lt;code&gt;-O&lt;/code&gt; or &lt;code&gt;-o&lt;/code&gt;option to download a file. But we need to make sure we don't use other options that modify the output like &lt;code&gt;-i&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -O url_of_the_file 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If we want to save a file with a different name than it has on the server:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl url_of_the_file -o desired-name
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -O https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg -o curl.jpg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="send-headers"&gt;Send headers&lt;a class="headerlink" href="#send-headers" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To send headers, we use the &lt;code&gt;-H&lt;/code&gt; option like this&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -H &amp;quot;Header-name: header-value&amp;quot; url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If we want to send multiple headers, we provide &lt;code&gt;-H&lt;/code&gt; options multiple times:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -H &amp;quot;Header-name: header-value&amp;quot; -H &amp;quot;Other-Header: -other-header-value&amp;quot; url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -H &amp;quot;Content-Type: application/json&amp;quot; url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -H &amp;quot;Content-Type: application/json&amp;quot; -H &amp;quot;Accept-Encoding: gzip, deflate&amp;quot; url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="http-method"&gt;HTTP Method&lt;a class="headerlink" href="#http-method" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Unless specified otherwise,  curl will make a request using the GET method.&lt;/p&gt;
+&lt;p&gt;To change the HTTP method, use the &lt;code&gt;-X&lt;/code&gt; option.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X METHOD url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="send-data"&gt;Send data&lt;a class="headerlink" href="#send-data" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When making POST or PUT requests, we need to send data with a request.&lt;/p&gt;
+&lt;p&gt;To send data, we use the &lt;code&gt;-d&lt;/code&gt; option.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -d 'our data here' url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST -d '{&amp;quot;id&amp;quot;:1, &amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;}' url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When sending data, don't forget to specify the &lt;code&gt;Content-type&lt;/code&gt; header using the &lt;code&gt;-H&lt;/code&gt; option.&lt;/p&gt;
+&lt;h2 id="send-data-from-file"&gt;Send data from file&lt;a class="headerlink" href="#send-data-from-file" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If the data we want to send in the request body are in the file, e.g.  we need to use the &lt;code&gt;-d&lt;/code&gt; option and then use the &lt;code&gt;@&lt;/code&gt; sign before the name of the file like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -d @my_file.json url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="follow-redirects"&gt;Follow redirects&lt;a class="headerlink" href="#follow-redirects" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sometimes response from the server has a 301 or 302 status code which means redirect to another page. Curl will not follow the new URL by default, but we can tell him to do so with the &lt;code&gt;-L&lt;/code&gt; option.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -L url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="more-info-about-request-and-response"&gt;More info about request and response&lt;a class="headerlink" href="#more-info-about-request-and-response" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To get more information about request and response, we can use the &lt;code&gt;-v&lt;/code&gt; option — as a shortcut for verbose:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -v url
+&lt;/code&gt;&lt;/pre&gt;</content><category term="Programming"></category><category term="curl"></category><category term="http"></category><category term="request"></category><category term="response"></category></entry><entry><title>What pure functions are, and why do more of them</title><link href="https://michaeliscoding.com/what-pure-functions-are/" rel="alternate"></link><published>2022-06-17T00:00:00+02:00</published><updated>2022-06-17T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-17:/what-pure-functions-are/</id><summary type="html">&lt;p&gt;Pure functions make our code much better. Learn what pure functions are and how they make our code better.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="What pure functions are, and why write more of them?" src="https://michaeliscoding.com/images/0028-what-pure-functions-are.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;A pure function is a function that, given the same input, always returns the same output and does not have side effects.&lt;/p&gt;
 &lt;h2 id="same-result-for-same-arguments"&gt;Same result for same arguments&lt;a class="headerlink" href="#same-result-for-same-arguments" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The pure function will always return the same result for the same arguments. What exactly does it mean?&lt;/p&gt;
