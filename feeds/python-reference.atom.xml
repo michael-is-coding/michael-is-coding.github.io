@@ -27,7 +27,7 @@ bye + name
 # 'up&amp;gt;right&amp;gt;down&amp;gt;left'
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;str.join(iterable)&lt;/code&gt; is a method of string. It takes one parameter - iterable (e.g. list, set etc.) and returns a new string.&lt;/p&gt;
-&lt;p&gt;It creates a new string by joining (concatenating) strings in iterable by string separator. The separator is the string on which we call the &lt;code&gt;join()&lt;/code&gt; method  (in the code above, it's "&gt;".&lt;/p&gt;
+&lt;p&gt;It creates a new string by joining (concatenating) strings in iterable by string separator. The separator is the string on which we call the &lt;code&gt;join()&lt;/code&gt; method  (in the code above, it's "&amp;gt;".&lt;/p&gt;
 &lt;h2 id="splitting-string"&gt;Splitting string&lt;a class="headerlink" href="#splitting-string" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Sometimes we want to split one string into multiple using some separator. For that, we use the &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.split"&gt;&lt;code&gt;split()&lt;/code&gt;&lt;/a&gt; method:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;names = 'John &amp;amp; Martin &amp;amp; Carla &amp;amp; Linda &amp;amp; Alena'

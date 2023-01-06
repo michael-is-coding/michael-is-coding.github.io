@@ -49,7 +49,7 @@
 
 
 
-<meta name="description" content="What is the best way to merge two or more dictionaries into one?"/>
+<meta name="description" content="4 ways to do it and which one should programmers use to make their code better, faster and elegant."/>
 
 
 <link rel="canonical" href="https://michaeliscoding.com/how-to-merge-dictionaries-in-python/">
@@ -59,7 +59,7 @@
 <meta property="og:url" content="https://michaeliscoding.com/how-to-merge-dictionaries-in-python/"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="How to merge dictionaries in Python"/>
-<meta property="og:description" content="What is the best way to merge two or more dictionaries into one?"/>
+<meta property="og:description" content="4 ways to do it and which one should programmers use to make their code better, faster and elegant."/>
 <meta property="og:image" content="https://michaeliscoding.com/images/0004-merge-dictionaries-python.jpg"/>
 
 <script type="application/ld+json">
@@ -72,7 +72,7 @@
             "name": "Michael is coding"
         },
         "headline": "How to merge dictionaries in Python",
-        "description": "What is the best way to merge two or more dictionaries into one?",
+        "description": "4 ways to do it and which one should programmers use to make their code better, faster and elegant.",
         "datePublished": "2021-08-12",
         "dateModified": "2022-04-08 ",
         "publisher": {
@@ -205,9 +205,11 @@
     <header class="max-w-[60ch]">
         <h1 itemprop="name headline">
             How to merge dictionaries in Python
-<!--            <a href="https://michaeliscoding.com/how-to-merge-dictionaries-in-python/" rel="bookmark" class="headerlink" title="Permalink to How to merge dictionaries in Python">Permalink-->
-            </a>
+<!--            <a href="https://michaeliscoding.com/how-to-merge-dictionaries-in-python/" rel="bookmark" class="headerlink" title="Permalink to How to merge dictionaries in Python">Permalink</a>-->            
         </h1>
+        <p class="lead">
+            4 ways to do it and which one should programmers use to make their code better, faster and elegant.
+        </p>
 
 <!--        <time class="font-sans font-medium text-base"-->
 <!--              datetime="2021-08-12"-->
@@ -232,11 +234,13 @@
                 <h4 class="toc-title not-prose mt-0"><span>Table of contents</span></h4>
                 <div class="toc">
 <ul>
-<li><a href="#using-the-dictionary-union">Using the dictionary union</a></li>
-<li><a href="#using-the-dictionary-constructor">Using the dictionary constructor</a></li>
-<li><a href="#using-a-comprehension">Using a comprehension</a></li>
-<li><a href="#copy-and-update">Copy and update</a></li>
+<li><a href="#we-are-merging-two-dicts-d1-and-d2">We are merging two dicts, d1 and d2:</a></li>
+<li><a href="#1-copy-and-update">1. Copy and update</a></li>
+<li><a href="#2-dict-comprehension">2. Dict comprehension</a></li>
+<li><a href="#3-dict-constructor">3. Dict constructor</a></li>
+<li><a href="#4dict-union">4.Dict union</a></li>
 <li><a href="#more-than-2-dictionaries">More than 2 dictionaries</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
 </ul>
 </div>
 
@@ -244,56 +248,67 @@
             </div>
         <div id="full-article" class="max-w-[60ch]" itemprop="articleBody">
             <p><img alt="How to merge dictionaries in Python" src="https://michaeliscoding.com/images/0004-merge-dictionaries-python.jpg"></p>
-<p>We have two dictionaries, <code>d1</code> and <code>d2</code>, and we want to merge them, so we end up with a dictionary containing values from both.</p>
-<pre><code class="language-python">d1 = {'left': 5, 'right': 10}
+<p>Not all ways to merge dicts in Python are created equal. There is only one best way to merge them.</p>
+<h2 id="we-are-merging-two-dicts-d1-and-d2">We are merging two dicts, <code>d1</code> and <code>d2</code>:<a class="headerlink" href="#we-are-merging-two-dicts-d1-and-d2" title="Permanent link">Permalink</a></h2>
+<pre><code>d1 = {'left': 5, 'right': 10}
 
 d2 = {'top': 15, 'bottom': 20}
 </code></pre>
-<p>The expected result after merging is the following:</p>
+<p>After merging them, we want to end up with a dictionary containing values from both. The expected result is the following:</p>
 <pre><code class="language-python">{'left': 5, 'right': 10, 'top': 15, 'bottom': 20}
 </code></pre>
-<h2 id="using-the-dictionary-union">Using the dictionary union<a class="headerlink" href="#using-the-dictionary-union" title="Permanent link">Permalink</a></h2>
-<p>The cleanest and shortest way is to use dictionary union. It is available <strong>only for Python 3.9</strong> and newer:</p>
-<pre><code class="language-python">merged = d1 | d2
-</code></pre>
-<h2 id="using-the-dictionary-constructor">Using the dictionary constructor<a class="headerlink" href="#using-the-dictionary-constructor" title="Permanent link">Permalink</a></h2>
-<p>The second best way is to use a dictionary constructor. It is available <strong>for Python 3.5</strong> and newer:</p>
-<pre><code class="language-python">merged = {**d1, **d2}
-</code></pre>
-<h2 id="using-a-comprehension">Using a comprehension<a class="headerlink" href="#using-a-comprehension" title="Permanent link">Permalink</a></h2>
-<p>With Python 3.4 and lower, we'll have to write more code. The shortest and fastest option is to use a dict comprehension:</p>
-<pre><code class="language-python">merged = {k: v for d in [d1, d2] for k, v in d.items()}
-</code></pre>
-<h2 id="copy-and-update">Copy and update<a class="headerlink" href="#copy-and-update" title="Permanent link">Permalink</a></h2>
-<p>We could also use the old-style imperative way, copy the first dict and update it with the second one. It is two lines, though, and we mutate a variable, which I do not recommend.</p>
+<p>Let’s have a look at our 4 options.</p>
+<h2 id="1-copy-and-update">1. Copy and update<a class="headerlink" href="#1-copy-and-update" title="Permanent link">Permalink</a></h2>
+<p>First,  old-style imperative way is to copy the first dict and update it with the second one. </p>
 <pre><code class="language-python">merged = d1.copy()
 merged.update(d2)
 </code></pre>
+<p>It is two lines and we mutate a variable, which I don’t recommend. </p>
+<h2 id="2-dict-comprehension">2. Dict comprehension<a class="headerlink" href="#2-dict-comprehension" title="Permanent link">Permalink</a></h2>
+<p>Second option is to use a dict comprehension:</p>
+<pre><code class="language-python">merged = {k: v for d in [d1, d2] for k, v in d.items()}
+</code></pre>
+<p>Comprehension creates a new dict and leaves original dicts untouched. But it is a nested dict comprehension and so it might be not that obvious what we’re doing.  </p>
+<p>It’s also harder to understand for beginners
+.</p>
+<h2 id="3-dict-constructor">3. Dict constructor<a class="headerlink" href="#3-dict-constructor" title="Permanent link">Permalink</a></h2>
+<p>Third option is to use a dictionary constructor:</p>
+<pre><code class="language-python">merged = {**d1, **d2}
+</code></pre>
+<p>It’s nice and short. Here we create a new dict by giving it our two existing dicts. </p>
+<p>Please note it’s <strong>only available in Python 3.5 and newer</strong>.</p>
+<h2 id="4dict-union">4.Dict union<a class="headerlink" href="#4dict-union" title="Permanent link">Permalink</a></h2>
+<p>Fourth option is to use a dictionary union:</p>
+<pre><code class="language-python">merged = d1 | d2
+</code></pre>
+<p><em>This one is the cleanest and shortest way to merge dicts.</em> It also creates a new dict and leaves original dicts untouched.</p>
+<p>Please note it’s <strong>only available in Python 3.9 and newer</strong>.</p>
 <h2 id="more-than-2-dictionaries">More than 2 dictionaries<a class="headerlink" href="#more-than-2-dictionaries" title="Permanent link">Permalink</a></h2>
-<p>Anything above also works with three or more dictionaries, of course:</p>
+<p>Anything above also works with three or more dictionaries:</p>
 <pre><code class="language-python">d1 = {'left': 5, 'right': 10}
-
 d2 = {'top': 15, 'bottom': 20}
-
 d3 = {'height': 30, 'width': 40}
 
-# Python 3.9+
-merged = d1 | d2 | d3
-
-# Python 3.5+
-merged = {**d1, **d2, **d3}
-
-# Python 3.4 and lower
-merged = {k: v for d in [d1, d2, d3] for k, v in d.items()}
-
-# imperative way 
+# 1. Copy &amp; update
 merged = d1.copy()
 merged.update(d2)
 merged.update(d3)
 
+# 2. Dict comprehension
+merged = {k: v for d in [d1, d2, d3] for k, v in d.items()}
+
+# 3. Dict constructor (only Python 3.5+)
+merged = {**d1, **d2, **d3}
+
+# 4. Dict union (only Python 3.9+)
+merged = d1 | d2 | d3
+
 # All code above will produce 
 {'left': 5, 'right': 10, 'top': 15, 'bottom': 20, 'height': 30, 'width': 40}
 </code></pre>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">Permalink</a></h2>
+<p>If you are on Python 3.9 or newer use dict union operator <code>|</code> . If you are on older Python use dict constructor.</p>
+<p>Happy coding!</p>
             <h2 class="text-center">
                 <span class="border-b-2 border-teal-300 text-2xl font-medium tracking-wide mb-6 mt-12">You might also like</span>
             </h2>
@@ -330,7 +345,7 @@ merged.update(d3)
     <div>
         <h2 class="text-3xl text-center text-white mb-2.5">Join the newsletter</h2>
         <p class="text-center text-cyan-300 px-2 text-lg mb-5">
-            Subscribe to get new articles about Python, code and programming into your inbox!
+            Subscribe to get new articles about <i>programming, Python and career</i> into your inbox!
         </p>
         <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
         <form action="https://app.convertkit.com/forms/3066414/subscriptions" class="seva-form formkit-form"
