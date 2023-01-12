@@ -49,7 +49,7 @@
 
 
 
-<meta name="description" content="What is the best way to flat a list of lists?"/>
+<meta name="description" content="3 ways to do it and which one is the best."/>
 
 
 <link rel="canonical" href="https://michaeliscoding.com/how-to-flat-list-of-lists-in-python/">
@@ -59,7 +59,7 @@
 <meta property="og:url" content="https://michaeliscoding.com/how-to-flat-list-of-lists-in-python/"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="How to flat a list of lists in Python"/>
-<meta property="og:description" content="What is the best way to flat a list of lists?"/>
+<meta property="og:description" content="3 ways to do it and which one is the best."/>
 <meta property="og:image" content="https://michaeliscoding.com/images/0005-flat-list-of-lists-python.jpg"/>
 
 <script type="application/ld+json">
@@ -72,9 +72,9 @@
             "name": "Michael is coding"
         },
         "headline": "How to flat a list of lists in Python",
-        "description": "What is the best way to flat a list of lists?",
+        "description": "3 ways to do it and which one is the best.",
         "datePublished": "2021-08-17",
-        "dateModified": "2022-04-11 ",
+        "dateModified": "2023-01-12 ",
         "publisher": {
             "@type": "Organization",
             "name": "Michael is coding",
@@ -208,7 +208,7 @@
 <!--            <a href="https://michaeliscoding.com/how-to-flat-list-of-lists-in-python/" rel="bookmark" class="headerlink" title="Permalink to How to flat a list of lists in Python">Permalink</a>-->            
         </h1>
         <p class="lead">
-            What is the best way to flat a list of lists?
+            3 ways to do it and which one is the best.
         </p>
 
 <!--        <time class="font-sans font-medium text-base"-->
@@ -220,9 +220,9 @@
 <!--        <span class="text-gray-500 font-sans font-medium text-base">-->
 <!--            (Updated on-->
 <!--        <time class="text-gray-500 font-sans font-medium text-base"-->
-<!--              datetime="2022-04-11"-->
+<!--              datetime="2023-01-12"-->
 <!--              itemprop="dateModified">-->
-<!--            11 Apr 2022-->
+<!--            12 Jan 2023-->
 <!--        </time>-->
 <!--        )</span>-->
 <!--        -->
@@ -234,9 +234,13 @@
                 <h4 class="toc-title not-prose mt-0"><span>Table of contents</span></h4>
                 <div class="toc">
 <ul>
-<li><a href="#using-a-for-loop">Using a for loop</a></li>
-<li><a href="#using-a-list-comprehension">Using a list comprehension</a></li>
-<li><a href="#using-the-itertools">Using the itertools</a></li>
+<li><a href="#1-for-loop">1. for loop</a><ul>
+<li><a href="#1a-use-the-inner-for-loop">1a. Use the inner for loop</a></li>
+<li><a href="#1b-use-only-one-loop">1b. Use only one loop</a></li>
+</ul>
+</li>
+<li><a href="#2-list-comprehension">2. List comprehension</a></li>
+<li><a href="#3-itertools">3. itertools</a></li>
 <li><a href="#summary">Summary</a></li>
 </ul>
 </div>
@@ -245,7 +249,7 @@
             </div>
         <div id="full-article" class="max-w-[60ch]" itemprop="articleBody">
             <p><img alt="How to flat a list of lists in Python" src="https://michaeliscoding.com/images/0005-flat-list-of-lists-python.jpg"></p>
-<p>Let's say we have a list of lists like this:</p>
+<p>Say we have a list of lists like this:</p>
 <pre><code class="language-python">list_of_lists = [
     ['London', 'Manchester'],
     ['New York', 'Los Angeles'],
@@ -255,9 +259,9 @@
 <p>What's the best way to turn it into a simple list that looks like this?</p>
 <pre><code class="language-python">['London', 'Manchester', 'New York', 'Los Angeles', 'Rome', 'Milan']
 </code></pre>
-<h2 id="using-a-for-loop">Using a <em>for</em> loop<a class="headerlink" href="#using-a-for-loop" title="Permanent link">Permalink</a></h2>
+<h2 id="1-for-loop">1. <em>for</em> loop<a class="headerlink" href="#1-for-loop" title="Permanent link">Permalink</a></h2>
 <p>Using <em>for</em> loop, we can flat list of lists in two ways.</p>
-<p>The first one is to use the inner <em>for</em> loop:</p>
+<h3 id="1a-use-the-inner-for-loop">1a. Use the inner <em>for</em> loop<a class="headerlink" href="#1a-use-the-inner-for-loop" title="Permanent link">Permalink</a></h3>
 <pre><code class="language-python">flat = []
 for sublist in list_of_lists:
     for item in sublist:
@@ -266,35 +270,35 @@ for sublist in list_of_lists:
 <p>In the four lines of code above we:</p>
 <ol>
 <li>Create an empty list. </li>
-<li>Iterate through list_of_lists.</li>
+<li>Iterate through <code>list_of_lists</code>.</li>
 <li>Then iterate through each sublist.</li>
 <li>Then when we get to an item in the sublist, append it to our flat list.</li>
 </ol>
-<p>The second one is to use only one loop.</p>
+<h3 id="1b-use-only-one-loop">1b. Use only one loop<a class="headerlink" href="#1b-use-only-one-loop" title="Permanent link">Permalink</a></h3>
 <pre><code class="language-python">flat = []
 for sublist in list_of_lists:
     flat.extend(sublist)
 </code></pre>
-<p>In the three lines of code above we:
-1. Create an empty list. 
-1. Iterate through list_of_lists.
-1. We extend our flat list with the content of the sublist.</p>
+<p>In the three lines of code above we:</p>
+<ol>
+<li>Create an empty list. </li>
+<li>Iterate through <code>list_of_lists</code>.</li>
+<li>We extend our flat list with the content of the sublist.</li>
+</ol>
 <p>This second option is shorter and also faster. It's probably also a bit easier to understand.</p>
-<p>But there are better ways.</p>
-<h2 id="using-a-list-comprehension">Using a list comprehension<a class="headerlink" href="#using-a-list-comprehension" title="Permanent link">Permalink</a></h2>
+<p>But there is a better way:</p>
+<h2 id="2-list-comprehension">2. List comprehension<a class="headerlink" href="#2-list-comprehension" title="Permanent link">Permalink</a></h2>
 <p>With a list comprehension, it's nice and short:</p>
 <pre><code class="language-python">flat = [item for sublist in list_of_lists for item in sublist]
 </code></pre>
-<p>What's going on here?</p>
-<p>It is pretty similar to the inner <code>for</code> loop. </p>
-<p>Let's reformat that comprehension to see the similarity:</p>
+<p>What's going on here? It is pretty similar to the inner <code>for</code> loop. Let's reformat that comprehension to see the similarity:</p>
 <pre><code class="language-python">flat = [item 
         for sublist in list_of_lists 
             for item in sublist]
 </code></pre>
 <p>We can see it's the same two <em>for</em> loops when formatted like this.  </p>
 <p>The only difference is that instead of <code>flat.append(item)</code> in the inner loop, we use <code>item</code> at the beginning of the comprehension. </p>
-<h2 id="using-the-itertools">Using the <em>itertools</em><a class="headerlink" href="#using-the-itertools" title="Permanent link">Permalink</a></h2>
+<h2 id="3-itertools">3. itertools<a class="headerlink" href="#3-itertools" title="Permanent link">Permalink</a></h2>
 <p>For completeness, I want to mention we can use <a href="https://docs.python.org/3/library/itertools.html">itertools</a>. </p>
 <p>We could use two functions: <code>chain</code> and <code>chain_iterable</code>.</p>
 <pre><code class="language-python">from itertools import chain
@@ -305,21 +309,24 @@ flat1 = chain(*list_of_lists)
 # Using chain_iterable
 flat2 = chain.from_iterable(list_of_lists)
 </code></pre>
-<p>These functions, however, don't return a list but rather an iterator, so if we need a list, we need to create it explicitly.</p>
+<p>These functions, however, don't return a list but rather an iterator, so if we need a list, we need to create it explicitly:</p>
 <pre><code class="language-python">flat_list_1 = list(chain(*list_of_lists))
 
 flat_list_2 = list(chain.from_iterable(list_of_lists))
 </code></pre>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">Permalink</a></h2>
-<p>I recommend using list comprehension. </p>
-<p>It's one line, it doesn't mutate any variable, it is clear to any experienced Python developer, and it's also the fastest.</p>
+<p><em>I recommend using list comprehension:</em></p>
+<ul>
+<li>It's one line</li>
+<li>It doesn't mutate any variable. </li>
+<li>It is clear to any experienced Python developer, </li>
+<li>and it's also fast (the fastest  is one <em>for</em> loop with <code>extend</code>)</li>
+</ul>
 <p>Also, if we need to apply some function to an <code>item</code>, we can do it directly as part of comprehension:</p>
 <pre><code class="language-python"># Notice item.lower()
 flat = [item.lower() for sublist in list_of_lists for item in sublist]
 </code></pre>
-<p>In case we don't want to allocate a list, we can also turn it into a generator expression by changing brackets from <code>[]</code> to <code>()</code>:</p>
-<pre><code class="language-python">flat = (item.lower() for sublist in list_of_lists for item in sublist)
-</code></pre>
+<p>Happy coding!</p>
             <h2 class="text-center">
                 <span class="border-b-2 border-teal-300 text-2xl font-medium tracking-wide mb-6 mt-12">You might also like</span>
             </h2>
@@ -880,16 +887,16 @@ flat = [item.lower() for sublist in list_of_lists for item in sublist]
                     </li>
                     <li class="my-6">
                         <a class=""
-                           href="">Python explained</a>
+                           href="/category/python-explained">Python explained</a>
                     </li>
                     <li class="my-6">
                         <a class=""
-                           href="">How to...</a>
+                           href="/category/how-to-in-python">How to...</a>
                     </li>
 
                     <li class="my-6">
                         <a class=""
-                           href="">Python reference</a>
+                           href="/category/python-reference">Python reference</a>
                     </li>
 
                     <li class="my-6">

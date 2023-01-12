@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/all.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2022-06-24T00:00:00+02:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>cURL cheat sheet</title><link href="https://michaeliscoding.com/curl-cheat-sheet/" rel="alternate"></link><published>2022-06-24T00:00:00+02:00</published><updated>2022-06-24T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-24:/curl-cheat-sheet/</id><summary type="html"></summary><content type="html">&lt;p&gt;&lt;img alt="cURL cheat sheet" src="https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/all.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2023-01-12T00:00:00+01:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>cURL cheat sheet</title><link href="https://michaeliscoding.com/curl-cheat-sheet/" rel="alternate"></link><published>2022-06-24T00:00:00+02:00</published><updated>2022-06-24T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-24:/curl-cheat-sheet/</id><summary type="html"></summary><content type="html">&lt;p&gt;&lt;img alt="cURL cheat sheet" src="https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg"&gt;&lt;/p&gt;
 &lt;h2 id="basic-usage"&gt;Basic usage&lt;a class="headerlink" href="#basic-usage" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;pre&gt;&lt;code class="language-bash"&gt;curl url
 &lt;/code&gt;&lt;/pre&gt;
@@ -2504,8 +2504,8 @@ We can also make it one line if you're into one-liners.&lt;/p&gt;
 &lt;p&gt;We can avoid the &lt;em&gt;for&lt;/em&gt; loop and keep clarity and efficiency by using generator expression. &lt;/p&gt;
 &lt;p&gt;This code will be shorter and might be preferred by more experienced
 Python developers but will be a bit harder to understand for people just 
-starting with Python.&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehension"></category><category term="list"></category><category term="generator"></category><category term="loop"></category><category term="next()"></category></entry><entry><title>How to flat a list of lists in Python</title><link href="https://michaeliscoding.com/how-to-flat-list-of-lists-in-python/" rel="alternate"></link><published>2021-08-17T00:00:00+02:00</published><updated>2022-04-11T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-17:/how-to-flat-list-of-lists-in-python/</id><summary type="html">&lt;p&gt;What is the best way to flat a list of lists?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to flat a list of lists in Python" src="https://michaeliscoding.com/images/0005-flat-list-of-lists-python.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;Let's say we have a list of lists like this:&lt;/p&gt;
+starting with Python.&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehension"></category><category term="list"></category><category term="generator"></category><category term="loop"></category><category term="next()"></category></entry><entry><title>How to flat a list of lists in Python</title><link href="https://michaeliscoding.com/how-to-flat-list-of-lists-in-python/" rel="alternate"></link><published>2021-08-17T00:00:00+02:00</published><updated>2023-01-12T00:00:00+01:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-17:/how-to-flat-list-of-lists-in-python/</id><summary type="html">&lt;p&gt;3 ways to do it and which one is the best.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to flat a list of lists in Python" src="https://michaeliscoding.com/images/0005-flat-list-of-lists-python.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Say we have a list of lists like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;list_of_lists = [
     ['London', 'Manchester'],
     ['New York', 'Los Angeles'],
@@ -2515,9 +2515,9 @@ starting with Python.&lt;/p&gt;</content><category term="How to in Python"></cat
 &lt;p&gt;What's the best way to turn it into a simple list that looks like this?&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;['London', 'Manchester', 'New York', 'Los Angeles', 'Rome', 'Milan']
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="using-a-for-loop"&gt;Using a &lt;em&gt;for&lt;/em&gt; loop&lt;a class="headerlink" href="#using-a-for-loop" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="1-for-loop"&gt;1. &lt;em&gt;for&lt;/em&gt; loop&lt;a class="headerlink" href="#1-for-loop" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Using &lt;em&gt;for&lt;/em&gt; loop, we can flat list of lists in two ways.&lt;/p&gt;
-&lt;p&gt;The first one is to use the inner &lt;em&gt;for&lt;/em&gt; loop:&lt;/p&gt;
+&lt;h3 id="1a-use-the-inner-for-loop"&gt;1a. Use the inner &lt;em&gt;for&lt;/em&gt; loop&lt;a class="headerlink" href="#1a-use-the-inner-for-loop" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h3&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;flat = []
 for sublist in list_of_lists:
     for item in sublist:
@@ -2526,35 +2526,35 @@ for sublist in list_of_lists:
 &lt;p&gt;In the four lines of code above we:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Create an empty list. &lt;/li&gt;
-&lt;li&gt;Iterate through list_of_lists.&lt;/li&gt;
+&lt;li&gt;Iterate through &lt;code&gt;list_of_lists&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Then iterate through each sublist.&lt;/li&gt;
 &lt;li&gt;Then when we get to an item in the sublist, append it to our flat list.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;The second one is to use only one loop.&lt;/p&gt;
+&lt;h3 id="1b-use-only-one-loop"&gt;1b. Use only one loop&lt;a class="headerlink" href="#1b-use-only-one-loop" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h3&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;flat = []
 for sublist in list_of_lists:
     flat.extend(sublist)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In the three lines of code above we:
-1. Create an empty list. 
-1. Iterate through list_of_lists.
-1. We extend our flat list with the content of the sublist.&lt;/p&gt;
+&lt;p&gt;In the three lines of code above we:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create an empty list. &lt;/li&gt;
+&lt;li&gt;Iterate through &lt;code&gt;list_of_lists&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;We extend our flat list with the content of the sublist.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;This second option is shorter and also faster. It's probably also a bit easier to understand.&lt;/p&gt;
-&lt;p&gt;But there are better ways.&lt;/p&gt;
-&lt;h2 id="using-a-list-comprehension"&gt;Using a list comprehension&lt;a class="headerlink" href="#using-a-list-comprehension" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;But there is a better way:&lt;/p&gt;
+&lt;h2 id="2-list-comprehension"&gt;2. List comprehension&lt;a class="headerlink" href="#2-list-comprehension" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;With a list comprehension, it's nice and short:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;flat = [item for sublist in list_of_lists for item in sublist]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;What's going on here?&lt;/p&gt;
-&lt;p&gt;It is pretty similar to the inner &lt;code&gt;for&lt;/code&gt; loop. &lt;/p&gt;
-&lt;p&gt;Let's reformat that comprehension to see the similarity:&lt;/p&gt;
+&lt;p&gt;What's going on here? It is pretty similar to the inner &lt;code&gt;for&lt;/code&gt; loop. Let's reformat that comprehension to see the similarity:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;flat = [item 
         for sublist in list_of_lists 
             for item in sublist]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We can see it's the same two &lt;em&gt;for&lt;/em&gt; loops when formatted like this.  &lt;/p&gt;
 &lt;p&gt;The only difference is that instead of &lt;code&gt;flat.append(item)&lt;/code&gt; in the inner loop, we use &lt;code&gt;item&lt;/code&gt; at the beginning of the comprehension. &lt;/p&gt;
-&lt;h2 id="using-the-itertools"&gt;Using the &lt;em&gt;itertools&lt;/em&gt;&lt;a class="headerlink" href="#using-the-itertools" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="3-itertools"&gt;3. itertools&lt;a class="headerlink" href="#3-itertools" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;For completeness, I want to mention we can use &lt;a href="https://docs.python.org/3/library/itertools.html"&gt;itertools&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;We could use two functions: &lt;code&gt;chain&lt;/code&gt; and &lt;code&gt;chain_iterable&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;from itertools import chain
@@ -2565,21 +2565,24 @@ flat1 = chain(*list_of_lists)
 # Using chain_iterable
 flat2 = chain.from_iterable(list_of_lists)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;These functions, however, don't return a list but rather an iterator, so if we need a list, we need to create it explicitly.&lt;/p&gt;
+&lt;p&gt;These functions, however, don't return a list but rather an iterator, so if we need a list, we need to create it explicitly:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;flat_list_1 = list(chain(*list_of_lists))
 
 flat_list_2 = list(chain.from_iterable(list_of_lists))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id="summary"&gt;Summary&lt;a class="headerlink" href="#summary" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;I recommend using list comprehension. &lt;/p&gt;
-&lt;p&gt;It's one line, it doesn't mutate any variable, it is clear to any experienced Python developer, and it's also the fastest.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I recommend using list comprehension:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It's one line&lt;/li&gt;
+&lt;li&gt;It doesn't mutate any variable. &lt;/li&gt;
+&lt;li&gt;It is clear to any experienced Python developer, &lt;/li&gt;
+&lt;li&gt;and it's also fast (the fastest  is one &lt;em&gt;for&lt;/em&gt; loop with &lt;code&gt;extend&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Also, if we need to apply some function to an &lt;code&gt;item&lt;/code&gt;, we can do it directly as part of comprehension:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;# Notice item.lower()
 flat = [item.lower() for sublist in list_of_lists for item in sublist]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In case we don't want to allocate a list, we can also turn it into a generator expression by changing brackets from &lt;code&gt;[]&lt;/code&gt; to &lt;code&gt;()&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;flat = (item.lower() for sublist in list_of_lists for item in sublist)
-&lt;/code&gt;&lt;/pre&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehension"></category><category term="list"></category><category term="for loop"></category></entry><entry><title>How to merge dictionaries in Python</title><link href="https://michaeliscoding.com/how-to-merge-dictionaries-in-python/" rel="alternate"></link><published>2021-08-12T00:00:00+02:00</published><updated>2022-04-08T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-12:/how-to-merge-dictionaries-in-python/</id><summary type="html">&lt;p&gt;4 ways to do it and which one should programmers use to make their code better, faster and elegant.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to merge dictionaries in Python" src="https://michaeliscoding.com/images/0004-merge-dictionaries-python.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Happy coding!&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehension"></category><category term="list"></category><category term="for loop"></category></entry><entry><title>How to merge dictionaries in Python</title><link href="https://michaeliscoding.com/how-to-merge-dictionaries-in-python/" rel="alternate"></link><published>2021-08-12T00:00:00+02:00</published><updated>2023-01-11T00:00:00+01:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-12:/how-to-merge-dictionaries-in-python/</id><summary type="html">&lt;p&gt;4 ways to do it and which one should programmers use to make their code better, faster and elegant.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to merge dictionaries in Python" src="https://michaeliscoding.com/images/0004-merge-dictionaries-python.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Not all ways to merge dicts in Python are created equal. There is only one best way to merge them.&lt;/p&gt;
 &lt;h2 id="we-are-merging-two-dicts-d1-and-d2"&gt;We are merging two dicts, &lt;code&gt;d1&lt;/code&gt; and &lt;code&gt;d2&lt;/code&gt;:&lt;a class="headerlink" href="#we-are-merging-two-dicts-d1-and-d2" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;d1 = {'left': 5, 'right': 10}
