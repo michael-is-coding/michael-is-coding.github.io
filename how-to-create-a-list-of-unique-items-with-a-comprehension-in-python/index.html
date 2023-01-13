@@ -49,7 +49,7 @@
 
 
 
-<meta name="description" content="List comprehensions are a fantastic tool to work with lists. Is it possible to create a list of unique items with list comprehension?"/>
+<meta name="description" content="Is it possible to create a list of unique items with comprehension?"/>
 
 
 <link rel="canonical" href="https://michaeliscoding.com/how-to-create-a-list-of-unique-items-with-a-comprehension-in-python/">
@@ -59,7 +59,7 @@
 <meta property="og:url" content="https://michaeliscoding.com/how-to-create-a-list-of-unique-items-with-a-comprehension-in-python/"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="How to create a list of unique items with a comprehension in Python"/>
-<meta property="og:description" content="List comprehensions are a fantastic tool to work with lists. Is it possible to create a list of unique items with list comprehension?"/>
+<meta property="og:description" content="Is it possible to create a list of unique items with comprehension?"/>
 <meta property="og:image" content="https://michaeliscoding.com/images/0003-list-comprehension-unique-items-python.jpg"/>
 
 <script type="application/ld+json">
@@ -72,9 +72,9 @@
             "name": "Michael is coding"
         },
         "headline": "How to create a list of unique items with a comprehension in Python",
-        "description": "List comprehensions are a fantastic tool to work with lists. Is it possible to create a list of unique items with list comprehension?",
+        "description": "Is it possible to create a list of unique items with comprehension?",
         "datePublished": "2021-08-10",
-        "dateModified": "2022-04-07 ",
+        "dateModified": "2023-01-13 ",
         "publisher": {
             "@type": "Organization",
             "name": "Michael is coding",
@@ -208,7 +208,7 @@
 <!--            <a href="https://michaeliscoding.com/how-to-create-a-list-of-unique-items-with-a-comprehension-in-python/" rel="bookmark" class="headerlink" title="Permalink to How to create a list of unique items with a comprehension in Python">Permalink</a>-->            
         </h1>
         <p class="lead">
-            List comprehensions are a fantastic tool to work with lists. Is it possible to create a list of unique items with list comprehension?
+            Is it possible to create a list of unique items with comprehension?
         </p>
 
 <!--        <time class="font-sans font-medium text-base"-->
@@ -220,9 +220,9 @@
 <!--        <span class="text-gray-500 font-sans font-medium text-base">-->
 <!--            (Updated on-->
 <!--        <time class="text-gray-500 font-sans font-medium text-base"-->
-<!--              datetime="2022-04-07"-->
+<!--              datetime="2023-01-13"-->
 <!--              itemprop="dateModified">-->
-<!--            07 Apr 2022-->
+<!--            13 Jan 2023-->
 <!--        </time>-->
 <!--        )</span>-->
 <!--        -->
@@ -235,7 +235,9 @@
                 <div class="toc">
 <ul>
 <li><a href="#the-challenge">The challenge</a></li>
+<li><a href="#for-loop">for loop</a></li>
 <li><a href="#comprehension">Comprehension</a></li>
+<li><a href="#the-solution">The solution</a></li>
 </ul>
 </div>
 
@@ -243,7 +245,6 @@
             </div>
         <div id="full-article" class="max-w-[60ch]" itemprop="articleBody">
             <p><img alt="How to create a list of unique items with a comprehension in Python" src="https://michaeliscoding.com/images/0003-list-comprehension-unique-items-python.jpg"></p>
-<p>A list comprehension is a fantastic tool for creating lists. But is it possible to create a list of unique items with list comprehension?</p>
 <h2 id="the-challenge">The challenge<a class="headerlink" href="#the-challenge" title="Permanent link">Permalink</a></h2>
 <p>Let's say we have a list of posts:</p>
 <pre><code class="language-python">@dataclass(frozen=True)
@@ -259,27 +260,38 @@ posts = [
     Post(title='fifth post', category='django'),
 ]
 </code></pre>
-<p>Now say we want to get a list of all categories, but we don't want any category to appear twice in our list. So the resulting list from the above <code>posts</code> list would be <code>['pyton', 'django']</code>.</p>
-<p>With for loop, we could do this:</p>
+<p>Now, we want to get a list of all categories, but we don't want any category to appear twice (or more) in our list. So the resulting list would be <code>['python', 'django']</code>.</p>
+<h2 id="for-loop"><em>for</em> loop<a class="headerlink" href="#for-loop" title="Permanent link">Permalink</a></h2>
+<p>With <em>for</em> loop, we could do this:</p>
 <pre><code class="language-python">categories = []
 for p in posts:
     if p.category not in categories:
         categories.append(p.category)
 </code></pre>
+<ol>
+<li>We create empty list <code>categories</code></li>
+<li>We iterate over the <code>posts</code></li>
+<li>Check if post’s category is not in our <code>categories</code> list yet</li>
+<li>If it’s not we append it to <code>categories</code></li>
+</ol>
 <h2 id="comprehension">Comprehension<a class="headerlink" href="#comprehension" title="Permanent link">Permalink</a></h2>
 <p>How do we achieve the same result with a list comprehension?</p>
 <p>We could try this:</p>
-<pre><code class="language-python">categories = [p.category for p in posts if p.category not in categories]
+<pre><code class="language-python">categories = [p.category 
+              for p in posts if p.category not in categories]
 </code></pre>
 <p>But this will not work because the <code>categories</code> variable doesn't exist yet. When we use comprehension, it creates a list on the fly, and we don't have it in a variable until comprehension finishes.</p>
-<p>We can use set comprehension instead. Set is a data container that contains unique values, so it will deal with uniqueness for us. To change a list comprehension to a set comprehension, the only thing We need to do is to change square brackets to curly brackets:</p>
+<h2 id="the-solution">The solution<a class="headerlink" href="#the-solution" title="Permanent link">Permalink</a></h2>
+<p>We can use <em>set comprehension</em> instead. </p>
+<p><em>Set</em> is a data container that contains unique values, so it will deal with uniqueness for us. To change a <em>list comprehension</em> to a <em>set comprehension</em>, the only thing we need to do is to change square brackets to curly brackets:</p>
 <pre><code class="language-python">categories = {p.category for p in posts}
 </code></pre>
-<p>Now <code>categories</code> is a set. That works fine if we need any iterable. But, if 
-we specifically need a list we need to create a list out of a set:</p>
+<p>Now <code>categories</code> is a set. </p>
+<p>That works fine if we need any iterable. But, if we specifically need a <em>list</em> we need to create a list out of a <em>set</em>:</p>
 <pre><code class="language-python">categories = list({p.category for p in posts})
 </code></pre>
 <p>That's it. We did it with one line.</p>
+<p>Happy coding!</p>
             <h2 class="text-center">
                 <span class="border-b-2 border-teal-300 text-2xl font-medium tracking-wide mb-6 mt-12">You might also like</span>
             </h2>

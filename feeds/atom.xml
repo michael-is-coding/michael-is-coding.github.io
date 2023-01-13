@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2023-01-12T00:00:00+01:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>cURL cheat sheet</title><link href="https://michaeliscoding.com/curl-cheat-sheet/" rel="alternate"></link><published>2022-06-24T00:00:00+02:00</published><updated>2022-06-24T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-24:/curl-cheat-sheet/</id><summary type="html"></summary><content type="html">&lt;p&gt;&lt;img alt="cURL cheat sheet" src="https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2023-01-13T00:00:00+01:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>cURL cheat sheet</title><link href="https://michaeliscoding.com/curl-cheat-sheet/" rel="alternate"></link><published>2022-06-24T00:00:00+02:00</published><updated>2022-06-24T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-24:/curl-cheat-sheet/</id><summary type="html"></summary><content type="html">&lt;p&gt;&lt;img alt="cURL cheat sheet" src="https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg"&gt;&lt;/p&gt;
 &lt;h2 id="basic-usage"&gt;Basic usage&lt;a class="headerlink" href="#basic-usage" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;pre&gt;&lt;code class="language-bash"&gt;curl url
 &lt;/code&gt;&lt;/pre&gt;
@@ -2643,8 +2643,7 @@ merged = d1 | d2 | d3
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id="conclusion"&gt;Conclusion&lt;a class="headerlink" href="#conclusion" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;If you are on Python 3.9 or newer use dict union operator &lt;code&gt;|&lt;/code&gt; . If you are on older Python use dict constructor.&lt;/p&gt;
-&lt;p&gt;Happy coding!&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehensions"></category><category term="dict"></category><category term="dictionary"></category></entry><entry><title>How to create a list of unique items with a comprehension in Python</title><link href="https://michaeliscoding.com/how-to-create-a-list-of-unique-items-with-a-comprehension-in-python/" rel="alternate"></link><published>2021-08-10T00:00:00+02:00</published><updated>2022-04-07T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-10:/how-to-create-a-list-of-unique-items-with-a-comprehension-in-python/</id><summary type="html">&lt;p&gt;List comprehensions are a fantastic tool to work with lists. Is it possible to create a list of unique items with list comprehension?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to create a list of unique items with a comprehension in Python" src="https://michaeliscoding.com/images/0003-list-comprehension-unique-items-python.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;A list comprehension is a fantastic tool for creating lists. But is it possible to create a list of unique items with list comprehension?&lt;/p&gt;
+&lt;p&gt;Happy coding!&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehensions"></category><category term="dict"></category><category term="dictionary"></category></entry><entry><title>How to create a list of unique items with a comprehension in Python</title><link href="https://michaeliscoding.com/how-to-create-a-list-of-unique-items-with-a-comprehension-in-python/" rel="alternate"></link><published>2021-08-10T00:00:00+02:00</published><updated>2023-01-13T00:00:00+01:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-10:/how-to-create-a-list-of-unique-items-with-a-comprehension-in-python/</id><summary type="html">&lt;p&gt;Is it possible to create a list of unique items with comprehension?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to create a list of unique items with a comprehension in Python" src="https://michaeliscoding.com/images/0003-list-comprehension-unique-items-python.jpg"&gt;&lt;/p&gt;
 &lt;h2 id="the-challenge"&gt;The challenge&lt;a class="headerlink" href="#the-challenge" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Let's say we have a list of posts:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;@dataclass(frozen=True)
@@ -2660,27 +2659,38 @@ posts = [
     Post(title='fifth post', category='django'),
 ]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now say we want to get a list of all categories, but we don't want any category to appear twice in our list. So the resulting list from the above &lt;code&gt;posts&lt;/code&gt; list would be &lt;code&gt;['pyton', 'django']&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;With for loop, we could do this:&lt;/p&gt;
+&lt;p&gt;Now, we want to get a list of all categories, but we don't want any category to appear twice (or more) in our list. So the resulting list would be &lt;code&gt;['python', 'django']&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="for-loop"&gt;&lt;em&gt;for&lt;/em&gt; loop&lt;a class="headerlink" href="#for-loop" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;With &lt;em&gt;for&lt;/em&gt; loop, we could do this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;categories = []
 for p in posts:
     if p.category not in categories:
         categories.append(p.category)
 &lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;We create empty list &lt;code&gt;categories&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;We iterate over the &lt;code&gt;posts&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Check if post’s category is not in our &lt;code&gt;categories&lt;/code&gt; list yet&lt;/li&gt;
+&lt;li&gt;If it’s not we append it to &lt;code&gt;categories&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id="comprehension"&gt;Comprehension&lt;a class="headerlink" href="#comprehension" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;How do we achieve the same result with a list comprehension?&lt;/p&gt;
 &lt;p&gt;We could try this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;categories = [p.category for p in posts if p.category not in categories]
+&lt;pre&gt;&lt;code class="language-python"&gt;categories = [p.category 
+              for p in posts if p.category not in categories]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;But this will not work because the &lt;code&gt;categories&lt;/code&gt; variable doesn't exist yet. When we use comprehension, it creates a list on the fly, and we don't have it in a variable until comprehension finishes.&lt;/p&gt;
-&lt;p&gt;We can use set comprehension instead. Set is a data container that contains unique values, so it will deal with uniqueness for us. To change a list comprehension to a set comprehension, the only thing We need to do is to change square brackets to curly brackets:&lt;/p&gt;
+&lt;h2 id="the-solution"&gt;The solution&lt;a class="headerlink" href="#the-solution" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can use &lt;em&gt;set comprehension&lt;/em&gt; instead. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Set&lt;/em&gt; is a data container that contains unique values, so it will deal with uniqueness for us. To change a &lt;em&gt;list comprehension&lt;/em&gt; to a &lt;em&gt;set comprehension&lt;/em&gt;, the only thing we need to do is to change square brackets to curly brackets:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;categories = {p.category for p in posts}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now &lt;code&gt;categories&lt;/code&gt; is a set. That works fine if we need any iterable. But, if 
-we specifically need a list we need to create a list out of a set:&lt;/p&gt;
+&lt;p&gt;Now &lt;code&gt;categories&lt;/code&gt; is a set. &lt;/p&gt;
+&lt;p&gt;That works fine if we need any iterable. But, if we specifically need a &lt;em&gt;list&lt;/em&gt; we need to create a list out of a &lt;em&gt;set&lt;/em&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;categories = list({p.category for p in posts})
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;That's it. We did it with one line.&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehensions"></category><category term="list comprehension"></category><category term="list"></category></entry><entry><title>When to make a new .py file for a Python project?</title><link href="https://michaeliscoding.com/when-to-make-a-new-py-file-for-a-python-project/" rel="alternate"></link><published>2021-08-06T00:00:00+02:00</published><updated>2022-04-06T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-06:/when-to-make-a-new-py-file-for-a-python-project/</id><summary type="html">&lt;p&gt;Learn when to make a new .py file for a Python project and how to split and organize code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="When to make a new .py file for a Python project?" src="https://michaeliscoding.com/images/0002-when-new-file-for-python-project.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;That's it. We did it with one line.&lt;/p&gt;
+&lt;p&gt;Happy coding!&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehensions"></category><category term="list comprehension"></category><category term="list"></category><category term="set comprehension"></category></entry><entry><title>When to make a new .py file for a Python project?</title><link href="https://michaeliscoding.com/when-to-make-a-new-py-file-for-a-python-project/" rel="alternate"></link><published>2021-08-06T00:00:00+02:00</published><updated>2022-04-06T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-06:/when-to-make-a-new-py-file-for-a-python-project/</id><summary type="html">&lt;p&gt;Learn when to make a new .py file for a Python project and how to split and organize code.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="When to make a new .py file for a Python project?" src="https://michaeliscoding.com/images/0002-when-new-file-for-python-project.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Most Python projects have multiple python files instead of having all code in one file. &lt;/p&gt;
 &lt;p&gt;Should we always try to separate code into multiple files?&lt;/p&gt;
 &lt;p&gt;How do we know when to start splitting our code into multiple files?&lt;/p&gt;
