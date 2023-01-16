@@ -49,7 +49,7 @@
 
 
 
-<meta name="description" content="There are many ways to filter a list in Python. What are they and which one is the best?"/>
+<meta name="description" content="4 ways to do it and which one to use in your code"/>
 
 
 <link rel="canonical" href="https://michaeliscoding.com/how-to-filter-list-in-python/">
@@ -59,7 +59,7 @@
 <meta property="og:url" content="https://michaeliscoding.com/how-to-filter-list-in-python/"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="How to filter a list in Python"/>
-<meta property="og:description" content="There are many ways to filter a list in Python. What are they and which one is the best?"/>
+<meta property="og:description" content="4 ways to do it and which one to use in your code"/>
 <meta property="og:image" content="https://michaeliscoding.com/images/0007-filter-list-python.jpg"/>
 
 <script type="application/ld+json">
@@ -72,9 +72,9 @@
             "name": "Michael is coding"
         },
         "headline": "How to filter a list in Python",
-        "description": "There are many ways to filter a list in Python. What are they and which one is the best?",
+        "description": "4 ways to do it and which one to use in your code",
         "datePublished": "2021-08-24",
-        "dateModified": "2022-04-12 ",
+        "dateModified": "2023-01-16 ",
         "publisher": {
             "@type": "Organization",
             "name": "Michael is coding",
@@ -208,7 +208,7 @@
 <!--            <a href="https://michaeliscoding.com/how-to-filter-list-in-python/" rel="bookmark" class="headerlink" title="Permalink to How to filter a list in Python">Permalink</a>-->            
         </h1>
         <p class="lead">
-            There are many ways to filter a list in Python. What are they and which one is the best?
+            4 ways to do it and which one to use in your code
         </p>
 
 <!--        <time class="font-sans font-medium text-base"-->
@@ -220,9 +220,9 @@
 <!--        <span class="text-gray-500 font-sans font-medium text-base">-->
 <!--            (Updated on-->
 <!--        <time class="text-gray-500 font-sans font-medium text-base"-->
-<!--              datetime="2022-04-12"-->
+<!--              datetime="2023-01-16"-->
 <!--              itemprop="dateModified">-->
-<!--            12 Apr 2022-->
+<!--            16 Jan 2023-->
 <!--        </time>-->
 <!--        )</span>-->
 <!--        -->
@@ -234,11 +234,12 @@
                 <h4 class="toc-title not-prose mt-0"><span>Table of contents</span></h4>
                 <div class="toc">
 <ul>
-<li><a href="#setup">Setup</a></li>
-<li><a href="#using-a-for-loop">Using a for loop</a></li>
-<li><a href="#using-a-list-comprehension">Using a list comprehension</a></li>
-<li><a href="#using-the-built-in-filter-function">Using the built-in filter() function</a></li>
-<li><a href="#using-a-generator-expression">Using a generator expression</a></li>
+<li><a href="#we-start-with-a-list">We start with a list</a></li>
+<li><a href="#is-it-berry">Is it berry?</a></li>
+<li><a href="#1-for-loop">1. for loop</a></li>
+<li><a href="#2-list-comprehension">2. List comprehension</a></li>
+<li><a href="#3-the-built-in-filter-function">3. The built-in filter() function</a></li>
+<li><a href="#4-generator-expression">4. Generator expression</a></li>
 <li><a href="#what-option-is-the-best">What option is the best?</a></li>
 </ul>
 </div>
@@ -247,26 +248,28 @@
             </div>
         <div id="full-article" class="max-w-[60ch]" itemprop="articleBody">
             <p><img alt="How to filter list in Python" src="https://michaeliscoding.com/images/0007-filter-list-python.jpg"></p>
-<p>Filtering a list (or array) is a common thing every programmer needs to do quite often.</p>
-<p>There are many ways to filter a list in Python. What are they, and which one is the best?</p>
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">Permalink</a></h2>
-<p>We start with a list of fruits like the one below:</p>
+<h2 id="we-start-with-a-list">We start with a list<a class="headerlink" href="#we-start-with-a-list" title="Permanent link">Permalink</a></h2>
+<p>…of fruits, like the one below:</p>
 <pre><code class="language-python">fruits = [
-    'apple',
-    'pear',
-    'strawberry',
-    'orange',
-    'blueberry',
-    'lemon',
-    'raspberry',
-    'cranberry'
+    &quot;apple&quot;,
+    &quot;pear&quot;,
+    &quot;strawberry&quot;,
+    &quot;orange&quot;,
+    &quot;blueberry&quot;,
+    &quot;lemon&quot;,
+    &quot;raspberry&quot;,
+    &quot;cranberry&quot;
 ]
 </code></pre>
-<p>We want to filter this list, so the new list contains only berries (strawberry, blueberry, raspberry and cranberry).</p>
-<p>To determine if a fruit is a berry, we'll check if it contains the string <em>'berry'</em>. It might be a naive condition but good enough for our purpose here. We'll use the <code>in</code> operator:</p>
+<p>We want to filter this list, so the new list contains only berries:</p>
+<pre><code class="language-python">[&quot;strawberry&quot;, &quot;blueberry&quot;, &quot;raspberry, &quot;cranberry&quot;]
+</code></pre>
+<h2 id="is-it-berry">Is it berry?<a class="headerlink" href="#is-it-berry" title="Permanent link">Permalink</a></h2>
+<p>To determine if a fruit is a berry, we'll check if it contains the string 'berry'. </p>
+<p>It might be a naive condition but good enough for our purpose here. We'll use the <code>in</code> operator:</p>
 <pre><code class="language-python">'berry' in fruit
 </code></pre>
-<h2 id="using-a-for-loop">Using a <em>for</em> loop<a class="headerlink" href="#using-a-for-loop" title="Permanent link">Permalink</a></h2>
+<h2 id="1-for-loop">1. <em>for</em> loop<a class="headerlink" href="#1-for-loop" title="Permanent link">Permalink</a></h2>
 <p>Let's start with a plain old <em>for</em> loop. </p>
 <pre><code class="language-python">berries = []
 
@@ -278,23 +281,26 @@ print(berries)
 # will output
 # ['strawberry', 'blueberry', 'raspberry', 'cranberry']
 </code></pre>
-<p>We create an empty list named <code>berries</code>. Then we go through every item in <code>fruits</code> to check if it contains <em>'berry'</em> and if so, we add it to our new list <code>berries</code>.</p>
+<p>We :</p>
+<ol>
+<li>Create an empty list named <code>berries</code>. </li>
+<li>Then we go through every item in <code>fruits</code> </li>
+<li>We check if it contains <code>'berry'</code> </li>
+<li>If so, we add it to our new list <code>berries</code>.</li>
+</ol>
 <p>The code above is probably the most common solution. </p>
-<h2 id="using-a-list-comprehension">Using a list comprehension<a class="headerlink" href="#using-a-list-comprehension" title="Permanent link">Permalink</a></h2>
-<p>Python is a very expressive and succinct language, and list comprehensions are one of its most remarkable features.</p>
-<p>We can use it to do filtering:</p>
+<h2 id="2-list-comprehension">2. List comprehension<a class="headerlink" href="#2-list-comprehension" title="Permanent link">Permalink</a></h2>
+<p>Python is a very expressive and succinct language, and list comprehensions are one of its most remarkable features. We can use it to do filtering:</p>
 <pre><code class="language-python">berries = [fruit for fruit in fruits if 'berry' in fruit]
 </code></pre>
-<p>This code is very nice and short. And very pythonic. </p>
-<p>List comprehensions allow us to add an <code>if</code> statement, and we can use this to build a new filtered list. </p>
-<p>The comprehension above will add the <code>fruit</code> to the new list only when the <code>if</code> condition evaluates to <code>True</code>.</p>
-<h2 id="using-the-built-in-filter-function">Using the built-in <code>filter()</code> function<a class="headerlink" href="#using-the-built-in-filter-function" title="Permanent link">Permalink</a></h2>
-<p>Python has a built-in function <code>filter()</code>, which we use for ... </p>
-<p>wait for it...</p>
-<p>filtering. </p>
+<p>This code is very nice and short. </p>
+<p>And very pythonic. </p>
+<p>List comprehensions allow us to add an <code>if</code> statement, and we can use this to build a new filtered list.  The comprehension above will add the <code>fruit</code> to the new list only when the <code>if</code> condition evaluates to <code>True</code>.</p>
+<h2 id="3-the-built-in-filter-function">3. The built-in <code>filter()</code> function<a class="headerlink" href="#3-the-built-in-filter-function" title="Permanent link">Permalink</a></h2>
+<p>Python has a built-in function <code>filter()</code>, which we use for ... wait for it ... filtering. </p>
 <p><code>filter()</code> takes 2 parameters: </p>
 <ol>
-<li>The first parameter is a function that determines if an item should be filtered out or not. It receives each item as a parameter and should return True for items we want to keep; otherwise, it should return False.</li>
+<li>The first parameter is a function that determines if an item should be included in the result. It receives each item as a parameter and should return True for items we want to keep; otherwise, it should return False.</li>
 <li>The second parameter is a list (or other iterable) that we want to filter.</li>
 </ol>
 <p>We can use it like this:</p>
@@ -307,29 +313,28 @@ berries = filter(is_berry, fruits)
 <pre><code class="language-python">berries = filter(lambda fruit: 'berry' in fruit, fruits)
 </code></pre>
 <p>But there is a slight problem here. </p>
-<p>In both cases above, <code>filter()</code> actually doesn't return a list but rather a <code>filter object</code>. </p>
-<p>The filter object is an iterator - very helpful if we operate on large datasets as it doesn't load data in the memory all at once.</p>
+<p>In both cases above, <code>filter()</code> actually doesn't return a list but rather a <code>filter object</code>.  The filter object is an iterator - very helpful if we operate on large datasets as it doesn't load data in the memory all at once.</p>
 <pre><code class="language-python">print(berries)
 # will output
 # &lt;filter object at 0x10314b610&gt;
 </code></pre>
-<p>Often we can use an iterator exactly like a list (but only once). But if we want an actual list, we need to create it explicitly from the iterator:</p>
+<p>Often we can use an iterator exactly like a list (but only once). </p>
+<p>But if we want an actual list, we need to create it explicitly from the iterator:</p>
 <pre><code class="language-python">berries =  list(filter(lambda fruit: 'berry' in fruit, fruits))
 </code></pre>
-<h2 id="using-a-generator-expression">Using a generator expression<a class="headerlink" href="#using-a-generator-expression" title="Permanent link">Permalink</a></h2>
+<h2 id="4-generator-expression">4. Generator expression<a class="headerlink" href="#4-generator-expression" title="Permanent link">Permalink</a></h2>
 <p>Generator expression works like comprehension, except it returns a generator object rather than a list. </p>
-<p>A generator object is an iterator which might be helpful if we work with large datasets.</p>
-<p>We write generator expression same as a list comprehension except we change square brackets <code>[]</code> to round brackets <code>()</code>.</p>
+<p>A generator object is an iterator which might be helpful if we work with large datasets. We write generator expression same as a list comprehension except we change square brackets <code>[]</code> to round brackets <code>()</code>.</p>
 <pre><code class="language-python">berries = (fruit for fruit in fruits if 'berry' in fruit)
 print(berries)
 # will output
 # &lt;generator object &lt;genexpr&gt; at 0x102f43300&gt;
 </code></pre>
 <h2 id="what-option-is-the-best">What option is the best?<a class="headerlink" href="#what-option-is-the-best" title="Permanent link">Permalink</a></h2>
-<p>If we need an actual list and our dataset is not too big, the best option is to use list comprehension. 
-It's very pythonic and short. Most Python programmers will understand it straight away.</p>
-<p>We should use the filter() or generator expression when working with a large dataset.
-<code>filter()</code> is more verbose unless our function, which determines if an item should be filtered out, already exists. But we can still use <code>lambda</code>. </p>
+<p>If we need an actual list and our dataset is not too big, the best option is to use list comprehension. </p>
+<p>It's very pythonic and short. Most Python programmers will understand it straight away. We should use the filter() or generator expression when working with a large dataset.</p>
+<p><code>filter()</code> is more verbose unless our function, which determines if an item should be filtered out, already exists. </p>
+<p>But we can still use <code>lambda</code>. </p>
 <p>Plain old for loop is the most lengthy, but one benefit is that it will be 
 also understood by people who don't know Python.</p>
             <h2 class="text-center">

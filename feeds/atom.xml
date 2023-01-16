@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2023-01-13T00:00:00+01:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>cURL cheat sheet</title><link href="https://michaeliscoding.com/curl-cheat-sheet/" rel="alternate"></link><published>2022-06-24T00:00:00+02:00</published><updated>2022-06-24T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-24:/curl-cheat-sheet/</id><summary type="html"></summary><content type="html">&lt;p&gt;&lt;img alt="cURL cheat sheet" src="https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2023-01-16T00:00:00+01:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>cURL cheat sheet</title><link href="https://michaeliscoding.com/curl-cheat-sheet/" rel="alternate"></link><published>2022-06-24T00:00:00+02:00</published><updated>2022-06-24T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-24:/curl-cheat-sheet/</id><summary type="html"></summary><content type="html">&lt;p&gt;&lt;img alt="cURL cheat sheet" src="https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg"&gt;&lt;/p&gt;
 &lt;h2 id="basic-usage"&gt;Basic usage&lt;a class="headerlink" href="#basic-usage" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;pre&gt;&lt;code class="language-bash"&gt;curl url
 &lt;/code&gt;&lt;/pre&gt;
@@ -2338,27 +2338,29 @@ fruits = {
 
 'banana' not in fruits
 # outputs: False
-&lt;/code&gt;&lt;/pre&gt;</content><category term="Python reference"></category><category term="python"></category><category term="in"></category><category term="list"></category><category term="string"></category><category term="operator"></category></entry><entry><title>How to filter a list in Python</title><link href="https://michaeliscoding.com/how-to-filter-list-in-python/" rel="alternate"></link><published>2021-08-24T00:00:00+02:00</published><updated>2022-04-12T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-24:/how-to-filter-list-in-python/</id><summary type="html">&lt;p&gt;There are many ways to filter a list in Python. What are they and which one is the best?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to filter list in Python" src="https://michaeliscoding.com/images/0007-filter-list-python.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;Filtering a list (or array) is a common thing every programmer needs to do quite often.&lt;/p&gt;
-&lt;p&gt;There are many ways to filter a list in Python. What are they, and which one is the best?&lt;/p&gt;
-&lt;h2 id="setup"&gt;Setup&lt;a class="headerlink" href="#setup" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;We start with a list of fruits like the one below:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;</content><category term="Python reference"></category><category term="python"></category><category term="in"></category><category term="list"></category><category term="string"></category><category term="operator"></category></entry><entry><title>How to filter a list in Python</title><link href="https://michaeliscoding.com/how-to-filter-list-in-python/" rel="alternate"></link><published>2021-08-24T00:00:00+02:00</published><updated>2023-01-16T00:00:00+01:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-24:/how-to-filter-list-in-python/</id><summary type="html">&lt;p&gt;4 ways to do it and which one to use in your code&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to filter list in Python" src="https://michaeliscoding.com/images/0007-filter-list-python.jpg"&gt;&lt;/p&gt;
+&lt;h2 id="we-start-with-a-list"&gt;We start with a list&lt;a class="headerlink" href="#we-start-with-a-list" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;…of fruits, like the one below:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;fruits = [
-    'apple',
-    'pear',
-    'strawberry',
-    'orange',
-    'blueberry',
-    'lemon',
-    'raspberry',
-    'cranberry'
+    &amp;quot;apple&amp;quot;,
+    &amp;quot;pear&amp;quot;,
+    &amp;quot;strawberry&amp;quot;,
+    &amp;quot;orange&amp;quot;,
+    &amp;quot;blueberry&amp;quot;,
+    &amp;quot;lemon&amp;quot;,
+    &amp;quot;raspberry&amp;quot;,
+    &amp;quot;cranberry&amp;quot;
 ]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We want to filter this list, so the new list contains only berries (strawberry, blueberry, raspberry and cranberry).&lt;/p&gt;
-&lt;p&gt;To determine if a fruit is a berry, we'll check if it contains the string &lt;em&gt;'berry'&lt;/em&gt;. It might be a naive condition but good enough for our purpose here. We'll use the &lt;code&gt;in&lt;/code&gt; operator:&lt;/p&gt;
+&lt;p&gt;We want to filter this list, so the new list contains only berries:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;[&amp;quot;strawberry&amp;quot;, &amp;quot;blueberry&amp;quot;, &amp;quot;raspberry, &amp;quot;cranberry&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="is-it-berry"&gt;Is it berry?&lt;a class="headerlink" href="#is-it-berry" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To determine if a fruit is a berry, we'll check if it contains the string 'berry'. &lt;/p&gt;
+&lt;p&gt;It might be a naive condition but good enough for our purpose here. We'll use the &lt;code&gt;in&lt;/code&gt; operator:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;'berry' in fruit
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="using-a-for-loop"&gt;Using a &lt;em&gt;for&lt;/em&gt; loop&lt;a class="headerlink" href="#using-a-for-loop" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="1-for-loop"&gt;1. &lt;em&gt;for&lt;/em&gt; loop&lt;a class="headerlink" href="#1-for-loop" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Let's start with a plain old &lt;em&gt;for&lt;/em&gt; loop. &lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;berries = []
 
@@ -2370,23 +2372,26 @@ print(berries)
 # will output
 # ['strawberry', 'blueberry', 'raspberry', 'cranberry']
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We create an empty list named &lt;code&gt;berries&lt;/code&gt;. Then we go through every item in &lt;code&gt;fruits&lt;/code&gt; to check if it contains &lt;em&gt;'berry'&lt;/em&gt; and if so, we add it to our new list &lt;code&gt;berries&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create an empty list named &lt;code&gt;berries&lt;/code&gt;. &lt;/li&gt;
+&lt;li&gt;Then we go through every item in &lt;code&gt;fruits&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;We check if it contains &lt;code&gt;'berry'&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;If so, we add it to our new list &lt;code&gt;berries&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;The code above is probably the most common solution. &lt;/p&gt;
-&lt;h2 id="using-a-list-comprehension"&gt;Using a list comprehension&lt;a class="headerlink" href="#using-a-list-comprehension" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Python is a very expressive and succinct language, and list comprehensions are one of its most remarkable features.&lt;/p&gt;
-&lt;p&gt;We can use it to do filtering:&lt;/p&gt;
+&lt;h2 id="2-list-comprehension"&gt;2. List comprehension&lt;a class="headerlink" href="#2-list-comprehension" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Python is a very expressive and succinct language, and list comprehensions are one of its most remarkable features. We can use it to do filtering:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;berries = [fruit for fruit in fruits if 'berry' in fruit]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This code is very nice and short. And very pythonic. &lt;/p&gt;
-&lt;p&gt;List comprehensions allow us to add an &lt;code&gt;if&lt;/code&gt; statement, and we can use this to build a new filtered list. &lt;/p&gt;
-&lt;p&gt;The comprehension above will add the &lt;code&gt;fruit&lt;/code&gt; to the new list only when the &lt;code&gt;if&lt;/code&gt; condition evaluates to &lt;code&gt;True&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id="using-the-built-in-filter-function"&gt;Using the built-in &lt;code&gt;filter()&lt;/code&gt; function&lt;a class="headerlink" href="#using-the-built-in-filter-function" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Python has a built-in function &lt;code&gt;filter()&lt;/code&gt;, which we use for ... &lt;/p&gt;
-&lt;p&gt;wait for it...&lt;/p&gt;
-&lt;p&gt;filtering. &lt;/p&gt;
+&lt;p&gt;This code is very nice and short. &lt;/p&gt;
+&lt;p&gt;And very pythonic. &lt;/p&gt;
+&lt;p&gt;List comprehensions allow us to add an &lt;code&gt;if&lt;/code&gt; statement, and we can use this to build a new filtered list.  The comprehension above will add the &lt;code&gt;fruit&lt;/code&gt; to the new list only when the &lt;code&gt;if&lt;/code&gt; condition evaluates to &lt;code&gt;True&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="3-the-built-in-filter-function"&gt;3. The built-in &lt;code&gt;filter()&lt;/code&gt; function&lt;a class="headerlink" href="#3-the-built-in-filter-function" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Python has a built-in function &lt;code&gt;filter()&lt;/code&gt;, which we use for ... wait for it ... filtering. &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;filter()&lt;/code&gt; takes 2 parameters: &lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;The first parameter is a function that determines if an item should be filtered out or not. It receives each item as a parameter and should return True for items we want to keep; otherwise, it should return False.&lt;/li&gt;
+&lt;li&gt;The first parameter is a function that determines if an item should be included in the result. It receives each item as a parameter and should return True for items we want to keep; otherwise, it should return False.&lt;/li&gt;
 &lt;li&gt;The second parameter is a list (or other iterable) that we want to filter.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;We can use it like this:&lt;/p&gt;
@@ -2399,29 +2404,28 @@ berries = filter(is_berry, fruits)
 &lt;pre&gt;&lt;code class="language-python"&gt;berries = filter(lambda fruit: 'berry' in fruit, fruits)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;But there is a slight problem here. &lt;/p&gt;
-&lt;p&gt;In both cases above, &lt;code&gt;filter()&lt;/code&gt; actually doesn't return a list but rather a &lt;code&gt;filter object&lt;/code&gt;. &lt;/p&gt;
-&lt;p&gt;The filter object is an iterator - very helpful if we operate on large datasets as it doesn't load data in the memory all at once.&lt;/p&gt;
+&lt;p&gt;In both cases above, &lt;code&gt;filter()&lt;/code&gt; actually doesn't return a list but rather a &lt;code&gt;filter object&lt;/code&gt;.  The filter object is an iterator - very helpful if we operate on large datasets as it doesn't load data in the memory all at once.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;print(berries)
 # will output
 # &amp;lt;filter object at 0x10314b610&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Often we can use an iterator exactly like a list (but only once). But if we want an actual list, we need to create it explicitly from the iterator:&lt;/p&gt;
+&lt;p&gt;Often we can use an iterator exactly like a list (but only once). &lt;/p&gt;
+&lt;p&gt;But if we want an actual list, we need to create it explicitly from the iterator:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;berries =  list(filter(lambda fruit: 'berry' in fruit, fruits))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="using-a-generator-expression"&gt;Using a generator expression&lt;a class="headerlink" href="#using-a-generator-expression" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="4-generator-expression"&gt;4. Generator expression&lt;a class="headerlink" href="#4-generator-expression" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Generator expression works like comprehension, except it returns a generator object rather than a list. &lt;/p&gt;
-&lt;p&gt;A generator object is an iterator which might be helpful if we work with large datasets.&lt;/p&gt;
-&lt;p&gt;We write generator expression same as a list comprehension except we change square brackets &lt;code&gt;[]&lt;/code&gt; to round brackets &lt;code&gt;()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A generator object is an iterator which might be helpful if we work with large datasets. We write generator expression same as a list comprehension except we change square brackets &lt;code&gt;[]&lt;/code&gt; to round brackets &lt;code&gt;()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;berries = (fruit for fruit in fruits if 'berry' in fruit)
 print(berries)
 # will output
 # &amp;lt;generator object &amp;lt;genexpr&amp;gt; at 0x102f43300&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id="what-option-is-the-best"&gt;What option is the best?&lt;a class="headerlink" href="#what-option-is-the-best" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;If we need an actual list and our dataset is not too big, the best option is to use list comprehension. 
-It's very pythonic and short. Most Python programmers will understand it straight away.&lt;/p&gt;
-&lt;p&gt;We should use the filter() or generator expression when working with a large dataset.
-&lt;code&gt;filter()&lt;/code&gt; is more verbose unless our function, which determines if an item should be filtered out, already exists. But we can still use &lt;code&gt;lambda&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;If we need an actual list and our dataset is not too big, the best option is to use list comprehension. &lt;/p&gt;
+&lt;p&gt;It's very pythonic and short. Most Python programmers will understand it straight away. We should use the filter() or generator expression when working with a large dataset.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;filter()&lt;/code&gt; is more verbose unless our function, which determines if an item should be filtered out, already exists. &lt;/p&gt;
+&lt;p&gt;But we can still use &lt;code&gt;lambda&lt;/code&gt;. &lt;/p&gt;
 &lt;p&gt;Plain old for loop is the most lengthy, but one benefit is that it will be 
 also understood by people who don't know Python.&lt;/p&gt;</content><category term="How to in Python"></category><category term="python"></category><category term="comprehension"></category><category term="list"></category><category term="filter"></category><category term="lambda"></category></entry><entry><title>How to get the first matching item in a list without a loop in Python</title><link href="https://michaeliscoding.com/how-to-get-first-matching-item-without-loop-in-python/" rel="alternate"></link><published>2021-08-19T00:00:00+02:00</published><updated>2022-04-11T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2021-08-19:/how-to-get-first-matching-item-without-loop-in-python/</id><summary type="html">&lt;p&gt;Can we avoid a loop and keep its efficiency when we want to get the first matching item in the list?&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="How to get the first matching item in a list without a loop in Python" src="https://michaeliscoding.com/images/0006-first-matching-item-without-loop-python.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;In programming, it is very common that we need to get the first item from a list that matches some criteria. Let's look at our options in Python and if we can do it without a &lt;em&gt;for&lt;/em&gt; loop.&lt;/p&gt;
