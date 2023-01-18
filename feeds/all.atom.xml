@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/all.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2023-01-16T00:00:00+01:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>cURL cheat sheet</title><link href="https://michaeliscoding.com/curl-cheat-sheet/" rel="alternate"></link><published>2022-06-24T00:00:00+02:00</published><updated>2022-06-24T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-24:/curl-cheat-sheet/</id><summary type="html"></summary><content type="html">&lt;p&gt;&lt;img alt="cURL cheat sheet" src="https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/all.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2023-01-18T00:00:00+01:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>How I got a remote €130k+ job</title><link href="https://michaeliscoding.com/how-i-got-remote-130k-job/" rel="alternate"></link><published>2023-01-18T00:00:00+01:00</published><updated>2023-01-18T00:00:00+01:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2023-01-18:/how-i-got-remote-130k-job/</id><summary type="html">&lt;p&gt;In October 2022, I was fired from my remote €100k+ job. I got a new remote €130k+ job in December. This is how:&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Remote €100k+ job" src="https://michaeliscoding.com/images/0030-remote-100k-job.jpg"&gt;&lt;/p&gt;
+&lt;h2 id="fired"&gt;Fired!&lt;a class="headerlink" href="#fired" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Our company was raising series B investments. One evening I got a work email saying there'll be a company-wide meeting the following day. At that meeting, the founders announced that the company didn't get money from investors and would talk to everyone individually during the day. &lt;/p&gt;
+&lt;p&gt;Three hours later, I was fired after over 6 years at this company.&lt;/p&gt;
+&lt;p&gt;I was employee no.3.&lt;/p&gt;
+&lt;p&gt;It was pretty devastating. I didn't expect I'd be one to let go. After a tough day and a few drinks in the evening, I started to look for a new job the following day.&lt;/p&gt;
+&lt;h2 id="contacting-people-i-know"&gt;Contacting people I know&lt;a class="headerlink" href="#contacting-people-i-know" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;First, I reached out to my contacts. &lt;/p&gt;
+&lt;p&gt;I send emails telling them I'm looking for a new job and send them an updated CV. You never know who can help you. It's no shame to be looking for a new job. &lt;/p&gt;
+&lt;h2 id="linkedin"&gt;LinkedIn&lt;a class="headerlink" href="#linkedin" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Second I checked my LinkedIn profile and did some cleanup. &lt;/p&gt;
+&lt;p&gt;I focused on describing things I accomplished that are interesting and in demand. I changed my settings so recruiters can see I'm open to work. After that, I went to LinkedIn Jobs and started to search and apply. &lt;/p&gt;
+&lt;p&gt;I searched for remote UK jobs as I was working for UK companies before.&lt;/p&gt;
+&lt;p&gt;Within the first week, almost 40 recruiters contacted me with open positions.&lt;/p&gt;
+&lt;p&gt;Soon I realised I couldn't work for most of those companies for 2 reasons:
+ * Not all jobs were fully remote. Some were hybrid (2-3 days a week in the office) or wanted to come to the office too often. That's a no go for me. 
+* They were looking for an employee. They didn't want to do invoicing, so I'd have to be based in the UK., which I'm not.&lt;/p&gt;
+&lt;p&gt;So I was left only with a handful of jobs where I was a viable candidate. &lt;/p&gt;
+&lt;h2 id="search"&gt;Search&lt;a class="headerlink" href="#search" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I had to broaden my search to include other countries. I prepared two resumes, one for a Principal Engineer/Architect role and one for a developer. I searched for jobs, read descriptions and sent resumes a few hours a day, every day.&lt;/p&gt;
+&lt;p&gt;I applied to jobs where I didn't have all the skills. &lt;/p&gt;
+&lt;p&gt;It's ok to do that. &lt;/p&gt;
+&lt;p&gt;They see your resume, and they decide if that's the problem. You need to admit during the interview what you know and what you don't and tell them you're keen to learn any missing skill. Over a few weeks, I applied to almost 60 jobs I found, and 144 recruiters contacted me with offers. &lt;/p&gt;
+&lt;p&gt;I replied to every single one of them.&lt;/p&gt;
+&lt;p&gt;Together I've sent over 150 resumes.&lt;/p&gt;
+&lt;h2 id="interviews"&gt;Interviews&lt;a class="headerlink" href="#interviews" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;All of this resulted only in 5 interviews.&lt;/p&gt;
+&lt;p&gt;In three of them, I was out in the 1st or 2nd round (or didn't hear back). The remaining interviews went better. Let's call these companies X and Z.&lt;/p&gt;
+&lt;p&gt;X was three rounds, 5 hours of meetings and some homework where I had to do live coding, architecture presentation and whatnot.&lt;/p&gt;
+&lt;p&gt;Z required me to build the app in the cloud with the backend and front end. It was about 6-8 hours of work and took me three evenings. It was two rounds and 2 hours of meetings. &lt;/p&gt;
+&lt;p&gt;These are significant barriers to go through, but if you want a good job, you have to do the work.&lt;/p&gt;
+&lt;h2 id="offers"&gt;Offers&lt;a class="headerlink" href="#offers" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I got offers from both!&lt;/p&gt;
+&lt;p&gt;First from X: €100k+, 15% bonus and stock options. I told them to wait. I was waiting to see if I get an offer from Z. &lt;/p&gt;
+&lt;p&gt;And I did: €130k+, no bonus, no stock options.&lt;/p&gt;
+&lt;p&gt;I took Z for three reasons:
+* I like what the company does, it's a new industry for me, and they use things I never used before in production - CDK, React, TypeScript- you see, they hired me even though I don't know those things.
+* Bonus is not guaranteed and  paid once a year, so it's not always money on the table
+* Stock options are only good if you're a very early employee or in a billion-dollar company. So it's not really a thing.&lt;/p&gt;
+&lt;h2 id="summary"&gt;Summary&lt;a class="headerlink" href="#summary" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Finding a new job takes time and effort.&lt;/li&gt;
+&lt;li&gt;Send a lot of applications.&lt;/li&gt;
+&lt;li&gt;Apply to jobs even if you don't have full qualifications.&lt;/li&gt;
+&lt;li&gt;Take hard interviews that want you to do the work.&lt;/li&gt;
+&lt;li&gt;Be honest.&lt;/li&gt;
+&lt;li&gt;Don't give up.&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Career"></category><category term="career"></category><category term="job"></category><category term="interview"></category></entry><entry><title>cURL cheat sheet</title><link href="https://michaeliscoding.com/curl-cheat-sheet/" rel="alternate"></link><published>2022-06-24T00:00:00+02:00</published><updated>2022-06-24T00:00:00+02:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2022-06-24:/curl-cheat-sheet/</id><summary type="html"></summary><content type="html">&lt;p&gt;&lt;img alt="cURL cheat sheet" src="https://michaeliscoding.com/images/0029-curl-cheat-sheet.jpg"&gt;&lt;/p&gt;
 &lt;h2 id="basic-usage"&gt;Basic usage&lt;a class="headerlink" href="#basic-usage" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;pre&gt;&lt;code class="language-bash"&gt;curl url
 &lt;/code&gt;&lt;/pre&gt;
