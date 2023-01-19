@@ -1244,11 +1244,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .block {
   display: block;
 }
+.inline-block {
+  display: inline-block;
+}
 .inline {
   display: inline;
 }
 .flex {
   display: flex;
+}
+.table {
+  display: table;
 }
 .grid {
   display: grid;
@@ -1462,6 +1468,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(14 116 144 / var(--tw-bg-opacity));
 }
+.bg-yellow-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 240 138 / var(--tw-bg-opacity));
+}
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
 .bg-cover {
   background-size: cover;
 }
@@ -1542,6 +1556,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pr-2 {
   padding-right: 0.5rem;
 }
+.text-left {
+  text-align: left;
+}
 .text-center {
   text-align: center;
 }
@@ -1610,6 +1627,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .leading-none {
   line-height: 1;
+}
+.leading-loose {
+  line-height: 2;
 }
 .tracking-wide {
   letter-spacing: 0.025em;
