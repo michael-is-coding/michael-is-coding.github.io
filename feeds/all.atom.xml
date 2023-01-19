@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/all.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2023-01-18T00:00:00+01:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>How I got a remote €130k+ job</title><link href="https://michaeliscoding.com/how-i-got-remote-130k-job/" rel="alternate"></link><published>2023-01-18T00:00:00+01:00</published><updated>2023-01-18T00:00:00+01:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2023-01-18:/how-i-got-remote-130k-job/</id><summary type="html">&lt;p&gt;In October 2022, I was fired from my remote €100k+ job. I got a new remote €130k+ job in December. This is how:&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Remote €100k+ job" src="https://michaeliscoding.com/images/0030-remote-100k-job.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Michael is coding</title><link href="https://michaeliscoding.com/" rel="alternate"></link><link href="https://michaeliscoding.com/feeds/all.atom.xml" rel="self"></link><id>https://michaeliscoding.com/</id><updated>2023-01-18T00:00:00+01:00</updated><subtitle>Learn to write fast, beautiful and efficient code. Understand programming concepts and technologies. Advance your career by learning how to deal with people.</subtitle><entry><title>How I got a remote €130k+ job</title><link href="https://michaeliscoding.com/how-i-got-remote-130k-job/" rel="alternate"></link><published>2023-01-18T00:00:00+01:00</published><updated>2023-01-18T00:00:00+01:00</updated><author><name>Michael</name></author><id>tag:michaeliscoding.com,2023-01-18:/how-i-got-remote-130k-job/</id><summary type="html">&lt;p&gt;In October 2022, I was fired from my remote €100k+ job. I got a new remote €130k+ job in December. This is how:&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Remote €130k+ job" src="https://michaeliscoding.com/images/0030-remote-130k-job.jpg"&gt;&lt;/p&gt;
 &lt;h2 id="fired"&gt;Fired!&lt;a class="headerlink" href="#fired" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Our company was raising series B investments. One evening I got a work email saying there'll be a company-wide meeting the following day. At that meeting, the founders announced that the company didn't get money from investors and would talk to everyone individually during the day. &lt;/p&gt;
 &lt;p&gt;Three hours later, I was fired after over 6 years at this company.&lt;/p&gt;
@@ -13,9 +13,11 @@
 &lt;p&gt;I focused on describing things I accomplished that are interesting and in demand. I changed my settings so recruiters can see I'm open to work. After that, I went to LinkedIn Jobs and started to search and apply. &lt;/p&gt;
 &lt;p&gt;I searched for remote UK jobs as I was working for UK companies before.&lt;/p&gt;
 &lt;p&gt;Within the first week, almost 40 recruiters contacted me with open positions.&lt;/p&gt;
-&lt;p&gt;Soon I realised I couldn't work for most of those companies for 2 reasons:
- * Not all jobs were fully remote. Some were hybrid (2-3 days a week in the office) or wanted to come to the office too often. That's a no go for me. 
-* They were looking for an employee. They didn't want to do invoicing, so I'd have to be based in the UK., which I'm not.&lt;/p&gt;
+&lt;p&gt;Soon I realised I couldn't work for most of those companies for 2 reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Not all jobs were fully remote. Some were hybrid (2-3 days a week in the office) or wanted to come to the office too often. That's a no go for me. &lt;/li&gt;
+&lt;li&gt;They were looking for an employee. They didn't want to do invoicing, so I'd have to be based in the UK., which I'm not.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;So I was left only with a handful of jobs where I was a viable candidate. &lt;/p&gt;
 &lt;h2 id="search"&gt;Search&lt;a class="headerlink" href="#search" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I had to broaden my search to include other countries. I prepared two resumes, one for a Principal Engineer/Architect role and one for a developer. I searched for jobs, read descriptions and sent resumes a few hours a day, every day.&lt;/p&gt;
@@ -34,10 +36,14 @@
 &lt;p&gt;I got offers from both!&lt;/p&gt;
 &lt;p&gt;First from X: €100k+, 15% bonus and stock options. I told them to wait. I was waiting to see if I get an offer from Z. &lt;/p&gt;
 &lt;p&gt;And I did: €130k+, no bonus, no stock options.&lt;/p&gt;
-&lt;p&gt;I took Z for three reasons:
-* I like what the company does, it's a new industry for me, and they use things I never used before in production - CDK, React, TypeScript- you see, they hired me even though I don't know those things.
-* Bonus is not guaranteed and  paid once a year, so it's not always money on the table
-* Stock options are only good if you're a very early employee or in a billion-dollar company. So it's not really a thing.&lt;/p&gt;
+&lt;p&gt;I took Z for few reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I like what the company does.&lt;/li&gt;
+&lt;li&gt;It's a new industry for me.&lt;/li&gt;
+&lt;li&gt;They use things I never used before in production - CDK, React, TypeScript- you see, they hired me even though I don't know those things.&lt;/li&gt;
+&lt;li&gt;Bonus is not guaranteed and  paid once a year, so it's not always money on the table.&lt;/li&gt;
+&lt;li&gt;Stock options are only good if you're a very early employee or in a billion-dollar company. So it's not really a thing.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="summary"&gt;Summary&lt;a class="headerlink" href="#summary" title="Permanent link"&gt;Permalink&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Finding a new job takes time and effort.&lt;/li&gt;
